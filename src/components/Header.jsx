@@ -94,9 +94,8 @@ const Header = () => {
                 </div>
 
                 {/* Mobile Menu */}
-                {mobileMenuOpen && (
-                    <nav className="md:hidden mt-4 pt-4 border-t border-border">
-                        <div className="flex flex-col space-y-2">
+                <nav className={`md:hidden mt-4 pt-4 border-t border-border mobile-menu ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
+                    <div className="flex flex-col space-y-2">
                             <NavLink
                                 to="/"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -154,7 +153,6 @@ const Header = () => {
                             </NavLink>
                         </div>
                     </nav>
-                )}
             </div>
         </header>
     );

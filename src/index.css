@@ -101,3 +101,18 @@ body {
 .warm-border {
   border-color: var(--color-secondary);
 }
+
+/* Mobile menu transition - collapsed by default, expands smoothly when `.open` is added */
+.mobile-menu {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  overflow: hidden;
+  transition: max-height 300ms ease, opacity 300ms ease, transform 400ms ease;
+}
+
+.mobile-menu.open {
+  max-height: 800px; /* large enough to contain menu items */
+  opacity: 1;
+  transform: translateY(0);
+}
