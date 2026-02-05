@@ -1,0 +1,1362 @@
+[
+  {
+    "id": "2026-02-02",
+    "date": "2026-02-02",
+    "mood": "reflective",
+    "song": {
+      "title": "Born Sinner",
+      "artist": "J. Cole",
+      "link": "https://open.spotify.com/track/4v6F7w6fl8M6Vmc3c0bXs7"
+    },
+    "movie": {
+      "title": "The Prestige",
+      "year": 2006,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTc4OF5BMl5BanBnXkFtZTYwNTM0NjY2._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=o4g9ljd2hKk"
+    },
+    "caption": "Reflective mood. Owning my flaws like a born sinner, watching rivalries unfold in The Prestige. Are you watching closely?"
+  },
+  {
+    "id": "2026-02-03",
+    "date": "2026-02-03",
+    "mood": "energetic",
+    "song": {
+      "title": "Runaway",
+      "artist": "Kanye West",
+      "link": "https://open.spotify.com/track/3DK6m7It6Pw857FcQftMds"
+    },
+    "movie": {
+      "title": "Interstellar",
+      "year": 2014,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWE2ZWYtMGY2M2YyN2Q1M2Y0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E"
+    },
+    "caption": "Energy high. Runaway on blast, pushing limits like Cooper crossing galaxies in Interstellar. No turning back."
+  },
+  {
+    "id": "2026-02-04",
+    "date": "2026-02-04",
+    "mood": "calm",
+    "song": {
+      "title": "Tears in Rain",
+      "artist": "James Blunt",
+      "link": "https://open.spotify.com/track/2Zq6X7b3S7gq9K0O8rF6Lm"
+    },
+    "movie": {
+      "title": "The Town",
+      "year": 2010,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTcyNzY0ODA0OV5BMl5BanBnXkFtZTcwOTgwNDk0Mw@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=WgAza4h8s5Q"
+    },
+    "caption": "Calm and quiet. Tears in Rain washing over me while The Town shows that sometimes peace means leaving everything behind."
+  },
+  {
+    "id": "2026-02-05",
+    "date": "2026-02-05",
+    "mood": "romantic",
+    "song": {
+      "title": "Essence",
+      "artist": "Wizkid feat. Tems",
+      "link": "https://open.spotify.com/track/5q3LwGnsq8A0yO9V0PesK5"
+    },
+    "movie": {
+      "title": "Django Unchained",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=eUdM9vrC7pw"
+    },
+    "caption": "Romantic energy. Essence got me lost in you — real love rides through fire, just like Django and Broomhilda."
+  },
+  {
+    "id": "2026-02-06",
+    "date": "2026-02-06",
+    "mood": "happy",
+    "song": {
+      "title": "Ye",
+      "artist": "Burna Boy",
+      "link": "https://open.spotify.com/track/4svZ7pJ9nP2Nlfhwn2q4z1"
+    },
+    "movie": {
+      "title": "Body of Lies",
+      "year": 2008,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTgzOTY0NTE1Ml5BMl5BanBnXkFtZTcwNjg3MDc4MQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=2eQxjZAWjIE"
+    },
+    "caption": "Happy and free. Ye on repeat — nobody fit stress me. Even in the deception of Body of Lies, joy still finds a way."
+  },
+  {
+    "id": "2026-02-07",
+    "date": "2026-02-07",
+    "mood": "reflective",
+    "song": {
+      "title": "God on the Mountain",
+      "artist": "Lynda Randle",
+      "link": "https://open.spotify.com/track/2f7sG6p3aWkn1dbJ5K6f5K"
+    },
+    "movie": {
+      "title": "The Age of Adaline",
+      "year": 2015,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTAzMTQzMTA2MjheQTJeQWpwZ16BbWU4MDU2MTY4NDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=cmqqX2beX2U"
+    },
+    "caption": "Deep reflection. God on the Mountain stays the same through every season, just like Adaline's endless journey through time."
+  },
+  {
+    "id": "2026-02-08",
+    "date": "2026-02-08",
+    "mood": "energetic",
+    "song": {
+      "title": "Better Man",
+      "artist": "Robbie Williams",
+      "link": "https://open.spotify.com/track/1lOeZ6WqP8p2sD7f1gZ7mL"
+    },
+    "movie": {
+      "title": "Guy Ritchie's The Covenant",
+      "year": 2023,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmM1NmY4N2QtZjY3MS00NTRjLWEyNzQtMTkyOTY0NGY5NGY5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=0lNApRk8lHw"
+    },
+    "caption": "Full energy. Better Man pumping through my veins — loyalty and promises kept, like in The Covenant."
+  },
+  {
+    "id": "2026-02-09",
+    "date": "2026-02-09",
+    "mood": "calm",
+    "song": {
+      "title": "Ready or Not",
+      "artist": "Fugees",
+      "link": "https://open.spotify.com/track/3n3K4lT4g7zqL1lU1pNTnQ"
+    },
+    "movie": {
+      "title": "The Outpost",
+      "year": 2020,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGQyZmE4YzItZjE2Mi00ZjkyLTkyZWEtOWQ2ODM3OTIwM2U2XkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=qjNc0XHoPFc"
+    },
+    "caption": "Calm but ready. Ready or Not keeping the vibe steady while The Outpost reminds me courage is quiet until it isn't."
+  },
+  {
+    "id": "2026-02-10",
+    "date": "2026-02-10",
+    "mood": "romantic",
+    "song": {
+      "title": "Sing About Me, I'm Dying of Thirst",
+      "artist": "Kendrick Lamar",
+      "link": "https://open.spotify.com/track/4k0qxyR5K0i5eR8dF8qM2K"
+    },
+    "movie": {
+      "title": "Lone Survivor",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA0NjE1MjM1OV5BMl5BanBnXkFtZTgwNDYyMjYxMDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=yoLFk4JK_RM"
+    },
+    "caption": "Romantic in the deepest way. Kendrick speaking life and legacy — love and brotherhood endure, like in Lone Survivor."
+  },
+  {
+    "id": "2026-02-11",
+    "date": "2026-02-11",
+    "mood": "happy",
+    "song": {
+      "title": "No Time to Die",
+      "artist": "Billie Eilish",
+      "link": "https://open.spotify.com/track/73K33p4c6J9J1w4M5bSZ3F"
+    },
+    "movie": {
+      "title": "Oppenheimer",
+      "year": 2023,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDBiNmY0NGItZjY3Ni00ZGU3LWI3MzgtODk3NWQ4ZjkzZTBjXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=uYPbbksJxIg"
+    },
+    "caption": "Happy and alive. No Time to Die carrying that dramatic joy — even world-builders chase meaning with fire, like Oppenheimer."
+  },
+  {
+    "id": "2026-02-12",
+    "date": "2026-02-12",
+    "mood": "reflective",
+    "song": {
+      "title": "Good Times",
+      "artist": "Asa feat. The Cavemen.",
+      "link": "https://open.spotify.com/track/3iZ4y8Y8pZ0Y7m7u9v7b8G"
+    },
+    "movie": {
+      "title": "Batman Begins",
+      "year": 2005,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTgyNjAtZmJlOGQ0MWQwNTZkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=neY2xVmOfUM"
+    },
+    "caption": "Reflective vibes. Good Times with Asa and The Cavemen. taking me back — every hero has an origin, like Batman Begins."
+  },
+  {
+    "id": "2026-02-13",
+    "date": "2026-02-13",
+    "mood": "energetic",
+    "song": {
+      "title": "Me You I",
+      "artist": "The Cavemen.",
+      "link": "https://open.spotify.com/track/5uE3pKlO3d3j0d3f3f3f3f"
+    },
+    "movie": {
+      "title": "Inglourious Basterds",
+      "year": 2009,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=KnrRy6kSFF0"
+    },
+    "caption": "Pure energy. Me You I by The Cavemen. lifting the mood — revenge served cold and stylish, Inglourious Basterds style."
+  },
+  {
+    "id": "2026-02-14",
+    "date": "2026-02-14",
+    "mood": "calm",
+    "song": {
+      "title": "Blinded By Your Grace, Pt. 2",
+      "artist": "Stormzy feat. MNEK",
+      "link": "https://open.spotify.com/track/1rXq0uoV4KTgRN67j7bM0Y"
+    },
+    "movie": {
+      "title": "Fury",
+      "year": 2014,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA4MDU5MDgyNF5BMl5BanBnXkFtZTgwNzQ1MjMxMjE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=0pWJpAphorU"
+    },
+    "caption": "Calm in the storm. Blinded By Your Grace carrying me — even in the chaos of Fury, grace finds a way."
+  },
+  {
+    "id": "2026-02-15",
+    "date": "2026-02-15",
+    "mood": "romantic",
+    "song": {
+      "title": "Love Nwantiti",
+      "artist": "CKay",
+      "link": "https://open.spotify.com/track/2XrJY0B3pJPLwF8p8p2p8p"
+    },
+    "movie": {
+      "title": "Before Sunset",
+      "year": 2004,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQ1MjAwNTM5Ml5BMl5BanBnXkFtZTYwNDk0MDc3._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=4j3xO1QbO0Y"
+    },
+    "caption": "Romantic evening. Love Nwantiti in the air — some conversations change everything, like one sunset in Paris."
+  },
+  {
+    "id": "2026-02-16",
+    "date": "2026-02-16",
+    "mood": "happy",
+    "song": {
+      "title": "Outside",
+      "artist": "BNXN fka Buju",
+      "link": "https://open.spotify.com/track/4v4Z3jZJ3ZJ3ZJ3ZJ3ZJ3Z"
+    },
+    "movie": {
+      "title": "Inception",
+      "year": 2010,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=YoHD9XEInc0"
+    },
+    "caption": "Happy and dreaming big. Outside by BNXN — bending reality like a dream heist in Inception."
+  },
+  {
+    "id": "2026-02-17",
+    "date": "2026-02-17",
+    "mood": "reflective",
+    "song": {
+      "title": "Ilashe",
+      "artist": "BNXN fka Buju feat. Ruger",
+      "link": "https://open.spotify.com/track/6u6u6u6u6u6u6u6u6u6u6u"
+    },
+    "movie": {
+      "title": "Shutter Island",
+      "year": 2010,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzhiNDkyNzktNTZmYS00ZTBkLTk2MDAtM2U0YjU1MzgxZjgzXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=5iaYLCiq5RM"
+    },
+    "caption": "Reflective and twisted. Ilashe vibes deep — truth sometimes hides in plain sight, like on Shutter Island."
+  },
+  {
+    "id": "2026-02-18",
+    "date": "2026-02-18",
+    "mood": "energetic",
+    "song": {
+      "title": "Remember",
+      "artist": "Asake",
+      "link": "https://open.spotify.com/track/7j7j7j7j7j7j7j7j7j7j7j"
+    },
+    "movie": {
+      "title": "Training Day",
+      "year": 2001,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDZkODI0MjEtZDBlMi00N2ViLWI2ZTEtZTVkZWI2ZTVkZWI2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=DXPJqV3Y1nA"
+    },
+    "caption": "Energy on max. Remember by Asake pushing the pace — one day changes everything, just like Training Day."
+  },
+  {
+    "id": "2026-02-19",
+    "date": "2026-02-19",
+    "mood": "calm",
+    "song": {
+      "title": "Kante",
+      "artist": "Davido feat. Fave",
+      "link": "https://open.spotify.com/track/3k3k3k3k3k3k3k3k3k3k3k"
+    },
+    "movie": {
+      "title": "Oblivion",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQwMDY0MTA4MF5BMl5BanBnXkFtZTcwNzI3MDgxOQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=XmRSG7dK2QA"
+    },
+    "caption": "Calm and floating. Kante keeping it smooth — memories and truth in the quiet of Oblivion."
+  },
+  {
+    "id": "2026-02-20",
+    "date": "2026-02-20",
+    "mood": "romantic",
+    "song": {
+      "title": "American Love",
+      "artist": "Qing Madi",
+      "link": "https://open.spotify.com/track/5m5m5m5m5m5m5m5m5m5m5m"
+    },
+    "movie": {
+      "title": "Arrival",
+      "year": 2016,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ16BbWU4MDc1NjIx._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=tFMo3UJ4B8g"
+    },
+    "caption": "Romantic and timeless. American Love by Qing Madi — love transcends language and time, like in Arrival."
+  },
+  {
+    "id": "2026-02-21",
+    "date": "2026-02-21",
+    "mood": "happy",
+    "song": {
+      "title": "Water",
+      "artist": "Tyla",
+      "link": "https://open.spotify.com/track/5a7y3y3y3y3y3y3y3y3y3y"
+    },
+    "movie": {
+      "title": "Phone Booth",
+      "year": 2002,
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2I3ZTE5YzQtN2Q5OS00MWY2LThjMDUtZDBjM2M2ZWE2ZWMwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=4y3y3y3y3y3y"
+    },
+    "caption": "Happy and flowing. Water by Tyla making me move — one call can change everything, like in Phone Booth."
+  },
+  {
+    "id": "2026-02-22",
+    "date": "2026-02-22",
+    "mood": "reflective",
+    "song": {
+      "title": "birds of a feather",
+      "artist": "Billie Eilish",
+      "link": "https://open.spotify.com/track/6dOtVTDdiauQNBQEDO2SB1"
+    },
+    "movie": {
+      "title": "Sicario",
+      "year": 2015,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA5Njg2NDc2OV5BMl5BanBnXkFtZTgwODA0NjYxNjE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=sD2gZ8r1Z0c"
+    },
+    "caption": "Reflective. birds of a feather sticking together — sometimes the line blurs in the shadows of Sicario."
+  },
+  {
+    "id": "2026-02-23",
+    "date": "2026-02-23",
+    "mood": "energetic",
+    "song": {
+      "title": "God's Plan",
+      "artist": "Drake",
+      "link": "https://open.spotify.com/track/6DCZcsw7HLBTpZNdFY9n1C"
+    },
+    "movie": {
+      "title": "Man of Steel",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTk5ODk1NDkxMF5BMl5BanBnXkFtZTcwNTAyN2I1OA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=T6DJcgm3wyc"
+    },
+    "caption": "Energy unlimited. God's Plan on repeat — destiny calling loud, like Superman in Man of Steel."
+  },
+  {
+    "id": "2026-02-24",
+    "date": "2026-02-24",
+    "mood": "calm",
+    "song": {
+      "title": "WILDFLOWER",
+      "artist": "Billie Eilish",
+      "link": "https://open.spotify.com/track/4t1D1wV1lR3vR2pZ2X3Z4Y"
+    },
+    "movie": {
+      "title": "The Martian",
+      "year": 2015,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=ej3ioOneTy8"
+    },
+    "caption": "Calm and growing. WILDFLOWER blooming slow — survival is science and will, like on The Martian."
+  },
+  {
+    "id": "2026-02-25",
+    "date": "2026-02-25",
+    "mood": "romantic",
+    "song": {
+      "title": "My Love Is Your Love",
+      "artist": "Whitney Houston",
+      "link": "https://open.spotify.com/track/4w2iAPq4sWFoHGLjKzS1BS"
+    },
+    "movie": {
+      "title": "Unlocked",
+      "year": 2017,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjI5OGM1MzAtZjQ4My00NmQ2LWE3MDktZWIyZWM3ZjAxZjk1XkEyXkFqcGdeQXVyNDg4NjI2MA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=8J6v0s3bYbI"
+    },
+    "caption": "Romantic forever. My Love Is Your Love — eternal like Whitney's voice, unbreakable even when everything is Unlocked."
+  },
+  {
+    "id": "2026-02-26",
+    "date": "2026-02-26",
+    "mood": "happy",
+    "song": {
+      "title": "Thunder",
+      "artist": "Imagine Dragons",
+      "link": "https://open.spotify.com/track/1z0J5r7xK1jK1jK1jK1jK1"
+    },
+    "movie": {
+      "title": "Upgrade",
+      "year": 2018,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjI3NTQ0NzQ4MV5BMl5BanBnXkFtZTgwNjA4ODkzNTM@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=36P1d0C1j34"
+    },
+    "caption": "Happy and powerful. Thunder feeling young and loud — human upgraded, limits broken in Upgrade."
+  },
+  {
+    "id": "2026-02-27",
+    "date": "2026-02-27",
+    "mood": "reflective",
+    "song": {
+      "title": "One Dance",
+      "artist": "Drake",
+      "link": "https://open.spotify.com/track/1zi7xx7UVEFkmKfv06H8x0"
+    },
+    "movie": {
+      "title": "Mad Max: Fury Road",
+      "year": 2015,
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8"
+    },
+    "caption": "Reflective in motion. One Dance holding close — survival is a high-speed chase for hope in Mad Max: Fury Road."
+  },
+  {
+    "id": "2026-02-28",
+    "date": "2026-02-28",
+    "mood": "energetic",
+    "song": {
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "link": "https://open.spotify.com/track/7qiZfU4dY1lWllzX7mPBI3"
+    },
+    "movie": {
+      "title": "Furiosa: A Mad Max Saga",
+      "year": 2024,
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2QyZWE0YjItZWEyNi00YmVhLWI4ZjktZjA5M2FkMWUzNzk1XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=FVswuip0-co"
+    },
+    "caption": "Energy roaring. Shape of You moving bodies — vengeance and fire on the road in Furiosa."
+  },
+  {
+    "id": "2026-02-29",
+    "date": "2026-02-29",
+    "mood": "calm",
+    "song": {
+      "title": "Mistletoe",
+      "artist": "Justin Bieber",
+      "link": "https://open.spotify.com/track/1bG3gR9j0E9j0E9j0E9j0E"
+    },
+    "movie": {
+      "title": "Elysium",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDc2NjU0MTcwNV5BMl5BanBnXkFtZTcwMjg4MDg2OQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=2GflO3u9yew"
+    },
+    "caption": "Calm and hopeful. Mistletoe vibes even in leap day — fighting for a better world, like in Elysium."
+  },
+  {
+    "id": "2026-03-01",
+    "date": "2026-03-01",
+    "mood": "romantic",
+    "song": {
+      "title": "Calm Down (Remix)",
+      "artist": "Rema feat. Selena Gomez",
+      "link": "https://open.spotify.com/track/0WtM2NBVQNNJLh6scP13H8"
+    },
+    "movie": {
+      "title": "Extraction",
+      "year": 2020,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDJiNzUwYzEtNmQ2MS00OGRmLTg2N2MtN2UyM2YwZjUyMzVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=L6P3nI6VnlY"
+    },
+    "caption": "Romantic with edge. Calm Down remix making me move slow — one mission, one chance, like in Extraction."
+  },
+  {
+    "id": "2026-03-02",
+    "date": "2026-03-02",
+    "mood": "happy",
+    "song": {
+      "title": "We Found Love",
+      "artist": "Rihanna",
+      "link": "https://open.spotify.com/track/6DnO8q1Xjw8o1L3p2p2p2p"
+    },
+    "movie": {
+      "title": "Valkyrie",
+      "year": 2008,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTg3Njc2ODEyN15BMl5BanBnXkFtZTcwNTAwMzc3OA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=5atdK3tTK3E"
+    },
+    "caption": "Happy and fearless. We Found Love in a hopeless place — courage changes history, like in Valkyrie."
+  },
+  {
+    "id": "2026-03-03",
+    "date": "2026-03-03",
+    "mood": "reflective",
+    "song": {
+      "title": "Out of Love",
+      "artist": "Chike",
+      "link": "https://open.spotify.com/track/4CAGgIS6HZfdswQhlZ4RKo"
+    },
+    "movie": {
+      "title": "One Battle After Another",
+      "year": 2025,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjM5OTYxMjgtNzYwOC00OGQ5LWE5OTQtZjA0ZjM5ZjA5Mjg5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=kQUPdVxZNPk"
+    },
+    "caption": "Reflective start. Chike's 'Out of Love' echoes the pain of letting go — one battle after another, but growth comes from the fight."
+  },
+  {
+    "id": "2026-03-04",
+    "date": "2026-03-04",
+    "mood": "energetic",
+    "song": {
+      "title": "Oleku",
+      "artist": "Ice Prince feat. Brymo",
+      "link": "https://open.spotify.com/track/5f8Z8zJ3jVHGqMGFq8z3Lm"
+    },
+    "movie": {
+      "title": "American Gangster",
+      "year": 2007,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjE2NzU1ODc0NV5BMl5BanBnXkFtZTcwNjA4Mjg2MQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=JO1M5qN0oR4"
+    },
+    "caption": "Energy loaded. Oleku classic hustle — building empires quietly, American Gangster style. Nobody go pan us."
+  },
+  {
+    "id": "2026-03-05",
+    "date": "2026-03-05",
+    "mood": "calm",
+    "song": {
+      "title": "MMS",
+      "artist": "Asake feat. Wizkid",
+      "link": "https://open.spotify.com/track/3fA0Id8zN3eW6bKe8NksqC"
+    },
+    "movie": {
+      "title": "Gladiator",
+      "year": 2000,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDliMmY1MjktY2QxOC00OGU5LWE4NjctZjU4ZTM0ZWIxN2U2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=owpT7nY6TJo"
+    },
+    "caption": "Calm strength. MMS smooth vibes — are you not entertained? Strength and honor like Maximus."
+  },
+  {
+    "id": "2026-03-06",
+    "date": "2026-03-06",
+    "mood": "romantic",
+    "song": {
+      "title": "Common Person",
+      "artist": "Burna Boy",
+      "link": "https://open.spotify.com/track/1i3p2j3p2j3p2j3p2j3p2j"
+    },
+    "movie": {
+      "title": "Casino Royale",
+      "year": 2006,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMDgwNTAwNjEtZWMxZC00ZmQ4LTkxZjAtYTY5Y2JiZmY5ZGE2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=fl5WHj0a0BQ"
+    },
+    "caption": "Romantic risks. Common Person love — high stakes, Bond-level intensity in Casino Royale."
+  },
+  {
+    "id": "2026-03-07",
+    "date": "2026-03-07",
+    "mood": "happy",
+    "song": {
+      "title": "Arike",
+      "artist": "Kunmie",
+      "link": "https://open.spotify.com/track/6k6k6k6k6k6k6k6k6k6k6k"
+    },
+    "movie": {
+      "title": "No Time to Die",
+      "year": 2021,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzQ2NC00YjEwLWE4M2EtZjU5NzEwNDE3NzBlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=BIhNsAtPbPI"
+    },
+    "caption": "Happy and living bold. Arike sweetness — no time to waste, full throttle like 007's farewell."
+  },
+  {
+    "id": "2026-03-08",
+    "date": "2026-03-08",
+    "mood": "reflective",
+    "song": {
+      "title": "With You",
+      "artist": "Davido feat. Omah Lay",
+      "link": "https://open.spotify.com/track/2j2j2j2j2j2j2j2j2j2j2j"
+    },
+    "movie": {
+      "title": "Riddick",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjYxNDE0Mzk4Nl5BMl5BanBnXkFtZTgwNTk0NzE4MDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=tDxP3o1bC2M"
+    },
+    "caption": "Reflective survival. With You feels — left for dead but shining in the dark, Riddick mode."
+  },
+  {
+    "id": "2026-03-09",
+    "date": "2026-03-09",
+    "mood": "energetic",
+    "song": {
+      "title": "Ojuelegba",
+      "artist": "Wizkid",
+      "link": "https://open.spotify.com/track/4u4NyydR0mf4iGz3v8pF33"
+    },
+    "movie": {
+      "title": "The Courier",
+      "year": 2020,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGViODQ4NDAtNTM2NC00OTdlLWIxNmQtNjYxZjYzZjJlZjA5XkEyXkFqcGdeQXVyMTAyMjQ3NzQ1._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=3Yb0o1d9j0k"
+    },
+    "caption": "Energy from the streets. Ojuelegba grind — real-life high-stakes moves in The Courier."
+  },
+  {
+    "id": "2026-03-10",
+    "date": "2026-03-10",
+    "mood": "calm",
+    "song": {
+      "title": "Pidgin and English",
+      "artist": "BNXN",
+      "link": "https://open.spotify.com/track/5p5p5p5p5p5p5p5p5p5p5p"
+    },
+    "movie": {
+      "title": "The Shawshank Redemption",
+      "year": 1994,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzktN2Q0OC00ZjM2LTg1OTAtZjY5MTM2NzE4OTdlXkEyXkFqcGdeQXVyNjAwMjM5MDk@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=NmzuHjEs7x0"
+    },
+    "caption": "Calm hope. Pidgin and English flow — get busy living, Shawshank redemption."
+  },
+  {
+    "id": "2026-03-11",
+    "date": "2026-03-11",
+    "mood": "romantic",
+    "song": {
+      "title": "POE",
+      "artist": "BNXN",
+      "link": "https://open.spotify.com/track/6q6q6q6q6q6q6q6q6q6q6q"
+    },
+    "movie": {
+      "title": "The Wolf of Wall Street",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=iszwuX1AK6A"
+    },
+    "caption": "Romantic excess. POE passion — living loud and unapologetic, Wolf of Wall Street energy."
+  },
+  {
+    "id": "2026-03-12",
+    "date": "2026-03-12",
+    "mood": "happy",
+    "song": {
+      "title": "Bae Bae",
+      "artist": "BNXN",
+      "link": "https://open.spotify.com/track/7r7r7r7r7r7r7r7r7r7r7r"
+    },
+    "movie": {
+      "title": "Troy",
+      "year": 2004,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTY5MzEzNjA5OV5BMl5BanBnXkFtZTYwNTM0NjY2._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=ZN1qB8Z7p0U"
+    },
+    "caption": "Happy epic love. Bae Bae sweetness — fighting legends for what matters, Troy vibes."
+  },
+  {
+    "id": "2026-03-13",
+    "date": "2026-03-13",
+    "mood": "reflective",
+    "song": {
+      "title": "Worldwide",
+      "artist": "Asake",
+      "link": "https://open.spotify.com/track/0V3AG6zLB94gE4aV2Z4U6w"
+    },
+    "movie": {
+      "title": "Catch Me If You Can",
+      "year": 2002,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTY5MzEzNjA5OV5BMl5BanBnXkFtZTYwNTM0NjY2._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Hm1lW4T8jWM"
+    },
+    "caption": "Reflective chase. Worldwide dreams — living many lives, always one step ahead like Frank Abagnale."
+  },
+  {
+    "id": "2026-03-14",
+    "date": "2026-03-14",
+    "mood": "energetic",
+    "song": {
+      "title": "Successful",
+      "artist": "Drake",
+      "link": "https://open.spotify.com/track/5lFDtgWsSVJsq3T4w2fAgF"
+    },
+    "movie": {
+      "title": "Zero Dark Thirty",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQ4OTUyNzY4M15BMl5BanBnXkFtZTcwMzY3MTI5OA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Y9pZ0p5aF5A"
+    },
+    "caption": "Energy focused. Successful mindset — the hunt never stops, Zero Dark Thirty intensity."
+  },
+  {
+    "id": "2026-03-15",
+    "date": "2026-03-15",
+    "mood": "calm",
+    "song": {
+      "title": "In the Morning",
+      "artist": "Drake & J. Cole",
+      "link": "https://open.spotify.com/track/1a2a2a2a2a2a2a2a2a2a2a"
+    },
+    "movie": {
+      "title": "12 Years a Slave",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=vvuMBXL3Y1U"
+    },
+    "caption": "Calm resilience. In the Morning hope — enduring the unimaginable, finding freedom."
+  },
+  {
+    "id": "2026-03-16",
+    "date": "2026-03-16",
+    "mood": "romantic",
+    "song": {
+      "title": "Mask Off",
+      "artist": "Future feat. Kendrick Lamar",
+      "link": "https://open.spotify.com/track/2c3c3c3c3c3c3c3c3c3c3c"
+    },
+    "movie": {
+      "title": "Batman Begins",
+      "year": 2005,
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTgyNjAtZmJlOGQ0MWQwNTZkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=neY2xVmOfUM"
+    },
+    "caption": "Romantic origins. Mask Off realness — rising from darkness, Batman Begins love for justice."
+  },
+  {
+    "id": "2026-03-17",
+    "date": "2026-03-17",
+    "mood": "happy",
+    "song": {
+      "title": "Humble",
+      "artist": "Kendrick Lamar",
+      "link": "https://open.spotify.com/track/7KX65PC1n5T8c2K2o1K3mP"
+    },
+    "movie": {
+      "title": "The Dark Knight Rises",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=GokKUqDi3dM"
+    },
+    "caption": "Happy comeback. Humble king — sit down, be humble, then rise stronger."
+  },
+  {
+    "id": "2026-03-18",
+    "date": "2026-03-18",
+    "mood": "reflective",
+    "song": {
+      "title": "In My Feelings",
+      "artist": "Drake",
+      "link": "https://open.spotify.com/track/2G7V7zsVDxlOT2Pv0xgH81"
+    },
+    "movie": {
+      "title": "Batman: The Dark Knight Returns",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMzIxOTM3NDc3N15BMl5BanBnXkFtZTcwNTY3MjU2OA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=uw9TfnQqG2E"
+    },
+    "caption": "Reflective return. In My Feelings deep — an older, battered Batman comes back one last time."
+  },
+  {
+    "id": "2026-03-19",
+    "date": "2026-03-19",
+    "mood": "energetic",
+    "song": {
+      "title": "If That's What It Takes",
+      "artist": "Céline Dion",
+      "link": "https://open.spotify.com/track/4d4d4d4d4d4d4d4d4d4d4d"
+    },
+    "movie": {
+      "title": "Joker",
+      "year": 2019,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00N2NhLThjNWQtMGM2MTZiNTk2NzY5XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=zAGVQLHvwOY"
+    },
+    "caption": "Energy chaotic. If That's What It Takes passion — one bad day changes everything."
+  },
+  {
+    "id": "2026-03-20",
+    "date": "2026-03-20",
+    "mood": "calm",
+    "song": {
+      "title": "Bad Influence",
+      "artist": "Omah Lay",
+      "link": "https://open.spotify.com/track/3d5d5d5d5d5d5d5d5d5d5d"
+    },
+    "movie": {
+      "title": "Acrimony",
+      "year": 2018,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTk4NTE1NDY5OF5BMl5BanBnXkFtZTgwNDI4NDEyNDM@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=2v3wW4p2r0A"
+    },
+    "caption": "Calm rage. Bad Influence vibes — when trust breaks, Acrimony unleashes."
+  },
+  {
+    "id": "2026-03-21",
+    "date": "2026-03-21",
+    "mood": "romantic",
+    "song": {
+      "title": "Show Me Off",
+      "artist": "Asa",
+      "link": "https://open.spotify.com/track/6e6e6e6e6e6e6e6e6e6e6e"
+    },
+    "movie": {
+      "title": "Apocalypse Now",
+      "year": 1979,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYmQyNTA1ZGItZjAxNC00NzkzLTgwN2MtMGYyNmNhOTAwN2FhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=FTcjzaa7Q1A"
+    },
+    "caption": "Romantic madness. Show Me Off love — journey into the heart of darkness."
+  },
+  {
+    "id": "2026-03-22",
+    "date": "2026-03-22",
+    "mood": "happy",
+    "song": {
+      "title": "You",
+      "artist": "Fola",
+      "link": "https://open.spotify.com/track/7f7f7f7f7f7f7f7f7f7f7f"
+    },
+    "movie": {
+      "title": "Apocalypto",
+      "year": 2006,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjYyZjJjNzktYjM5Zi00ZDAwLWE3OTAtY2Y5ZTI2ZjY4ZDVjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=ng8Q2ZcP8d8"
+    },
+    "caption": "Happy chase. You sweetness — running for life and love, Apocalypto adrenaline."
+  },
+  {
+    "id": "2026-03-23",
+    "date": "2026-03-23",
+    "mood": "reflective",
+    "song": {
+      "title": "Venus",
+      "artist": "Faceless feat. Serotonin",
+      "link": "https://open.spotify.com/track/8g8g8g8g8g8g8g8g8g8g8g"
+    },
+    "movie": {
+      "title": "Avatar",
+      "year": 2009,
+      "poster": "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDQ1MC00N2FhLWE5OTQtNDRmZWEwMzE1ZDAwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=5PSNL1AaegA"
+    },
+    "caption": "Reflective connection. Venus beauty — seeing the world anew, like on Pandora."
+  },
+  {
+    "id": "2026-03-24",
+    "date": "2026-03-24",
+    "mood": "energetic",
+    "song": {
+      "title": "Lagos to Kampala",
+      "artist": "Runtown",
+      "link": "https://open.spotify.com/track/9h9h9h9h9h9h9h9h9h9h9h"
+    },
+    "movie": {
+      "title": "Bridge of Spies",
+      "year": 2015,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTc4OF5BMl5BanBnXkFtZTYwNTM0NjY2._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=mBBuzHrZBro"
+    },
+    "caption": "Energy crossing borders. Lagos to Kampala vibe — standing tall in cold negotiations."
+  },
+  {
+    "id": "2026-03-25",
+    "date": "2026-03-25",
+    "mood": "calm",
+    "song": {
+      "title": "Awolowo",
+      "artist": "Fido",
+      "link": "https://open.spotify.com/track/0i0i0i0i0i0i0i0i0i0i0i"
+    },
+    "movie": {
+      "title": "Colombiana",
+      "year": 2011,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTc0NDY1MDk5OV5BMl5BanBnXkFtZTcwMjM1MDk5NQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=M3QY0B3bQ_4"
+    },
+    "caption": "Calm vengeance. Awolowo flow — patient, precise, unstoppable like Cataleya."
+  },
+  {
+    "id": "2026-03-26",
+    "date": "2026-03-26",
+    "mood": "romantic",
+    "song": {
+      "title": "Ayo",
+      "artist": "Simi",
+      "link": "https://open.spotify.com/track/1j1j1j1j1j1j1j1j1j1j1j"
+    },
+    "movie": {
+      "title": "Devil Is a Liar",
+      "year": 2025,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTgzOTY0NTE1Ml5BMl5BanBnXkFtZTcwNjg3MDc4MQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=ZJXXhlzrlIM"
+    },
+    "caption": "Romantic twist. Ayo joy — love turns dark, lies exposed in Devil Is a Liar."
+  },
+  {
+    "id": "2026-03-27",
+    "date": "2026-03-27",
+    "mood": "happy",
+    "song": {
+      "title": "Felony",
+      "artist": "CKay",
+      "link": "https://open.spotify.com/track/2k2k2k2k2k2k2k2k2k2k2k"
+    },
+    "movie": {
+      "title": "Dunkirk",
+      "year": 2017,
+      "poster": "https://m.media-amazon.com/images/M/MV5BN2YyZjQ0NTEtZjUwOC00OTZkLTk3OTEtY2Y2Y2Y2Y2Y2Y2Y2XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=F9oB7C3yqZc"
+    },
+    "caption": "Happy survival. Felony fun — fighting on land, sea, air for home."
+  },
+  {
+    "id": "2026-03-28",
+    "date": "2026-03-28",
+    "mood": "reflective",
+    "song": {
+      "title": "The Weekend",
+      "artist": "Stormzy feat. RAYE",
+      "link": "https://open.spotify.com/track/3l3l3l3l3l3l3l3l3l3l3l"
+    },
+    "movie": {
+      "title": "End of Watch",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjA0NjE1MjM1OV5BMl5BanBnXkFtZTgwNDYyMjYxMDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=nmY6T7T9xZw"
+    },
+    "caption": "Reflective brotherhood. The Weekend vibes — partners to the end, streets real."
+  },
+  {
+    "id": "2026-03-29",
+    "date": "2026-03-29",
+    "mood": "energetic",
+    "song": {
+      "title": "In This Shirt",
+      "artist": "The Irrepressibles",
+      "link": "https://open.spotify.com/track/4m4m4m4m4m4m4m4m4m4m4m"
+    },
+    "movie": {
+      "title": "October 1",
+      "year": 2014,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTcyNzY0ODA0OV5BMl5BanBnXkFtZTcwOTgwNDk0Mw@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=-R7wJuPv_7o"
+    },
+    "caption": "Energy tense. In This Shirt emotion — hunting truth before independence day."
+  },
+  {
+    "id": "2026-03-30",
+    "date": "2026-03-30",
+    "mood": "calm",
+    "song": {
+      "title": "Young Forever",
+      "artist": "JAY-Z feat. Mr Hudson",
+      "link": "https://open.spotify.com/track/5n5n5n5n5n5n5n5n5n5n5n"
+    },
+    "movie": {
+      "title": "Everything Everywhere All at Once",
+      "year": 2022,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYTdiOTIyZTQtNmQ1OS00OGJlLWI3MTgtYzk5YzNlNmU5MDE2XkEyXkFqcGdeQXVyMTAyMjQ3NzQ1._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=wxN1T1zQj4U"
+    },
+    "caption": "Calm multiverse. Young Forever dreams — everything, everywhere, finding meaning."
+  },
+  {
+    "id": "2026-03-31",
+    "date": "2026-03-31",
+    "mood": "romantic",
+    "song": {
+      "title": "Hold On",
+      "artist": "Larry Gaaga feat. M.I Abaga",
+      "link": "https://open.spotify.com/track/6o6o6o6o6o6o6o6o6o6o6o"
+    },
+    "movie": {
+      "title": "F1",
+      "year": 2025,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmM1NmY4N2QtZjY3MS00NTRjLWEyNzQtMTkyOTY0NGY5NGY5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=CT2_P2DZBR0"
+    },
+    "caption": "Romantic speed. Hold On tight — racing heart, comeback story on the track."
+  },
+  {
+    "id": "2026-04-01",
+    "date": "2026-04-01",
+    "mood": "happy",
+    "song": {
+      "title": "Mockingbird",
+      "artist": "Eminem",
+      "link": "https://open.spotify.com/track/7p7p7p7p7p7p7p7p7p7p7p"
+    },
+    "movie": {
+      "title": "From Paris with Love",
+      "year": 2010,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTg5OTM0NTM3Nl5BMl5BanBnXkFtZTcwNjg3MDc4MQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=2eQxjZAWjIE"
+    },
+    "caption": "Happy action. Mockingbird real talk — Paris missions, no holds barred."
+  },
+  {
+    "id": "2026-04-02",
+    "date": "2026-04-02",
+    "mood": "reflective",
+    "song": {
+      "title": "Thang for You",
+      "artist": "Rylo Rodriguez feat. NoCap",
+      "link": "https://open.spotify.com/track/8q8q8q8q8q8q8q8q8q8q8q"
+    },
+    "movie": {
+      "title": "Gran Turismo",
+      "year": 2023,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmM1NmY4N2QtZjY3MS00NTRjLWEyNzQtMTkyOTY0NGY5NGY5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=GZSf0zFwyh8"
+    },
+    "caption": "Reflective grind. Thang for You loyalty — from gamer to racer, dreams real."
+  },
+  {
+    "id": "2026-04-03",
+    "date": "2026-04-03",
+    "mood": "energetic",
+    "song": {
+      "title": "Redemption Song",
+      "artist": "Bob Marley",
+      "link": "https://open.spotify.com/track/9r9r9r9r9r9r9r9r9r9r9r"
+    },
+    "movie": {
+      "title": "Green Book",
+      "year": 2018,
+      "poster": "https://m.media-amazon.com/images/M/MV5BYzIzYmJlYTYtNGNiYy00N2M3LTk0NmQtZWI3MDE3MjgyOTQyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=QzL9aNk0w9E"
+    },
+    "caption": "Energy freedom. Redemption Song power — unlikely friendship changes everything."
+  },
+  {
+    "id": "2026-04-04",
+    "date": "2026-04-04",
+    "mood": "calm",
+    "song": {
+      "title": "Stir It Up",
+      "artist": "Bob Marley & The Wailers",
+      "link": "https://open.spotify.com/track/0s0s0s0s0s0s0s0s0s0s0s"
+    },
+    "movie": {
+      "title": "Kill Bill: Vol. 1",
+      "year": 2003,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzM3NDFhYTAtYmU3Yy00ODZjLTk3ODgtN2Y3ZGE3NTA2ZjAwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=7kSuas6mRpk"
+    },
+    "caption": "Calm revenge. Stir It Up rhythm — the bride awakens, list in hand."
+  },
+  {
+    "id": "2026-04-05",
+    "date": "2026-04-05",
+    "mood": "romantic",
+    "song": {
+      "title": "Brother",
+      "artist": "M.I Abaga feat. Milli & Rosa",
+      "link": "https://open.spotify.com/track/1t1t1t1t1t1t1t1t1t1t1t"
+    },
+    "movie": {
+      "title": "Kill Bill: Vol. 2",
+      "year": 2004,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmFiYmJmN2QtNDQ1MC00YjA5LTk3OTgtYTA5OGU5Y2M3OTk0XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=WT5AxW6wJ0M"
+    },
+    "caption": "Romantic finale. Brother bonds — the bride finishes what she started."
+  },
+  {
+    "id": "2026-04-06",
+    "date": "2026-04-06",
+    "mood": "happy",
+    "song": {
+      "title": "Olarenwaju",
+      "artist": "Brymo",
+      "link": "https://open.spotify.com/track/2u2u2u2u2u2u2u2u2u2u2u"
+    },
+    "movie": {
+      "title": "Let It Shine",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTg5OTM0NTM3Nl5BMl5BanBnXkFtZTcwNjg3MDc4MQ@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=3Yb0o1d9j0k"
+    },
+    "caption": "Happy truth. Olarenwaju shine — finding your voice, letting it shine."
+  },
+  {
+    "id": "2026-04-07",
+    "date": "2026-04-07",
+    "mood": "reflective",
+    "song": {
+      "title": "Epic",
+      "artist": "M.I Abaga feat. Praiz",
+      "link": "https://open.spotify.com/track/3v3v3v3v3v3v3v3v3v3v3v"
+    },
+    "movie": {
+      "title": "Memory",
+      "year": 2022,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmM1NmY4N2QtZjY3MS00NTRjLWEyNzQtMTkyOTY0NGY5NGY5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=8J6v0s3bYbI"
+    },
+    "caption": "Reflective past. Epic stories — refusing to forget, one last job."
+  },
+  {
+    "id": "2026-04-08",
+    "date": "2026-04-08",
+    "mood": "energetic",
+    "song": {
+      "title": "Fix You",
+      "artist": "Coldplay",
+      "link": "https://open.spotify.com/track/4w4w4w4w4w4w4w4w4w4w4w"
+    },
+    "movie": {
+      "title": "Now You See Me",
+      "year": 2013,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjAxMzQyNjEtZDEzNy00OGRiLWE0NDAtZWIyZWM3ZjAxZjk1XkEyXkFqcGdeQXVyNDg4NjI2MA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=8J6v0s3bYbI"
+    },
+    "caption": "Energy magic. Fix You lights — the closer you look, the less you see."
+  },
+  {
+    "id": "2026-04-09",
+    "date": "2026-04-09",
+    "mood": "calm",
+    "song": {
+      "title": "Temi ni temi",
+      "artist": "Brymo",
+      "link": "https://open.spotify.com/track/5x5x5x5x5x5x5x5x5x5x5x"
+    },
+    "movie": {
+      "title": "Pompeii",
+      "year": 2014,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTQxMDA3NDc3N15BMl5BanBnXkFtZTgwNTM0MDU3MDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=IzccY0QiY8Q"
+    },
+    "caption": "Calm doom. Temi ni temi ownership — love against the ashes of Pompeii."
+  },
+  {
+    "id": "2026-04-10",
+    "date": "2026-04-10",
+    "mood": "romantic",
+    "song": {
+      "title": "Banuso",
+      "artist": "Brymo",
+      "link": "https://open.spotify.com/track/6y6y6y6y6y6y6y6y6y6y6y"
+    },
+    "movie": {
+      "title": "Prometheus",
+      "year": 2012,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTY3NzIyNTA2NV5BMl5BanBnXkFtZTcwNzE2NjI4Nw@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Ngv2p1UVb8c"
+    },
+    "caption": "Romantic origins. Banuso deep — seeking creators, big questions in space."
+  },
+  {
+    "id": "2026-04-11",
+    "date": "2026-04-11",
+    "mood": "happy",
+    "song": {
+      "title": "Charm",
+      "artist": "Rema",
+      "link": "https://open.spotify.com/track/7z7z7z7z7z7z7z7z7z7z7z"
+    },
+    "movie": {
+      "title": "Prospect",
+      "year": 2018,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmM1NmY4N2QtZjY3MS00NTRjLWEyNzQtMTkyOTY0NGY5NGY5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Hr0lCh3W3hY"
+    },
+    "caption": "Happy frontier. Charm smooth — mining gems on alien moons, father-daughter bond."
+  },
+  {
+    "id": "2026-04-12",
+    "date": "2026-04-12",
+    "mood": "reflective",
+    "song": {
+      "title": "Heal the World",
+      "artist": "Michael Jackson",
+      "link": "https://open.spotify.com/track/8a8a8a8a8a8a8a8a8a8a8a"
+    },
+    "movie": {
+      "title": "Public Enemies",
+      "year": 2009,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=voY5KiiUrCI"
+    },
+    "caption": "Reflective outlaw. Heal the World hope — Dillinger's run against the system."
+  },
+  {
+    "id": "2026-04-13",
+    "date": "2026-04-13",
+    "mood": "energetic",
+    "song": {
+      "title": "Money Trees",
+      "artist": "Kendrick Lamar",
+      "link": "https://open.spotify.com/track/9b9b9b9b9b9b9b9b9b9b9b"
+    },
+    "movie": {
+      "title": "San Andreas",
+      "year": 2015,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNzZhYjIyYjktYjI1NS00OGU5LWE2ZWYtMGY2M2YyN2Q1M2Y0XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=23Vfl3OVOB4"
+    },
+    "caption": "Energy quake. Money Trees dreams — saving family when the ground breaks."
+  },
+  {
+    "id": "2026-04-14",
+    "date": "2026-04-14",
+    "mood": "calm",
+    "song": {
+      "title": "Like That",
+      "artist": "Kendrick Lamar",
+      "link": "https://open.spotify.com/track/0c0c0c0c0c0c0c0c0c0c0c"
+    },
+    "movie": {
+      "title": "Shooter",
+      "year": 2007,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMjI3NTQ0NzQ4MV5BMl5BanBnXkFtZTgwNjA4ODkzNTM@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=36P1d0C1j34"
+    },
+    "caption": "Calm precision. Like That control — one shot, one truth."
+  },
+  {
+    "id": "2026-04-15",
+    "date": "2026-04-15",
+    "mood": "romantic",
+    "song": {
+      "title": "Halo",
+      "artist": "Beyoncé",
+      "link": "https://open.spotify.com/track/1d1d1d1d1d1d1d1d1d1d1d"
+    },
+    "movie": {
+      "title": "Sinners",
+      "year": 2025,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNmM1NmY4N2QtZjY3MS00NTRjLWEyNzQtMTkyOTY0NGY5NGY5XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=bKGxHflevuk"
+    },
+    "caption": "Romantic darkness. Halo light — twins facing ancient evil, redemption in blood."
+  },
+  {
+    "id": "2026-04-16",
+    "date": "2026-04-16",
+    "mood": "happy",
+    "song": {
+      "title": "Stay",
+      "artist": "Rihanna",
+      "link": "https://open.spotify.com/track/2e2e2e2e2e2e2e2e2e2e2e"
+    },
+    "movie": {
+      "title": "Spider-Man: Homecoming",
+      "year": 2017,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTY3MTg4MjE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=n9DwoQ7HYV4"
+    },
+    "caption": "Happy hero. Stay close — young Spider-Man coming home, friendly neighborhood vibes."
+  },
+  {
+    "id": "2026-04-17",
+    "date": "2026-04-17",
+    "mood": "reflective",
+    "song": {
+      "title": "Chandelier",
+      "artist": "Sia",
+      "link": "https://open.spotify.com/track/3f3f3f3f3f3f3f3f3f3f3f"
+    },
+    "movie": {
+      "title": "Spider-Man: Far From Home",
+      "year": 2019,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMGZlNTY1YWYtM2ZjNS00N2Q5LWE5OTAtYjY5MTg3NzM0N2Q5XkEyXkFqcGdeQXVyNjAwMjM5MDk@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=Nt9L1jCKBFE"
+    },
+    "caption": "Reflective swing. Chandelier life — vacation turns illusion, identity questions."
+  },
+  {
+    "id": "2026-04-18",
+    "date": "2026-04-18",
+    "mood": "energetic",
+    "song": {
+      "title": "Viva la Vida",
+      "artist": "Coldplay",
+      "link": "https://open.spotify.com/track/4g4g4g4g4g4g4g4g4g4g4g"
+    },
+    "movie": {
+      "title": "Doctor Strange",
+      "year": 2016,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjgwNzAzNjk1Nl5BMl5BanBnXkFtZTgwMzQ2NjI1OTE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=HSzx-zryEgM"
+    },
+    "caption": "Energy mystic. Viva la Vida reign — mastering the multiverse, Strange style."
+  },
+  {
+    "id": "2026-04-19",
+    "date": "2026-04-19",
+    "mood": "calm",
+    "song": {
+      "title": "Ara Edide",
+      "artist": "Wasiu Ayinde",
+      "link": "https://open.spotify.com/track/5h5h5h5h5h5h5h5h5h5h5h"
+    },
+    "movie": {
+      "title": "Captain America: Civil War",
+      "year": 2016,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNjA0NzE1MjM1OV5BMl5BanBnXkFtZTgwNDYyMjYxMDE@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=dKrVegVI0Us"
+    },
+    "caption": "Calm divide. Ara Edide rhythm — heroes clash, family breaks."
+  },
+  {
+    "id": "2026-04-20",
+    "date": "2026-04-20",
+    "mood": "romantic",
+    "song": {
+      "title": "Reality",
+      "artist": "Barrister",
+      "link": "https://open.spotify.com/track/6i6i6i6i6i6i6i6i6i6i6i"
+    },
+    "movie": {
+      "title": "Captain America: The Winter Soldier",
+      "year": 2014,
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTk0MjUxMDk0NV5BMl5BanBnXkFtZTgwNDI4NjI1OA@@._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=7SlILk2WMTI"
+    },
+    "caption": "Romantic trust. Reality check — friend or ghost from the past?"
+  },
+  {
+    "id": "2026-04-21",
+    "date": "2026-04-21",
+    "mood": "happy",
+    "song": {
+      "title": "Meji Meji",
+      "artist": "Brymo",
+      "link": "https://open.spotify.com/track/7j7j7j7j7j7j7j7j7j7j7j"
+    },
+    "movie": {
+      "title": "Straw",
+      "year": 2025,
+      "poster": "https://m.media-amazon.com/images/M/MV5BNGQyZmE4YzItZjE2Mi00ZjkyLTkyZWEtOWQ2ODM3OTIwM2U2XkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_.jpg",
+      "trailer": "https://www.youtube.com/watch?v=k1vWhii4tkE"
+    },
+    "caption": "Happy breaking point. Meji Meji double — one bad day, last straw, everything changes."
+  }
+]
