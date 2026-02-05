@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Archive as ArchiveIcon, Filter } from 'lucide-react';
 import { useEntries } from '../hooks/useEntries';
 import Layout from '../components/Layout';
@@ -11,8 +11,8 @@ const Archive = () => {
     const { getAllEntries, loading, getEntryByDate } = useEntries();
     const [selectedMood, setSelectedMood] = useState(null);
 
-    // Get the last 6 days from today
-    const recentDates = getPreviousDays(6);
+    // Get the last 18 days from today
+    const recentDates = getPreviousDays(18);
     
     // Find entries for those dates (if they exist)
     const entries = recentDates
@@ -22,6 +22,17 @@ const Archive = () => {
     const filteredEntries = selectedMood
         ? entries.filter(e => e.mood === selectedMood)
         : entries;
+
+    // Pagination: 9 entries per page
+    const [page, setPage] = useState(1);
+    const PER_PAGE = 9;
+    const totalPages = Math.max(1, Math.ceil(filteredEntries.length / PER_PAGE));
+    useEffect(() => {
+        setPage(1);
+    }, [selectedMood]);
+
+    const startIndex = (page - 1) * PER_PAGE;
+    const paginatedEntries = filteredEntries.slice(startIndex, startIndex + PER_PAGE);
 
     if (loading) {
         return (
@@ -79,7 +90,7 @@ const Archive = () => {
                     />
                 ) : (
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {filteredEntries.map(entry => (
+                        {paginatedEntries.map(entry => (
                             <EntryCard key={entry.id} entry={entry} />
                         ))}
                     </div>
@@ -93,6 +104,29 @@ const Archive = () => {
                             className="text-primary hover:underline text-sm"
                         >
                             Clear filter ({entries.length - filteredEntries.length} hidden)
+                        </button>
+                    </div>
+                )}
+
+                {/* Pagination Controls */}
+                {filteredEntries.length > PER_PAGE && (
+                    <div className="flex items-center justify-center gap-4 mt-6">
+                        <button
+                            onClick={() => setPage(p => Math.max(1, p - 1))}
+                            disabled={page === 1}
+                            className={`px-3 py-1 rounded ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'bg-surface hover:bg-surface-hover'}`}
+                        >
+                            Prev
+                        </button>
+
+                        <div className="text-sm text-muted">Page {page} of {totalPages}</div>
+
+                        <button
+                            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                            disabled={page === totalPages}
+                            className={`px-3 py-1 rounded ${page === totalPages ? 'opacity-50 cursor-not-allowed' : 'bg-surface hover:bg-surface-hover'}`}
+                        >
+                            Next
                         </button>
                     </div>
                 )}
