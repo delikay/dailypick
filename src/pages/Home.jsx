@@ -73,12 +73,9 @@ const Home = () => {
 
                 {/* Song & Movie Cards */}
                 <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <SongCard song={entry.song} featured />
-                    <MovieCard movie={entry.movie} featured />
+                    <SongCard song={entry.song} featured entry={entry} />
+                    <MovieCard movie={entry.movie} featured entry={entry} />
                 </div>
-
-                {/* Share */}
-                <ShareButton entry={entry} />
 
                 {/* View in Archive Link */}
                 {!isTodayView && (

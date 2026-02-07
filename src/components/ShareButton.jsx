@@ -6,7 +6,7 @@ import { Share2, Check } from 'lucide-react';
  * Renders a button that invokes the native Web Share API when available.
  * Falls back to copying the share text + URL to the clipboard.
  */
-const ShareButton = ({ entry }) => {
+const ShareButton = ({ entry, iconOnly = false, className = "" }) => {
     const [copied, setCopied] = useState(false);
 
     if (!entry) return null;
@@ -14,7 +14,9 @@ const ShareButton = ({ entry }) => {
     const shareUrl = `${window.location.origin}/?date=${entry.date}`;
     const shareText = "Today's picks from My daily pick";
 
-    const handleShare = async () => {
+    const handleShare = async (e) => {
+        e?.stopPropagation?.();
+        e?.preventDefault?.();
         if (navigator.share) {
             try {
                 await navigator.share({
@@ -35,6 +37,19 @@ const ShareButton = ({ entry }) => {
             }
         }
     };
+
+    if (iconOnly) {
+        return (
+            <button
+                onClick={handleShare}
+                title={copied ? 'Copied!' : 'Share'}
+                className={`p-2 rounded-full bg-secondary/80 text-white hover:bg-secondary transition-colors shadow absolute top-3 right-3 z-10 ${className}`}
+                aria-label="Share"
+            >
+                {copied ? <Check className="w-5 h-5" /> : <Share2 className="w-5 h-5" />}
+            </button>
+        );
+    }
 
     return (
         <div className="flex justify-center">

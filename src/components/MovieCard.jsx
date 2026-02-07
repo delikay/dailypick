@@ -1,10 +1,14 @@
 import { Film, Play } from 'lucide-react';
 
-const MovieCard = ({ movie, featured = false }) => {
+import ShareButton from './ShareButton';
+
+const MovieCard = ({ movie, featured = false, entry }) => {
     if (!movie) return null;
 
     return (
-        <div className={`glass rounded-2xl p-6 hover-lift ${featured ? 'col-span-1' : ''}`}>
+        <div className={`glass rounded-2xl p-6 hover-lift relative ${featured ? 'col-span-1' : ''}`}>
+            {/* Share Icon */}
+            {entry && <ShareButton entry={entry} iconOnly />}
             <div className="flex items-start gap-4">
                 {/* Poster or Icon */}
                 {movie.poster ? (
