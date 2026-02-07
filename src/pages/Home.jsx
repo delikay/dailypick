@@ -54,7 +54,7 @@ const Home = () => {
                         TODAY'S PICK
                     </h1>
                     <p className="text-lg sm:text-xl text-muted font-light max-w-2xl mx-auto">
-                        Because every day sounds different.
+                        Because every day sounds different...
                     </p>
                 </header>
 
