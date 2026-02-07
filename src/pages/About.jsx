@@ -24,7 +24,7 @@ const About = () => {
                         <ul className="space-y-2 text-sm">
                             <li>• Daily mood tracking with expressive emojis</li>
                             <li>• Song and movie recommendations for each day</li>
-                            <li>• Personal captions to capture your thoughts</li>
+                            <li>• Personal captions to capture thoughts</li>
                             <li>• Browse archive of entries</li>
                             <li>• Share my daily picks with friends</li>
                         </ul>
