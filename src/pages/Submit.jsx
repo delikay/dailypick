@@ -175,8 +175,8 @@ const Submit = () => {
 
                 <div className="mt-8 p-4 bg-surface/50 rounded-xl">
                     <p className="text-xs text-muted text-center">
-                        Your submission will be sent directly via our secure form service. 
-                        No email client required!
+                        Your submission will be sent directly. 
+                        No email required!
                     </p>
                 </div>
             </div>
