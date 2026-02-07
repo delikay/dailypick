@@ -50,8 +50,8 @@ const Home = () => {
             <div className="animate-fade-in">
                 {/* Main Heading */}
                 <div className="text-center mb-8">
-                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-2">My Daily Pick</h1>
-                    <p className="text-muted">Share your song and movie of the day based on your mood</p>
+                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-2">Today's Pick</h1>
+                    <p className="text-muted">Because every day sounds different.</p>
                 </div>
 
                 {/* Date Header */}
