@@ -55,7 +55,8 @@ const Archive = () => {
                             Archive
                         </h1>
                         <p className="text-muted mt-1">
-                            {entries.length} {entries.length === 1 ? 'entry' : 'entries'} from the last 6 days
+                            {/* {entries.length} {entries.length === 1 ? 'entry' : 'entries'} from the last 6 days */}
+                            {entries.length} {entries.length === 1 ? 'entry' : 'entries'} from the last 18 days
                         </p>
                     </div>
 
