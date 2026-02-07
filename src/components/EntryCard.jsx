@@ -9,50 +9,54 @@ const EntryCard = ({ entry }) => {
     return (
         <Link
             to={`/?date=${entry.date}`}
-            className="glass rounded-2xl p-5 hover-lift block group"
+            className="glass rounded-2xl p-6 hover-lift block group border border-border/30 shadow-sm hover:shadow-lg transition-all duration-300"
         >
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2 text-muted text-sm">
+                <div className="flex items-center gap-2 text-muted text-sm font-medium">
                     <Calendar className="w-4 h-4" />
                     <span>{formatShortDate(entry.date)}</span>
                 </div>
-                <span className="text-xs text-muted">{getDaysAgo(entry.date)}</span>
+                <span className="text-xs text-muted bg-surface/50 px-2 py-1 rounded-full">{getDaysAgo(entry.date)}</span>
             </div>
 
             {/* Mood */}
-            <div className="mb-4">
-                <MoodBadge mood={entry.mood} size="sm" />
+            <div className="mb-5 flex justify-center">
+                <MoodBadge mood={entry.mood} size="md" />
             </div>
 
             {/* Content Preview */}
-            <div className="space-y-2">
+            <div className="space-y-3">
                 {/* Song */}
-                <div className="flex items-center gap-2 text-sm">
-                    <Music className="w-4 h-4 text-green-400" />
-                    <span className="text-text truncate">{entry.song?.title}</span>
-                    <span className="text-muted truncate">- {entry.song?.artist}</span>
+                <div className="flex items-center gap-3 text-sm">
+                    <Music className="w-5 h-5 text-secondary flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                        <span className="text-text font-medium truncate block">{entry.song?.title}</span>
+                        <span className="text-muted truncate block">- {entry.song?.artist}</span>
+                    </div>
                 </div>
 
                 {/* Movie */}
-                <div className="flex items-center gap-2 text-sm">
-                    <Film className="w-4 h-4 text-red-400" />
-                    <span className="text-text truncate">{entry.movie?.title}</span>
-                    {entry.movie?.year && (
-                        <span className="text-muted">({entry.movie.year})</span>
-                    )}
+                <div className="flex items-center gap-3 text-sm">
+                    <Film className="w-5 h-5 text-primary flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                        <span className="text-text font-medium truncate block">{entry.movie?.title}</span>
+                        {entry.movie?.year && (
+                            <span className="text-muted">({entry.movie.year})</span>
+                        )}
+                    </div>
                 </div>
             </div>
 
             {/* Caption Preview */}
             {entry.caption && (
-                <p className="mt-3 text-sm text-muted line-clamp-2 italic">
+                <p className="mt-4 text-sm text-muted line-clamp-2 italic leading-relaxed">
                     "{entry.caption}"
                 </p>
             )}
 
             {/* Hover indicator */}
-            <div className="mt-4 text-xs text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="mt-5 text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
                 View full entry →
             </div>
         </Link>

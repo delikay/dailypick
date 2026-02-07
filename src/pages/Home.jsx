@@ -48,62 +48,71 @@ const Home = () => {
     return (
         <Layout>
             <div className="animate-fade-in">
-                {/* Main Heading */}
-                <div className="text-center mb-8">
-                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-2">Today's Pick</h1>
-                    <p className="text-muted">Because every day sounds different.</p>
-                </div>
+                {/* Main Header Section */}
+                <header className="text-center mb-12">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text mb-3 tracking-tight">
+                        TODAY'S PICK
+                    </h1>
+                    <p className="text-lg sm:text-xl text-muted font-light max-w-2xl mx-auto">
+                        Because every day sounds different.
+                    </p>
+                </header>
 
-                {/* Date Header */}
-                <div className="text-center mb-8">
-                    <div className="inline-flex items-center gap-2 text-muted mb-2">
-                        <Calendar className="w-4 h-4" />
-                        <span className="text-sm">
+                {/* Date & Mood Section */}
+                <section className="text-center mb-10">
+                    <div className="inline-flex items-center gap-2 text-muted mb-4">
+                        <Calendar className="w-5 h-5" />
+                        <span className="text-sm font-medium uppercase tracking-wide">
                             {isTodayView ? "Today" : "Viewing"}
                         </span>
                     </div>
-                    <h4 className="text-3xl sm:text-4xl font-bold text-text mb-4">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-text mb-4">
                         {formatDate(displayDate)}
-                    </h4>
+                    </h2>
                     <MoodBadge mood={entry.mood} size="lg" />
-                </div>
+                </section>
 
-                {/* Caption */}
+                {/* Caption Section */}
                 {entry.caption && (
-                    <div className="max-w-2xl mx-auto mb-8">
-                        <p className="text-center text-lg text-muted italic">
-                            "{entry.caption}"
-                        </p>
-                    </div>
+                    <section className="max-w-3xl mx-auto mb-12">
+                        <div className="bg-surface/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+                            <p className="text-center text-xl text-text italic leading-relaxed">
+                                "{entry.caption}"
+                            </p>
+                        </div>
+                    </section>
                 )}
 
-                {/* Song & Movie Cards */}
-                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <SongCard song={entry.song} featured entry={entry} />
-                    <MovieCard movie={entry.movie} featured entry={entry} />
-                </div>
+                {/* Content Cards Section */}
+                <section className="mb-12">
+                    <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <SongCard song={entry.song} featured entry={entry} />
+                        <MovieCard movie={entry.movie} featured entry={entry} />
+                    </div>
+                </section>
 
-                {/* Archive Link */}
-                <div className="text-center mt-8">
-                    <a
-                        href="/archive"
-                        className="text-primary hover:underline text-sm"
-                    >
-                        View Archive
-                    </a>
-                </div>
-
-                {/* Back to Today Link */}
-                {!isTodayView && (
-                    <div className="text-center mt-8">
+                {/* Navigation Section */}
+                <footer className="text-center space-y-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
-                            href="/"
-                            className="text-primary hover:underline text-sm"
+                            href="/archive"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-full font-medium hover:bg-secondary/90 transition-colors shadow-sm"
                         >
-                            ← Back to today
+                            View Archive
                         </a>
                     </div>
-                )}
+                    
+                    {!isTodayView && (
+                        <div>
+                            <a
+                                href="/"
+                                className="text-primary hover:underline text-sm font-medium"
+                            >
+                                ← Back to today
+                            </a>
+                        </div>
+                    )}
+                </footer>
             </div>
         </Layout>
     );
