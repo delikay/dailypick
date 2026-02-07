@@ -62,9 +62,9 @@ const Home = () => {
                             {isTodayView ? "Today" : "Viewing"}
                         </span>
                     </div>
-                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-4">
+                    <h4 className="text-3xl sm:text-4xl font-bold text-text mb-4">
                         {formatDate(displayDate)}
-                    </h1>
+                    </h4>
                     <MoodBadge mood={entry.mood} size="lg" />
                 </div>
 
