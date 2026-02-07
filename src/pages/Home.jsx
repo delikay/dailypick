@@ -48,6 +48,12 @@ const Home = () => {
     return (
         <Layout>
             <div className="animate-fade-in">
+                {/* Main Heading */}
+                <div className="text-center mb-8">
+                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-2">My Daily Pick</h1>
+                    <p className="text-muted">Share your song and movie of the day based on your mood</p>
+                </div>
+
                 {/* Date Header */}
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-2 text-muted mb-2">
@@ -77,7 +83,17 @@ const Home = () => {
                     <MovieCard movie={entry.movie} featured entry={entry} />
                 </div>
 
-                {/* View in Archive Link */}
+                {/* Archive Link */}
+                <div className="text-center mt-8">
+                    <a
+                        href="/archive"
+                        className="text-primary hover:underline text-sm"
+                    >
+                        View Archive
+                    </a>
+                </div>
+
+                {/* Back to Today Link */}
                 {!isTodayView && (
                     <div className="text-center mt-8">
                         <a
