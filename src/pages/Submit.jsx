@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { Mail, Music, Film, Send, Check } from 'lucide-react';
+import { Mail, Music, Film, Send, Check, User, MessageSquare } from 'lucide-react';
 import Layout from '../components/Layout';
 
 const Submit = () => {
     const [formData, setFormData] = useState({
+        name: '',
+        suggestion: '',
         artistName: '',
         songTitle: '',
         movies: ''
@@ -32,6 +34,8 @@ const Submit = () => {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
+                    name: formData.name,
+                    suggestion: formData.suggestion,
                     artistName: formData.artistName,
                     songTitle: formData.songTitle,
                     movies: formData.movies,
@@ -47,6 +51,8 @@ const Submit = () => {
                 setTimeout(() => {
                     setSubmitted(false);
                     setFormData({
+                        name: '',
+                        suggestion: '',
                         artistName: '',
                         songTitle: '',
                         movies: ''
@@ -95,6 +101,38 @@ const Submit = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Name */}
+                    <div>
+                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                            <User className="w-4 h-4" />
+                            Name (optional)
+                        </label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Your name"
+                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
+                        />
+                    </div>
+
+                    {/* Suggestion */}
+                    <div>
+                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                            <MessageSquare className="w-4 h-4" />
+                            Suggestion
+                        </label>
+                        <textarea
+                            name="suggestion"
+                            value={formData.suggestion}
+                            onChange={handleChange}
+                            rows={3}
+                            placeholder="Any suggestions or feedback?"
+                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all resize-none warm-shadow"
+                        />
+                    </div>
+
                     {/* Artist Name */}
                     <div>
                         <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
