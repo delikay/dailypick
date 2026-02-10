@@ -48,6 +48,13 @@ const Home = () => {
     return (
         <Layout>
             <div className="animate-fade-in">
+                {/* Main Heading */}
+                <div className="text-center mb-8">
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text mb-3 tracking-tight">
+                        Today's pick
+                    </h1>
+                </div>
+
                 {/* Date Header */}
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-2 text-muted mb-2">
@@ -77,17 +84,34 @@ const Home = () => {
                     <MovieCard movie={entry.movie} featured entry={entry} />
                 </div>
 
-                {/* View in Archive Link */}
-                {!isTodayView && (
-                    <div className="text-center mt-8">
+                {/* Navigation Footer */}
+                <footer className="text-center mt-12 space-y-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a
-                            href="/"
-                            className="text-primary hover:underline text-sm"
+                            href="/archive"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-full font-medium hover:bg-secondary/90 transition-colors shadow-sm"
                         >
-                            ← Back to today
+                            View Archive
+                        </a>
+                        <a
+                            href="/submit"
+                            className="text-primary hover:underline text-sm font-medium"
+                        >
+                            Suggest a pick
                         </a>
                     </div>
-                )}
+
+                    {!isTodayView && (
+                        <div>
+                            <a
+                                href="/"
+                                className="text-primary hover:underline text-sm font-medium"
+                            >
+                                ← Back to today
+                            </a>
+                        </div>
+                    )}
+                </footer>
             </div>
         </Layout>
     );
