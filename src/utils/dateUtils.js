@@ -34,7 +34,10 @@ export const getDaysAgo = (dateString) => {
     if (diffDays === 0) return 'Today';
     if (diffDays === 1) return 'Yesterday';
     if (diffDays < 7) return `${diffDays} days ago`;
-    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 30) {
+        const weeks = Math.floor(diffDays / 7);
+        return weeks === 1 ? '1 week' : `${weeks} weeks`;
+    }
     return formatShortDate(dateString);
 };
 
