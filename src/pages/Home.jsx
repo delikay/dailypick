@@ -53,6 +53,9 @@ const Home = () => {
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text mb-3 tracking-tight">
                         Today's pick
                     </h1>
+                    <p className="text-lg sm:text-xl text-muted font-light max-w-2xl mx-auto">
+                        One song. One mood. Every day.
+                    </p>
                 </div>
 
                 {/* Date Header */}
@@ -63,9 +66,9 @@ const Home = () => {
                             {isTodayView ? "Today" : "Viewing"}
                         </span>
                     </div>
-                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-4">
+                    <h2 className="text-lg sm:text-xl font-semibold text-text mb-4">
                         {formatDate(displayDate)}
-                    </h1>
+                    </h2>
                     <MoodBadge mood={entry.mood} size="lg" />
                 </div>
 
@@ -95,7 +98,7 @@ const Home = () => {
                         </a>
                         <a
                             href="/submit"
-                            className="text-primary hover:underline text-sm font-medium"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-secondary text-secondary rounded-full font-medium hover:bg-secondary/90 hover:text-white transition-colors shadow-sm"
                         >
                             Suggest a pick
                         </a>
