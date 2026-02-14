@@ -149,7 +149,7 @@ const Header = () => {
                                 }
                             >
                                 <Send className="w-5 h-5" />
-                                <span className="font-medium">Submit</span>
+                                <span className="font-medium">Suggestion</span>
                             </NavLink>
                         </div>
                     </nav>
