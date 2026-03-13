@@ -31,7 +31,7 @@ const Header = () => {
                                 <Film className="absolute -bottom-1.5 -right-1.5 h-4 w-4 rounded-full bg-surface p-0.5 text-secondary shadow-sm" />
                             </div>
                             <div className="min-w-0">
-                                <span className="editorial-kicker !gap-0 !text-[0.62rem] !tracking-[0.24em] before:!hidden">
+                                <span className="mb-1 block text-[0.62rem] font-extrabold uppercase tracking-[0.24em] text-secondary">
                                     Daily journal
                                 </span>
                                 <span className="font-display block truncate text-[1.8rem] leading-none tracking-[-0.05em] text-text">
