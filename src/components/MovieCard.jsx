@@ -1,5 +1,4 @@
 import { Film, Play } from 'lucide-react';
-
 import ShareButton from './ShareButton';
 
 const MovieCard = ({ movie, featured = false, entry }) => {
@@ -7,18 +6,18 @@ const MovieCard = ({ movie, featured = false, entry }) => {
 
     return (
         <div className={`glass rounded-2xl p-6 hover-lift relative overflow-x-hidden ${featured ? 'col-span-1' : ''}`}>
-            {/* Share Icon */}
             {entry && <ShareButton entry={entry} iconOnly />}
             <div className="flex items-start gap-4">
-                {/* Poster or Icon */}
                 {movie.poster ? (
                     <img
                         src={movie.poster}
-                        alt={movie.title}
+                        alt={`${movie.title} poster`}
                         className="w-14 h-20 rounded-lg object-cover flex-shrink-0"
-                        onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'flex';
+                        loading="lazy"
+                        decoding="async"
+                        onError={(event) => {
+                            event.target.style.display = 'none';
+                            event.target.nextSibling.style.display = 'flex';
                         }}
                     />
                 ) : null}
@@ -28,7 +27,6 @@ const MovieCard = ({ movie, featured = false, entry }) => {
                     <Film className="w-7 h-7 text-white" />
                 </div>
 
-                {/* Content */}
                 <div className="flex-1 min-w-0">
                     <p className="text-xs uppercase tracking-wider text-muted mb-1">Movie of the Day</p>
                     <h3 className="text-lg font-semibold text-text truncate">{movie.title}</h3>
@@ -36,7 +34,6 @@ const MovieCard = ({ movie, featured = false, entry }) => {
                 </div>
             </div>
 
-            {/* Trailer Link */}
             {movie.trailer && (
                 <a
                     href={movie.trailer}

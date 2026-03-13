@@ -1,16 +1,11 @@
-import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Music, Film, Archive, Home, Info, Send, Menu, X } from 'lucide-react';
 import { formatDate, getToday } from '../utils/dateUtils';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const location = useLocation();
     const today = formatDate(getToday());
-
-    useEffect(() => {
-        setMobileMenuOpen(false);
-    }, [location.pathname, location.search]);
 
     return (
         <header className="glass sticky top-0 z-50">
@@ -25,9 +20,9 @@ const Header = () => {
                             <Film className="w-4 h-4 text-secondary absolute -bottom-1 -right-1" />
                         </div>
                         <div>
-                            <h1 className="text-lg font-bold text-text group-hover:text-primary transition-colors">
+                            <span className="text-lg font-bold text-text group-hover:text-primary transition-colors">
                                 My daily pick
-                            </h1>
+                            </span>
                             <p className="text-xs text-muted hidden sm:block">{today}</p>
                         </div>
                     </NavLink>

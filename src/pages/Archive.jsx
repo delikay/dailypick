@@ -95,7 +95,7 @@ const Archive = () => {
                                 ))}
                             </select>
 
-                            {selectedMood && filteredEntries.length > 0 && (
+                            {selectedMood && (
                                 <button
                                     onClick={handleClearFilter}
                                     type="button"
