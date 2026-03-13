@@ -3,6 +3,8 @@ import { Mail, Music, Film, Send, Check, User, MessageSquare } from 'lucide-reac
 import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
 
+const FORM_SUBMIT_ENDPOINT = 'https://formsubmit.co/ajax/263fb238367735dd5f48e44391562b79';
+
 const INITIAL_FORM_DATA = {
     name: '',
     suggestion: '',
@@ -67,7 +69,7 @@ const Submit = () => {
         setError('');
 
         try {
-            const response = await fetch('/api/submit', {
+            const response = await fetch(FORM_SUBMIT_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
