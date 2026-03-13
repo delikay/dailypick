@@ -3,163 +3,126 @@ import { NavLink } from 'react-router-dom';
 import { Music, Film, Archive, Home, Info, Send, Menu, X } from 'lucide-react';
 import { formatDate, getToday } from '../utils/dateUtils';
 
+const navItems = [
+    { to: '/', label: 'Home', icon: Home },
+    { to: '/archive', label: 'Archive', icon: Archive },
+    { to: '/about', label: 'About', icon: Info },
+];
+
+const getNavClasses = ({ isActive }) =>
+    `inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold ${
+        isActive
+            ? 'bg-primary text-surface shadow-[0_16px_28px_rgba(24,21,18,0.16)]'
+            : 'text-muted hover:bg-surface/70 hover:text-text'
+    }`;
+
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const today = formatDate(getToday());
 
     return (
-        <header className="glass sticky top-0 z-50">
-            <div className="max-w-6xl mx-auto px-4 py-4">
-                <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <NavLink to="/" className="flex items-center gap-3 group">
-                        <div className="relative">
-                            <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center warm-shadow">
-                                <Music className="w-5 h-5 text-white" />
+        <header className="sticky top-3 z-50">
+            <div className="page-container">
+                <div className="glass rounded-[2rem] px-4 py-4 sm:px-5">
+                    <div className="flex items-center justify-between gap-4">
+                        <NavLink to="/" className="group flex min-w-0 items-center gap-4">
+                            <div className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[1.1rem] bg-primary text-surface shadow-[0_18px_34px_rgba(24,21,18,0.2)]">
+                                <Music className="h-5 w-5" />
+                                <Film className="absolute -bottom-1.5 -right-1.5 h-4 w-4 rounded-full bg-surface p-0.5 text-secondary shadow-sm" />
                             </div>
-                            <Film className="w-4 h-4 text-secondary absolute -bottom-1 -right-1" />
+                            <div className="min-w-0">
+                                <span className="editorial-kicker !gap-0 !text-[0.62rem] !tracking-[0.24em] before:!hidden">
+                                    Daily journal
+                                </span>
+                                <span className="font-display block truncate text-[1.8rem] leading-none tracking-[-0.05em] text-text">
+                                    My Daily Pick
+                                </span>
+                            </div>
+                        </NavLink>
+
+                        <div className="hidden items-center gap-3 xl:flex">
+                            <div className="rounded-full border border-border/70 bg-surface/60 px-4 py-2 text-right">
+                                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-secondary">
+                                    Today
+                                </p>
+                                <p className="text-sm font-semibold text-text">{today}</p>
+                            </div>
                         </div>
-                        <div>
-                            <span className="text-lg font-bold text-text group-hover:text-primary transition-colors">
-                                My daily pick
-                            </span>
-                            <p className="text-xs text-muted hidden sm:block">{today}</p>
-                        </div>
-                    </NavLink>
 
-                    {/* Navigation */}
-                    <nav className="hidden md:flex items-center gap-1 sm:gap-2">
-                        <NavLink
-                            to="/"
-                            className={({ isActive }) =>
-                                `flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${isActive
-                                    ? 'bg-primary/20 text-primary'
-                                    : 'text-muted hover:text-text hover:bg-surface-light/50'
-                                }`
-                            }
+                        <nav className="hidden items-center gap-2 md:flex">
+                            {navItems.map(({ to, label, icon: Icon }) => (
+                                <NavLink key={to} to={to} className={getNavClasses}>
+                                    <Icon className="h-4 w-4" />
+                                    <span>{label}</span>
+                                </NavLink>
+                            ))}
+                            <NavLink
+                                to="/submit"
+                                className={({ isActive }) =>
+                                    `button-primary !w-auto !px-5 !py-3 !text-sm ${
+                                        isActive ? 'ring-2 ring-primary/20' : ''
+                                    }`
+                                }
+                            >
+                                <Send className="h-4 w-4" />
+                                <span>Suggest</span>
+                            </NavLink>
+                        </nav>
+
+                        <button
+                            onClick={() => setMobileMenuOpen((open) => !open)}
+                            type="button"
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-surface/70 text-text md:hidden"
+                            aria-label="Toggle menu"
+                            aria-expanded={mobileMenuOpen}
+                            aria-controls="mobile-navigation"
                         >
-                            <Home className="w-4 h-4" />
-                            <span className="hidden sm:inline text-sm font-medium">Home</span>
-                        </NavLink>
+                            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                        </button>
+                    </div>
 
-                        <NavLink
-                            to="/archive"
-                            className={({ isActive }) =>
-                                `flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${isActive
-                                    ? 'bg-primary/20 text-primary'
-                                    : 'text-muted hover:text-text hover:bg-surface-light/50'
-                                }`
-                            }
-                        >
-                            <Archive className="w-4 h-4" />
-                            <span className="hidden sm:inline text-sm font-medium">Archive</span>
-                        </NavLink>
-
-                        <NavLink
-                            to="/about"
-                            className={({ isActive }) =>
-                                `flex items-center gap-2 px-3 py-2 rounded-lg transition-all ${isActive
-                                    ? 'bg-primary/20 text-primary'
-                                    : 'text-muted hover:text-text hover:bg-surface-light/50'
-                                }`
-                            }
-                        >
-                            <Info className="w-4 h-4" />
-                            <span className="hidden sm:inline text-sm font-medium">About</span>
-                        </NavLink>
-
-                        <NavLink
-                            to="/submit"
-                            className={({ isActive }) =>
-                                `flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${isActive
-                                    ? 'bg-primary text-white'
-                                    : 'bg-secondary text-white hover:bg-secondary/90'
-                                }`
-                            }
-                        >
-                            <Send className="w-4 h-4" />
-                            <span className="text-sm font-medium">Suggestion</span>
-                        </NavLink>
-
-                    </nav>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        type="button"
-                        className="md:hidden p-2 rounded-lg text-muted hover:text-text hover:bg-surface-light/50 transition-colors"
-                        aria-label="Toggle menu"
-                        aria-expanded={mobileMenuOpen}
-                        aria-controls="mobile-navigation"
+                    <nav
+                        id="mobile-navigation"
+                        className={`mobile-menu md:hidden ${mobileMenuOpen ? 'open mt-4 pt-4' : ''}`}
+                        aria-hidden={!mobileMenuOpen}
                     >
-                        {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
-                </div>
+                        <div className="section-frame space-y-2 p-3">
+                            <div className="rounded-2xl bg-surface/80 px-4 py-3">
+                                <p className="text-[0.65rem] font-bold uppercase tracking-[0.18em] text-secondary">
+                                    Today
+                                </p>
+                                <p className="mt-1 text-sm font-semibold text-text">{today}</p>
+                            </div>
 
-                {/* Mobile Menu */}
-                <nav
-                    id="mobile-navigation"
-                    className={`md:hidden mt-4 pt-4 border-t border-border mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
-                    aria-hidden={!mobileMenuOpen}
-                >
-                    <div className="flex flex-col space-y-2">
-                            <NavLink
-                                to="/"
-                                onClick={() => setMobileMenuOpen(false)}
-                                className={({ isActive }) =>
-                                    `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                        ? 'bg-primary/20 text-primary'
-                                        : 'text-muted hover:text-text hover:bg-surface-light/50'
-                                    }`
-                                }
-                            >
-                                <Home className="w-5 h-5" />
-                                <span className="font-medium">Home</span>
-                            </NavLink>
-
-                            <NavLink
-                                to="/archive"
-                                onClick={() => setMobileMenuOpen(false)}
-                                className={({ isActive }) =>
-                                    `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                        ? 'bg-primary/20 text-primary'
-                                        : 'text-muted hover:text-text hover:bg-surface-light/50'
-                                    }`
-                                }
-                            >
-                                <Archive className="w-5 h-5" />
-                                <span className="font-medium">Archive</span>
-                            </NavLink>
-
-                            <NavLink
-                                to="/about"
-                                onClick={() => setMobileMenuOpen(false)}
-                                className={({ isActive }) =>
-                                    `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                        ? 'bg-primary/20 text-primary'
-                                        : 'text-muted hover:text-text hover:bg-surface-light/50'
-                                    }`
-                                }
-                            >
-                                <Info className="w-5 h-5" />
-                                <span className="font-medium">About</span>
-                            </NavLink>
+                            {navItems.map(({ to, label, icon: Icon }) => (
+                                <NavLink
+                                    key={to}
+                                    to={to}
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    className={({ isActive }) =>
+                                        `flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold ${
+                                            isActive
+                                                ? 'bg-primary text-surface'
+                                                : 'bg-surface/75 text-text'
+                                        }`
+                                    }
+                                >
+                                    <Icon className="h-4 w-4" />
+                                    <span>{label}</span>
+                                </NavLink>
+                            ))}
 
                             <NavLink
                                 to="/submit"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={({ isActive }) =>
-                                    `flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${isActive
-                                        ? 'bg-primary text-white'
-                                        : 'bg-secondary text-white hover:bg-secondary/90'
-                                    }`
-                                }
+                                className="button-primary !flex !w-full !justify-center !px-4 !py-3.5 !text-sm"
                             >
-                                <Send className="w-5 h-5" />
-                                <span className="font-medium">Suggestion</span>
+                                <Send className="h-4 w-4" />
+                                <span>Suggest a Pick</span>
                             </NavLink>
                         </div>
                     </nav>
+                </div>
             </div>
         </header>
     );
