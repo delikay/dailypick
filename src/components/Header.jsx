@@ -1,11 +1,16 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Music, Film, Archive, Home, Info, Send, Menu, X } from 'lucide-react';
 import { formatDate, getToday } from '../utils/dateUtils';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const location = useLocation();
     const today = formatDate(getToday());
+
+    useEffect(() => {
+        setMobileMenuOpen(false);
+    }, [location.pathname, location.search]);
 
     return (
         <header className="glass sticky top-0 z-50">
@@ -86,15 +91,22 @@ const Header = () => {
                     {/* Mobile Menu Button */}
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        type="button"
                         className="md:hidden p-2 rounded-lg text-muted hover:text-text hover:bg-surface-light/50 transition-colors"
                         aria-label="Toggle menu"
+                        aria-expanded={mobileMenuOpen}
+                        aria-controls="mobile-navigation"
                     >
                         {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </div>
 
                 {/* Mobile Menu */}
-                <nav className={`md:hidden mt-4 pt-4 border-t border-border mobile-menu ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
+                <nav
+                    id="mobile-navigation"
+                    className={`md:hidden mt-4 pt-4 border-t border-border mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
+                    aria-hidden={!mobileMenuOpen}
+                >
                     <div className="flex flex-col space-y-2">
                             <NavLink
                                 to="/"

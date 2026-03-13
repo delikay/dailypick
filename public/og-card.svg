@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="My Daily Pick social card">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5efe6"/>
+      <stop offset="100%" stop-color="#e8dcc0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1056" height="486" rx="40" fill="#ffffff" opacity="0.84" stroke="#d4c4b0" stroke-width="4"/>
+  <circle cx="244" cy="315" r="94" fill="#f5efe6"/>
+  <circle cx="244" cy="315" r="28" fill="#8b5e3c"/>
+  <rect x="362" y="206" width="88" height="218" rx="18" fill="#2b2b2b"/>
+  <path d="M362 230h88M362 282h88M362 334h88" stroke="#f5efe6" stroke-linecap="round" stroke-width="10"/>
+  <text x="520" y="274" fill="#2b2b2b" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="700">My Daily Pick</text>
+  <text x="520" y="360" fill="#6b6b6b" font-family="Inter, Arial, sans-serif" font-size="34">One song. One movie. Every day.</text>
+  <text x="520" y="424" fill="#8b5e3c" font-family="Inter, Arial, sans-serif" font-size="28">Daily moods, shareable picks, and a living archive.</text>
+</svg>

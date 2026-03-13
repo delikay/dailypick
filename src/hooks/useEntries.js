@@ -1,8 +1,10 @@
 import initialEntries from '../data/entries.json';
 import { getToday } from '../utils/dateUtils';
+import { sanitizeEntries } from '../utils/entryUtils';
+
+const entries = sanitizeEntries(initialEntries);
 
 export const useEntries = () => {
-    const entries = initialEntries;
     const loading = false;
 
     // Get today's entry
@@ -18,7 +20,7 @@ export const useEntries = () => {
 
     // Get all entries sorted by date
     const getAllEntries = () => {
-        return [...entries].sort((a, b) => new Date(b.date) - new Date(a.date));
+        return [...entries].sort((a, b) => b.date.localeCompare(a.date));
     };
 
     // Filter entries by mood
