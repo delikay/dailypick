@@ -43,10 +43,11 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background:
-    radial-gradient(circle at 18% 10%, rgba(181, 108, 52, 0.32), transparent 22rem),
-    radial-gradient(circle at 82% 14%, rgba(245, 230, 204, 0.1), transparent 16rem),
-    radial-gradient(circle at 50% 100%, rgba(181, 108, 52, 0.14), transparent 22rem),
-    linear-gradient(180deg, #120f0c 0%, #1b1611 18%, #2a2118 40%, #d9cfbc 78%, #ece3d3 100%);
+    radial-gradient(circle at 14% 12%, rgba(233, 157, 92, 0.24), transparent 24rem),
+    radial-gradient(circle at 82% 18%, rgba(119, 148, 166, 0.16), transparent 20rem),
+    radial-gradient(circle at 50% 36%, rgba(255, 244, 226, 0.06), transparent 28rem),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.05), transparent 42%),
+    linear-gradient(180deg, #0d1016 0%, #141820 24%, #1c1d23 48%, #bcae98 79%, #eee6da 100%);
 }
 
 body::before {
@@ -55,41 +56,44 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.14), transparent 36%),
+    linear-gradient(125deg, rgba(255, 255, 255, 0.12), transparent 24%, transparent 74%, rgba(255, 255, 255, 0.04)),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 34%),
     repeating-linear-gradient(
       90deg,
-      rgba(255, 248, 236, 0.04) 0,
-      rgba(255, 248, 236, 0.04) 1px,
+      rgba(255, 248, 236, 0.03) 0,
+      rgba(255, 248, 236, 0.03) 1px,
       transparent 1px,
-      transparent 84px
+      transparent 108px
     ),
     repeating-linear-gradient(
       0deg,
-      rgba(255, 248, 236, 0.018) 0,
-      rgba(255, 248, 236, 0.018) 1px,
+      rgba(255, 248, 236, 0.014) 0,
+      rgba(255, 248, 236, 0.014) 1px,
       transparent 1px,
-      transparent 84px
+      transparent 108px
     );
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72), transparent 78%);
-  opacity: 0.48;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.38) 58%, transparent 88%);
+  opacity: 0.62;
 }
 
 body::after {
   content: "";
   position: fixed;
-  right: -10rem;
-  bottom: -10rem;
-  width: 28rem;
-  height: 28rem;
+  right: -8rem;
+  top: 3rem;
+  width: 32rem;
+  height: 32rem;
   border-radius: 999px;
   background: radial-gradient(
     circle,
-    rgba(181, 108, 52, 0.28),
-    rgba(181, 108, 52, 0.08) 48%,
+    rgba(233, 157, 92, 0.22),
+    rgba(233, 157, 92, 0.08) 34%,
+    rgba(101, 126, 146, 0.1) 58%,
     transparent 72%
   );
-  filter: blur(22px);
+  filter: blur(56px);
   pointer-events: none;
+  opacity: 0.9;
 }
 
 #root {
