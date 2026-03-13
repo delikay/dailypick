@@ -1,7 +1,8 @@
-import { useSearchParams } from 'react-router-dom';
-import { Calendar, Sparkles } from 'lucide-react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { ArrowLeft, Calendar, Sparkles } from 'lucide-react';
 import { useEntries } from '../hooks/useEntries';
 import { formatDate, getToday, isToday } from '../utils/dateUtils';
+import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
 import MoodBadge from '../components/MoodBadge';
 import SongCard from '../components/SongCard';
@@ -14,10 +15,21 @@ const Home = () => {
     const dateParam = searchParams.get('date');
     const { getTodayEntry, getEntryByDate, loading } = useEntries();
 
-    // Get entry for the requested date or today
     const entry = dateParam ? getEntryByDate(dateParam) : getTodayEntry();
     const displayDate = dateParam || getToday();
     const isTodayView = isToday(displayDate);
+    const heading = isTodayView ? "Today's pick" : 'Pick from the archive';
+    const description = entry
+        ? `${formatDate(displayDate)}: ${entry.song?.title} by ${entry.song?.artist} and ${entry.movie?.title}.`
+        : isTodayView
+            ? 'Check back for today\'s song and movie pairing.'
+            : `Browse the My Daily Pick entry for ${formatDate(displayDate)}.`;
+
+    usePageMeta({
+        title: isTodayView ? "Today's Pick" : formatDate(displayDate),
+        description,
+        canonicalPath: dateParam ? `/?date=${displayDate}` : '/',
+    });
 
     if (loading) {
         return (
@@ -34,10 +46,10 @@ const Home = () => {
             <Layout>
                 <EmptyState
                     icon={Sparkles}
-                    title={isTodayView ? "No entry for today yet" : "No entry for this date"}
+                    title={isTodayView ? 'No entry for today yet' : 'No entry for this date'}
                     description={
                         isTodayView
-                            ? "Start your day by sharing what song and movie match your mood right now."
+                            ? 'Start your day by sharing what song and movie match your mood right now.'
                             : "There's no entry recorded for this date. Try checking another day!"
                     }
                 />
@@ -48,23 +60,21 @@ const Home = () => {
     return (
         <Layout>
             <div className="animate-fade-in">
-                {/* Main Heading */}
                 <div className="text-center mb-8">
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text mb-3 tracking-tight">
-                        Today's pick
+                        {heading}
                     </h1>
                     <p className="text-lg sm:text-xl text-muted font-light max-w-2xl mx-auto">
-                        One song. One mood. Every day.
+                        {isTodayView
+                            ? 'One song. One mood. Every day.'
+                            : 'A saved snapshot of the song, movie, and mood for this day.'}
                     </p>
                 </div>
 
-                {/* Date Header */}
                 <div className="text-center mb-8">
                     <div className="inline-flex items-center gap-2 text-muted mb-2">
                         <Calendar className="w-4 h-4" />
-                        <span className="text-sm">
-                            {isTodayView ? "Today" : "Viewing"}
-                        </span>
+                        <span className="text-sm">{isTodayView ? 'Today' : 'Viewing'}</span>
                     </div>
                     <h2 className="text-lg sm:text-xl font-semibold text-text mb-4">
                         {formatDate(displayDate)}
@@ -72,7 +82,6 @@ const Home = () => {
                     <MoodBadge mood={entry.mood} size="lg" />
                 </div>
 
-                {/* Caption */}
                 {entry.caption && (
                     <div className="max-w-2xl mx-auto mb-8">
                         <p className="text-center text-lg text-muted italic">
@@ -81,37 +90,38 @@ const Home = () => {
                     </div>
                 )}
 
-                {/* Song & Movie Cards */}
                 <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                     <SongCard song={entry.song} featured entry={entry} />
                     <MovieCard movie={entry.movie} featured entry={entry} />
                 </div>
 
-                {/* Navigation Footer */}
+                <ShareButton entry={entry} />
+
                 <footer className="text-center mt-12 space-y-4">
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a
-                            href="/archive"
+                        <Link
+                            to="/archive"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white rounded-full font-medium hover:bg-secondary/90 transition-colors shadow-sm"
                         >
                             View Archive
-                        </a>
-                        <a
-                            href="/submit"
+                        </Link>
+                        <Link
+                            to="/submit"
                             className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-secondary text-secondary rounded-full font-medium hover:bg-secondary/90 hover:text-white transition-colors shadow-sm"
                         >
                             Suggest a pick
-                        </a>
+                        </Link>
                     </div>
 
                     {!isTodayView && (
                         <div>
-                            <a
-                                href="/"
-                                className="text-primary hover:underline text-sm font-medium"
+                            <Link
+                                to="/"
+                                className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-medium"
                             >
-                                ← Back to today
-                            </a>
+                                <ArrowLeft className="w-4 h-4" />
+                                Back to today
+                            </Link>
                         </div>
                     )}
                 </footer>

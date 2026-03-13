@@ -1,69 +1,96 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Mail, Music, Film, Send, Check, User, MessageSquare } from 'lucide-react';
+import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
 
+const INITIAL_FORM_DATA = {
+    name: '',
+    suggestion: '',
+    artistName: '',
+    songTitle: '',
+    movies: '',
+    website: '',
+};
+
 const Submit = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        suggestion: '',
-        artistName: '',
-        songTitle: '',
-        movies: ''
-    });
+    const [formData, setFormData] = useState(INITIAL_FORM_DATA);
     const [submitting, setSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState('');
+    const resetTimerRef = useRef(null);
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+    usePageMeta({
+        title: 'Submit a Pick',
+        description: 'Send a song and movie suggestion to My Daily Pick.',
+        canonicalPath: '/submit',
+    });
+
+    useEffect(() => {
+        return () => {
+            if (resetTimerRef.current) {
+                clearTimeout(resetTimerRef.current);
+            }
+        };
+    }, []);
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData((currentData) => ({
+            ...currentData,
+            [name]: value,
+        }));
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const resetForm = () => {
+        setFormData(INITIAL_FORM_DATA);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const payload = {
+            ...formData,
+            name: formData.name.trim(),
+            suggestion: formData.suggestion.trim(),
+            artistName: formData.artistName.trim(),
+            songTitle: formData.songTitle.trim(),
+            movies: formData.movies.trim(),
+            website: formData.website.trim(),
+        };
+
+        if (!payload.artistName || !payload.songTitle || !payload.movies) {
+            setError('Artist name, song title, and movie picks are required.');
+            return;
+        }
+
         setSubmitting(true);
         setError('');
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/263fb238367735dd5f48e44391562b79', {
+            const response = await fetch('/api/submit', {
                 method: 'POST',
                 headers: {
+                    Accept: 'application/json',
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json'
                 },
-                body: JSON.stringify({
-                    name: formData.name,
-                    suggestion: formData.suggestion,
-                    artistName: formData.artistName,
-                    songTitle: formData.songTitle,
-                    movies: formData.movies,
-                    submittedDate: new Date().toLocaleDateString()
-                })
+                body: JSON.stringify(payload),
             });
 
-            if (response.ok) {
-                setSubmitted(true);
-                setSubmitting(false);
-                
-                // Reset form after 3 seconds
-                setTimeout(() => {
-                    setSubmitted(false);
-                    setFormData({
-                        name: '',
-                        suggestion: '',
-                        artistName: '',
-                        songTitle: '',
-                        movies: ''
-                    });
-                }, 3000);
-            } else {
-                throw new Error('Form submission failed');
+            const responseData = await response.json().catch(() => null);
+
+            if (!response.ok) {
+                throw new Error(responseData?.error || 'Unable to submit right now.');
             }
-            
-        } catch (err) {
-            setError('Failed to submit form. Please try again.');
+
+            setSubmitted(true);
+            resetForm();
+
+            resetTimerRef.current = setTimeout(() => {
+                setSubmitted(false);
+            }, 3000);
+        } catch (submitError) {
+            setError(submitError.message || 'Failed to submit form. Please try again.');
+        } finally {
             setSubmitting(false);
         }
     };
@@ -71,13 +98,16 @@ const Submit = () => {
     if (submitted) {
         return (
             <Layout>
-                <div className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in">
+                <div
+                    className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in"
+                    aria-live="polite"
+                >
                     <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
                         <Check className="w-10 h-10 text-green-500" />
                     </div>
                     <h2 className="text-2xl font-bold text-text mb-2">Submitted!</h2>
                     <p className="text-muted text-center max-w-md">
-                        Your submission has been sent successfully. 
+                        Your submission has been sent successfully.
                         Thanks for sharing your recommendations!
                     </p>
                 </div>
@@ -96,34 +126,41 @@ const Submit = () => {
                         Submit Your Picks
                     </h1>
                     <p className="text-muted">
-                        Share your favorite songs and movies with me. Fill out the form below and i'll receive your recommendations via email.
+                        Share your favorite songs and movies with me. Fill out the form below and I&apos;ll receive your recommendations via email.
                     </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Name */}
                     <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                        <label
+                            htmlFor="submit-name"
+                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
+                        >
                             <User className="w-4 h-4" />
                             Name (optional)
                         </label>
                         <input
+                            id="submit-name"
                             type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
+                            autoComplete="name"
                             placeholder="Your name"
                             className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
                         />
                     </div>
 
-                    {/* Suggestion */}
                     <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                        <label
+                            htmlFor="submit-suggestion"
+                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
+                        >
                             <MessageSquare className="w-4 h-4" />
                             Suggestion
                         </label>
                         <textarea
+                            id="submit-suggestion"
                             name="suggestion"
                             value={formData.suggestion}
                             onChange={handleChange}
@@ -133,47 +170,71 @@ const Submit = () => {
                         />
                     </div>
 
-                    {/* Artist Name */}
+                    <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+                        <label htmlFor="submit-website">Website</label>
+                        <input
+                            id="submit-website"
+                            type="text"
+                            name="website"
+                            value={formData.website}
+                            onChange={handleChange}
+                            autoComplete="off"
+                            tabIndex={-1}
+                        />
+                    </div>
+
                     <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                        <label
+                            htmlFor="submit-artist-name"
+                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
+                        >
                             <Music className="w-4 h-4" />
                             Artist Name
                         </label>
                         <input
+                            id="submit-artist-name"
                             type="text"
                             name="artistName"
                             value={formData.artistName}
                             onChange={handleChange}
                             required
+                            autoComplete="off"
                             placeholder="Enter the artist's name"
                             className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
                         />
                     </div>
 
-                    {/* Song Title */}
                     <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                        <label
+                            htmlFor="submit-song-title"
+                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
+                        >
                             <Music className="w-4 h-4" />
                             Song Title
                         </label>
                         <input
+                            id="submit-song-title"
                             type="text"
                             name="songTitle"
                             value={formData.songTitle}
                             onChange={handleChange}
                             required
+                            autoComplete="off"
                             placeholder="Enter the song title"
                             className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
                         />
                     </div>
 
-                    {/* Movies */}
                     <div>
-                        <label className="flex items-center gap-2 text-sm font-medium text-text mb-2">
+                        <label
+                            htmlFor="submit-movies"
+                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
+                        >
                             <Film className="w-4 h-4" />
                             Movies
                         </label>
                         <textarea
+                            id="submit-movies"
                             name="movies"
                             value={formData.movies}
                             onChange={handleChange}
@@ -184,14 +245,15 @@ const Submit = () => {
                         />
                     </div>
 
-                    {/* Error Message */}
                     {error && (
-                        <div className="p-4 rounded-xl bg-red-500/20 border border-red-500/30">
+                        <div
+                            className="p-4 rounded-xl bg-red-500/20 border border-red-500/30"
+                            aria-live="polite"
+                        >
                             <p className="text-red-400 text-sm">{error}</p>
                         </div>
                     )}
 
-                    {/* Submit Button */}
                     <button
                         type="submit"
                         disabled={submitting}
@@ -210,13 +272,6 @@ const Submit = () => {
                         )}
                     </button>
                 </form>
-
-                {/* <div className="mt-8 p-4 bg-surface/50 rounded-xl">
-                    <p className="text-xs text-muted text-center">
-                        Your submission will be sent directly. 
-                        No email required!
-                    </p>
-                </div> */}
             </div>
         </Layout>
     );
