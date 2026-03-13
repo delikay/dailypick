@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Archive as ArchiveIcon, Filter } from 'lucide-react';
+import { Archive as ArchiveIcon, ChevronDown, Filter } from 'lucide-react';
 import { useEntries } from '../hooks/useEntries';
 import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
@@ -25,6 +25,10 @@ const Archive = () => {
     const entries = recentDates
         .map((date) => getEntryByDate(date))
         .filter(Boolean);
+    const moodCounts = moods.reduce((counts, mood) => {
+        counts[mood.id] = entries.filter((entry) => entry.mood === mood.id).length;
+        return counts;
+    }, {});
 
     const filteredEntries = selectedMood
         ? entries.filter((entry) => entry.mood === selectedMood)
@@ -102,46 +106,89 @@ const Archive = () => {
                     </aside>
                 </section>
 
-                <section className="section-frame px-6 py-5 sm:px-8">
-                    <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                        <label
-                            htmlFor="archive-mood-filter"
-                            className="flex items-center gap-3 text-sm font-semibold text-text"
-                        >
-                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                                <Filter className="h-4 w-4" />
-                            </span>
-                            <span>
-                                Filter the last 18 days by mood
-                            </span>
-                        </label>
+                <section className="section-frame px-6 py-6 sm:px-8 sm:py-7">
+                    <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                        <div className="max-w-2xl">
+                            <div className="flex items-center gap-3 text-sm font-semibold text-text">
+                                <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
+                                    <Filter className="h-4 w-4" />
+                                </span>
+                                <span>Filter the last 18 days by mood</span>
+                            </div>
+                            <p className="mt-4 text-sm leading-relaxed text-muted sm:text-[0.96rem]">
+                                Select one emotional register to narrow the archive. Each option shows how many recent entries sit inside that mood.
+                            </p>
+                        </div>
 
-                        <div className="flex flex-col gap-3 sm:flex-row">
-                            <select
-                                id="archive-mood-filter"
-                                value={selectedMood || ''}
-                                onChange={(event) => handleMoodChange(event.target.value)}
-                                className="form-field min-w-[15rem]"
+                        {selectedMood && (
+                            <button
+                                onClick={handleClearFilter}
+                                type="button"
+                                className="button-ghost w-full sm:w-auto"
                             >
-                                <option value="">All moods</option>
-                                {moods.map((mood) => (
-                                    <option key={mood.id} value={mood.id}>
-                                        {mood.emoji} {mood.label}
-                                    </option>
-                                ))}
-                            </select>
+                                Clear filter
+                                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary/80">
+                                    {entries.length - filteredEntries.length} hidden
+                                </span>
+                            </button>
+                        )}
+                    </div>
 
-                            {selectedMood && (
-                                <button
-                                    onClick={handleClearFilter}
-                                    type="button"
-                                    className="button-secondary"
+                    <div className="accent-rule my-6" />
+
+                    <div className="grid gap-4 lg:grid-cols-[minmax(0,26rem)_1fr] lg:items-end">
+                        <div>
+                            <label
+                                htmlFor="archive-mood-filter"
+                                className="mb-3 block text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted"
+                            >
+                                Mood selection
+                            </label>
+                            <div className="premium-select-shell">
+                                <select
+                                    id="archive-mood-filter"
+                                    value={selectedMood || ''}
+                                    onChange={(event) => handleMoodChange(event.target.value)}
+                                    className="premium-select"
                                 >
-                                    Clear filter ({entries.length - filteredEntries.length} hidden)
-                                </button>
-                            )}
+                                    <option value="">All moods ({entries.length})</option>
+                                    {moods.map((mood) => (
+                                        <option key={mood.id} value={mood.id}>
+                                            {mood.label} ({moodCounts[mood.id]})
+                                        </option>
+                                    ))}
+                                </select>
+                                <ChevronDown className="premium-select__icon h-4 w-4" />
+                            </div>
+                        </div>
+
+                        <div className="rounded-[1.3rem] border border-border/60 bg-surface/65 px-4 py-4 sm:px-5">
+                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                Current view
+                            </p>
+                            <p className="mt-2 text-base font-semibold text-text">
+                                {selectedMood
+                                    ? `${moods.find((mood) => mood.id === selectedMood)?.label} mood`
+                                    : 'All moods'}
+                            </p>
+                            <p className="mt-1 text-sm leading-relaxed text-muted">
+                                {selectedMood
+                                    ? `${filteredEntries.length} entries shown from the last 18 days.`
+                                    : `Showing all ${entries.length} entries in the active archive window.`}
+                            </p>
                         </div>
                     </div>
+
+                    {selectedMood && (
+                        <p className="mt-5 text-sm leading-relaxed text-muted">
+                            Showing <span className="font-semibold text-text">{filteredEntries.length}</span>{' '}
+                            entries tagged{' '}
+                            <span className="font-semibold text-text">
+                                {moods.find((mood) => mood.id === selectedMood)?.label}
+                            </span>
+                            .
+                        </p>
+                    )}
                 </section>
 
                 {filteredEntries.length === 0 ? (

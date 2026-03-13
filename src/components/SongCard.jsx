@@ -8,20 +8,19 @@ const SongCard = ({ song, featured = false, entry }) => {
         <article
             className={`card-shell hover-lift relative p-6 sm:p-7 ${featured ? 'min-h-[18rem]' : ''}`}
         >
-            <div className="pointer-events-none absolute -left-12 top-8 h-32 w-32 rounded-full bg-emerald-500/14 blur-3xl" />
             {entry && <ShareButton entry={entry} iconOnly />}
 
             <div className="relative z-[1] flex h-full flex-col">
                 <span className="editorial-kicker">Soundtrack</span>
 
                 <div className="mt-6 flex items-start gap-4">
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-[1.4rem] border border-emerald-500/20 bg-gradient-to-br from-emerald-500 to-green-600 text-white shadow-[0_18px_35px_rgba(22,163,74,0.22)]">
-                        <Music className="h-7 w-7" />
+                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-[1.1rem] border border-border/70 bg-surface/80 text-secondary">
+                        <Music className="h-5 w-5" />
                     </div>
 
                     <div className="min-w-0">
                         <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted">
-                            Song of the day
+                            Featured track
                         </p>
                         <h3 className="section-title mt-2 text-3xl text-text sm:text-[2.1rem]">
                             {song.title}
@@ -33,7 +32,7 @@ const SongCard = ({ song, featured = false, entry }) => {
                 <div className="accent-rule my-6" />
 
                 <p className="max-w-md text-sm leading-relaxed text-muted">
-                    A single track carrying the emotional temperature of this day.
+                    A single song anchoring the tone of this entry.
                 </p>
 
                 {song.link && (

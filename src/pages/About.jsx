@@ -91,14 +91,14 @@ const About = () => {
                         <p className="editorial-kicker">What defines it</p>
                     </div>
                     <div className="grid gap-6 md:grid-cols-2">
-                        {highlights.map(({ icon: Icon, title, description }) => (
-                            <article key={title} className="card-shell p-6 sm:p-7">
+                        {highlights.map((highlight) => (
+                            <article key={highlight.title} className="card-shell p-6 sm:p-7">
                                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-[1.1rem] bg-primary/8 text-primary">
-                                    <Icon className="h-5 w-5" />
+                                    <highlight.icon className="h-5 w-5" />
                                 </div>
-                                <h3 className="section-title text-3xl text-text">{title}</h3>
+                                <h3 className="section-title text-3xl text-text">{highlight.title}</h3>
                                 <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
-                                    {description}
+                                    {highlight.description}
                                 </p>
                             </article>
                         ))}

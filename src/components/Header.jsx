@@ -23,7 +23,7 @@ const Header = () => {
     return (
         <header className="sticky top-3 z-50">
             <div className="page-container">
-                <div className="glass rounded-[2rem] px-4 py-4 sm:px-5">
+                <div className="glass relative rounded-[2rem] px-4 py-4 sm:px-5">
                     <div className="flex items-center justify-between gap-4">
                         <NavLink to="/" className="group flex min-w-0 items-center gap-4">
                             <div className="relative flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-[1.1rem] bg-primary text-surface shadow-[0_18px_34px_rgba(24,21,18,0.2)]">
@@ -50,10 +50,10 @@ const Header = () => {
                         </div>
 
                         <nav className="hidden items-center gap-2 md:flex">
-                            {navItems.map(({ to, label, icon: Icon }) => (
-                                <NavLink key={to} to={to} className={getNavClasses}>
-                                    <Icon className="h-4 w-4" />
-                                    <span>{label}</span>
+                            {navItems.map((item) => (
+                                <NavLink key={item.to} to={item.to} className={getNavClasses}>
+                                    <item.icon className="h-4 w-4" />
+                                    <span>{item.label}</span>
                                 </NavLink>
                             ))}
                             <NavLink
@@ -83,7 +83,9 @@ const Header = () => {
 
                     <nav
                         id="mobile-navigation"
-                        className={`mobile-menu md:hidden ${mobileMenuOpen ? 'open mt-4 pt-4' : ''}`}
+                        className={`mobile-menu absolute left-0 right-0 top-full z-20 mt-3 px-1 md:hidden ${
+                            mobileMenuOpen ? 'open pointer-events-auto' : 'pointer-events-none'
+                        }`}
                         aria-hidden={!mobileMenuOpen}
                     >
                         <div className="section-frame space-y-2 p-3">
@@ -94,10 +96,10 @@ const Header = () => {
                                 <p className="mt-1 text-sm font-semibold text-text">{today}</p>
                             </div>
 
-                            {navItems.map(({ to, label, icon: Icon }) => (
+                            {navItems.map((item) => (
                                 <NavLink
-                                    key={to}
-                                    to={to}
+                                    key={item.to}
+                                    to={item.to}
                                     onClick={() => setMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         `flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold ${
@@ -107,8 +109,8 @@ const Header = () => {
                                         }`
                                     }
                                 >
-                                    <Icon className="h-4 w-4" />
-                                    <span>{label}</span>
+                                    <item.icon className="h-4 w-4" />
+                                    <span>{item.label}</span>
                                 </NavLink>
                             ))}
 

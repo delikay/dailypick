@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Calendar, Clapperboard, Music4 } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import { useEntries } from '../hooks/useEntries';
 import { formatDate, getToday, isToday } from '../utils/dateUtils';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -71,13 +71,13 @@ const Home = () => {
                         </p>
 
                         <div className="mt-5 max-w-3xl">
-                            <h1 className="display-title text-5xl text-text sm:text-6xl lg:text-[5.3rem]">
+                            <h1 className="display-title text-5xl text-text sm:text-[3.9rem] lg:text-[4.8rem]">
                                 {heading}
                             </h1>
                             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
                                 {isTodayView
-                                    ? 'A daily pairing of music, film, and feeling. Collected with enough structure to feel designed, but still personal.'
-                                    : 'A saved snapshot from the archive, pulled back into focus with its original mood, soundtrack, and screen pairing.'}
+                                    ? 'A daily pairing of music, film, and feeling. Personal enough to stay human, structured enough to revisit later.'
+                                    : 'A saved snapshot from the archive, brought back with its original mood, track, and film pairing intact.'}
                             </p>
                         </div>
 
@@ -98,8 +98,6 @@ const Home = () => {
                     </div>
 
                     <aside className="card-shell px-6 py-7 sm:px-7 sm:py-8">
-                        <div className="pointer-events-none absolute -right-10 top-6 h-32 w-32 rounded-full bg-secondary/12 blur-3xl" />
-
                         <div className="relative z-[1]">
                             <p className="editorial-kicker">
                                 {isTodayView ? 'Daily snapshot' : 'Selected entry'}
@@ -119,9 +117,6 @@ const Home = () => {
 
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div className="rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
-                                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                                        <Music4 className="h-4 w-4" />
-                                    </div>
                                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                                         Track
                                     </p>
@@ -132,9 +127,6 @@ const Home = () => {
                                 </div>
 
                                 <div className="rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
-                                    <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/8 text-primary">
-                                        <Clapperboard className="h-4 w-4" />
-                                    </div>
                                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                                         Movie
                                     </p>

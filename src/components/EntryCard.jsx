@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Music, Film, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar } from 'lucide-react';
 import MoodBadge from './MoodBadge';
 import { formatShortDate, getDaysAgo } from '../utils/dateUtils';
 
@@ -26,36 +26,24 @@ const EntryCard = ({ entry }) => {
             <div className="accent-rule my-5" />
 
             <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                        <Music className="h-4 w-4" />
-                    </div>
-                    <div className="min-w-0">
-                        <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
-                            Song
-                        </p>
-                        <p className="mt-1 truncate text-base font-semibold text-text">
-                            {entry.song?.title}
-                        </p>
-                        <p className="truncate text-sm text-muted">{entry.song?.artist}</p>
-                    </div>
+                <div className="min-w-0 rounded-[1.15rem] border border-border/65 bg-surface/75 px-4 py-3">
+                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                        Song
+                    </p>
+                    <p className="mt-1 truncate text-base font-semibold text-text">
+                        {entry.song?.title}
+                    </p>
+                    <p className="truncate text-sm text-muted">{entry.song?.artist}</p>
                 </div>
 
-                <div className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/8 text-primary">
-                        <Film className="h-4 w-4" />
-                    </div>
-                    <div className="min-w-0">
-                        <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
-                            Movie
-                        </p>
-                        <p className="mt-1 truncate text-base font-semibold text-text">
-                            {entry.movie?.title}
-                        </p>
-                        {entry.movie?.year && (
-                            <p className="text-sm text-muted">{entry.movie.year}</p>
-                        )}
-                    </div>
+                <div className="min-w-0 rounded-[1.15rem] border border-border/65 bg-surface/75 px-4 py-3">
+                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                        Movie
+                    </p>
+                    <p className="mt-1 truncate text-base font-semibold text-text">
+                        {entry.movie?.title}
+                    </p>
+                    {entry.movie?.year && <p className="text-sm text-muted">{entry.movie.year}</p>}
                 </div>
             </div>
 
