@@ -82,9 +82,9 @@ const ShareButton = ({ entry, iconOnly = false, className = '' }) => {
                 aria-label={label}
             >
                 {status === 'copied' ? (
-                    <Check className="h-4.5 w-4.5 text-secondary" />
+                    <Check className="h-4 w-4 text-secondary" />
                 ) : (
-                    <Link2 className="h-4.5 w-4.5 text-secondary" />
+                    <Link2 className="h-4 w-4 text-secondary" />
                 )}
             </button>
         );

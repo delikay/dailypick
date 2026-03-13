@@ -98,180 +98,217 @@ const Submit = () => {
     if (submitted) {
         return (
             <Layout>
-                <div
-                    className="flex flex-col items-center justify-center min-h-[60vh] animate-fade-in"
-                    aria-live="polite"
-                >
-                    <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
-                        <Check className="w-10 h-10 text-green-500" />
+                <section className="section-frame px-6 py-14 text-center sm:px-8 sm:py-16">
+                    <div
+                        className="mx-auto flex max-w-2xl flex-col items-center"
+                        aria-live="polite"
+                    >
+                        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/12 text-emerald-600 shadow-[0_18px_40px_rgba(16,185,129,0.18)]">
+                            <Check className="h-10 w-10" />
+                        </div>
+                        <p className="editorial-kicker">Submission received</p>
+                        <h1 className="section-title mt-5 text-4xl text-text sm:text-5xl">
+                            Thanks for sending a pick.
+                        </h1>
+                        <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
+                            Your suggestion is on its way through. The next good entry might already be in your message.
+                        </p>
                     </div>
-                    <h2 className="text-2xl font-bold text-text mb-2">Submitted!</h2>
-                    <p className="text-muted text-center max-w-md">
-                        Your submission has been sent successfully.
-                        Thanks for sharing your recommendations!
-                    </p>
-                </div>
+                </section>
             </Layout>
         );
     }
 
     return (
         <Layout>
-            <div className="animate-fade-in max-w-2xl mx-auto">
-                <div className="text-center mb-8">
-                    <div className="w-16 h-16 rounded-xl bg-secondary flex items-center justify-center mx-auto mb-4 warm-shadow">
-                        <Mail className="w-8 h-8 text-white" />
+            <div className="animate-fade-in grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+                <section className="section-frame px-6 py-8 sm:px-8 lg:px-10">
+                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-surface shadow-[0_18px_34px_rgba(24,21,18,0.18)]">
+                        <Mail className="h-6 w-6" />
                     </div>
-                    <h1 className="text-3xl sm:text-4xl font-bold text-text mb-4">
-                        Submit Your Picks
+                    <p className="editorial-kicker">Submit a suggestion</p>
+                    <h1 className="display-title mt-5 text-5xl text-text sm:text-6xl">
+                        Send the next song and film pair.
                     </h1>
-                    <p className="text-muted">
-                        Share your favorite songs and movies with me. Fill out the form below and I&apos;ll receive your recommendations via email.
+                    <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+                        If a track or movie feels right for the archive, drop it here. Keep it simple, and add context only if it helps explain the choice.
                     </p>
-                </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                        <label
-                            htmlFor="submit-name"
-                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
-                        >
-                            <User className="w-4 h-4" />
-                            Name (optional)
-                        </label>
-                        <input
-                            id="submit-name"
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            autoComplete="name"
-                            placeholder="Your name"
-                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
-                        />
-                    </div>
+                    <div className="accent-rule my-6" />
 
-                    <div>
-                        <label
-                            htmlFor="submit-suggestion"
-                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
-                        >
-                            <MessageSquare className="w-4 h-4" />
-                            Suggestion
-                        </label>
-                        <textarea
-                            id="submit-suggestion"
-                            name="suggestion"
-                            value={formData.suggestion}
-                            onChange={handleChange}
-                            rows={3}
-                            placeholder="Any suggestions or feedback?"
-                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all resize-none warm-shadow"
-                        />
-                    </div>
-
-                    <div className="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
-                        <label htmlFor="submit-website">Website</label>
-                        <input
-                            id="submit-website"
-                            type="text"
-                            name="website"
-                            value={formData.website}
-                            onChange={handleChange}
-                            autoComplete="off"
-                            tabIndex={-1}
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            htmlFor="submit-artist-name"
-                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
-                        >
-                            <Music className="w-4 h-4" />
-                            Artist Name
-                        </label>
-                        <input
-                            id="submit-artist-name"
-                            type="text"
-                            name="artistName"
-                            value={formData.artistName}
-                            onChange={handleChange}
-                            required
-                            autoComplete="off"
-                            placeholder="Enter the artist's name"
-                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            htmlFor="submit-song-title"
-                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
-                        >
-                            <Music className="w-4 h-4" />
-                            Song Title
-                        </label>
-                        <input
-                            id="submit-song-title"
-                            type="text"
-                            name="songTitle"
-                            value={formData.songTitle}
-                            onChange={handleChange}
-                            required
-                            autoComplete="off"
-                            placeholder="Enter the song title"
-                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all warm-shadow"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            htmlFor="submit-movies"
-                            className="flex items-center gap-2 text-sm font-medium text-text mb-2"
-                        >
-                            <Film className="w-4 h-4" />
-                            Movies
-                        </label>
-                        <textarea
-                            id="submit-movies"
-                            name="movies"
-                            value={formData.movies}
-                            onChange={handleChange}
-                            required
-                            rows={4}
-                            placeholder="Enter movie titles (one per line or comma-separated)"
-                            className="w-full px-4 py-3 rounded-xl bg-surface border border-border text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary/50 transition-all resize-none warm-shadow"
-                        />
-                    </div>
-
-                    {error && (
-                        <div
-                            className="p-4 rounded-xl bg-red-500/20 border border-red-500/30"
-                            aria-live="polite"
-                        >
-                            <p className="text-red-400 text-sm">{error}</p>
+                    <div className="grid gap-4">
+                        <div className="rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
+                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                Best submissions
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-muted">
+                                Clear song title, artist name, and one or more movie options that genuinely fit the mood.
+                            </p>
                         </div>
-                    )}
 
-                    <button
-                        type="submit"
-                        disabled={submitting}
-                        className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-secondary text-white font-medium hover:bg-secondary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed warm-shadow"
-                    >
-                        {submitting ? (
-                            <>
-                                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                <span>Submitting...</span>
-                            </>
-                        ) : (
-                            <>
-                                <Send className="w-5 h-5" />
-                                <span>Submit</span>
-                            </>
+                        <div className="rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
+                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                Extra context
+                            </p>
+                            <p className="mt-2 text-sm leading-relaxed text-muted">
+                                The suggestion field is optional, but it helps when there is a specific reason the pairing belongs together.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="card-shell px-6 py-7 sm:px-8">
+                    <form onSubmit={handleSubmit} className="relative z-[1] space-y-5">
+                        <div className="grid gap-5 sm:grid-cols-2">
+                            <div className="sm:col-span-2">
+                                <label
+                                    htmlFor="submit-name"
+                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                >
+                                    <User className="h-4 w-4 text-secondary" />
+                                    Name (optional)
+                                </label>
+                                <input
+                                    id="submit-name"
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    autoComplete="name"
+                                    placeholder="Your name"
+                                    className="form-field"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2">
+                                <label
+                                    htmlFor="submit-suggestion"
+                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                >
+                                    <MessageSquare className="h-4 w-4 text-secondary" />
+                                    Suggestion or context
+                                </label>
+                                <textarea
+                                    id="submit-suggestion"
+                                    name="suggestion"
+                                    value={formData.suggestion}
+                                    onChange={handleChange}
+                                    rows={4}
+                                    placeholder="Why does this pairing fit?"
+                                    className="form-field resize-none"
+                                />
+                            </div>
+
+                            <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+                                <label htmlFor="submit-website">Website</label>
+                                <input
+                                    id="submit-website"
+                                    type="text"
+                                    name="website"
+                                    value={formData.website}
+                                    onChange={handleChange}
+                                    autoComplete="off"
+                                    tabIndex={-1}
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    htmlFor="submit-artist-name"
+                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                >
+                                    <Music className="h-4 w-4 text-secondary" />
+                                    Artist name
+                                </label>
+                                <input
+                                    id="submit-artist-name"
+                                    type="text"
+                                    name="artistName"
+                                    value={formData.artistName}
+                                    onChange={handleChange}
+                                    required
+                                    autoComplete="off"
+                                    placeholder="Artist"
+                                    className="form-field"
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    htmlFor="submit-song-title"
+                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                >
+                                    <Music className="h-4 w-4 text-secondary" />
+                                    Song title
+                                </label>
+                                <input
+                                    id="submit-song-title"
+                                    type="text"
+                                    name="songTitle"
+                                    value={formData.songTitle}
+                                    onChange={handleChange}
+                                    required
+                                    autoComplete="off"
+                                    placeholder="Song"
+                                    className="form-field"
+                                />
+                            </div>
+
+                            <div className="sm:col-span-2">
+                                <label
+                                    htmlFor="submit-movies"
+                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                >
+                                    <Film className="h-4 w-4 text-secondary" />
+                                    Movie picks
+                                </label>
+                                <textarea
+                                    id="submit-movies"
+                                    name="movies"
+                                    value={formData.movies}
+                                    onChange={handleChange}
+                                    required
+                                    rows={5}
+                                    placeholder="One per line or comma separated"
+                                    className="form-field resize-none"
+                                />
+                            </div>
+                        </div>
+
+                        {error && (
+                            <div
+                                className="rounded-[1.4rem] border border-red-500/20 bg-red-500/10 px-4 py-3"
+                                aria-live="polite"
+                            >
+                                <p className="text-sm font-medium text-red-600">{error}</p>
+                            </div>
                         )}
-                    </button>
-                </form>
+
+                        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <p className="text-sm leading-relaxed text-muted">
+                                Required fields: artist, song title, and at least one movie suggestion.
+                            </p>
+
+                            <button
+                                type="submit"
+                                disabled={submitting}
+                                className="button-primary disabled:cursor-not-allowed disabled:opacity-50"
+                            >
+                                {submitting ? (
+                                    <>
+                                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                                        <span>Submitting</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send className="h-4 w-4" />
+                                        <span>Send pick</span>
+                                    </>
+                                )}
+                            </button>
+                        </div>
+                    </form>
+                </section>
             </div>
         </Layout>
     );
