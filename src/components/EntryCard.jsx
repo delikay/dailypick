@@ -9,49 +9,65 @@ const EntryCard = ({ entry }) => {
     return (
         <Link
             to={`/?date=${entry.date}`}
-            className="glass rounded-2xl p-6 hover-lift block group border border-border/30 shadow-sm hover:shadow-lg transition-all duration-300"
+            className="card-shell hover-lift group block p-5 sm:p-6"
         >
-            <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2 text-muted text-sm font-medium">
-                    <Calendar className="w-4 h-4" />
-                    <span>{formatShortDate(entry.date)}</span>
+            <div className="flex items-start justify-between gap-4">
+                <div>
+                    <div className="inline-flex items-center gap-2 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-secondary">
+                        <Calendar className="h-3.5 w-3.5" />
+                        <span>{formatShortDate(entry.date)}</span>
+                    </div>
+                    <p className="mt-2 text-sm font-medium text-muted">{getDaysAgo(entry.date)}</p>
                 </div>
-                <span className="text-xs text-muted bg-surface/50 px-2 py-1 rounded-full">{getDaysAgo(entry.date)}</span>
+
+                <MoodBadge mood={entry.mood} size="sm" />
             </div>
 
-            <div className="mb-5 flex justify-center">
-                <MoodBadge mood={entry.mood} size="md" />
-            </div>
+            <div className="accent-rule my-5" />
 
-            <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm">
-                    <Music className="w-5 h-5 text-secondary flex-shrink-0" />
-                    <div className="min-w-0 flex-1">
-                        <span className="text-text font-medium truncate block">{entry.song?.title}</span>
-                        <span className="text-muted truncate block">- {entry.song?.artist}</span>
+            <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
+                        <Music className="h-4 w-4" />
+                    </div>
+                    <div className="min-w-0">
+                        <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                            Song
+                        </p>
+                        <p className="mt-1 truncate text-base font-semibold text-text">
+                            {entry.song?.title}
+                        </p>
+                        <p className="truncate text-sm text-muted">{entry.song?.artist}</p>
                     </div>
                 </div>
 
-                <div className="flex items-center gap-3 text-sm">
-                    <Film className="w-5 h-5 text-primary flex-shrink-0" />
-                    <div className="min-w-0 flex-1">
-                        <span className="text-text font-medium truncate block">{entry.movie?.title}</span>
+                <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-2xl bg-primary/8 text-primary">
+                        <Film className="h-4 w-4" />
+                    </div>
+                    <div className="min-w-0">
+                        <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                            Movie
+                        </p>
+                        <p className="mt-1 truncate text-base font-semibold text-text">
+                            {entry.movie?.title}
+                        </p>
                         {entry.movie?.year && (
-                            <span className="text-muted">({entry.movie.year})</span>
+                            <p className="text-sm text-muted">{entry.movie.year}</p>
                         )}
                     </div>
                 </div>
             </div>
 
             {entry.caption && (
-                <p className="mt-4 text-sm text-muted line-clamp-2 italic leading-relaxed">
-                    "{entry.caption}"
+                <p className="mt-5 line-clamp-3 text-sm leading-relaxed text-muted">
+                    {entry.caption}
                 </p>
             )}
 
-            <div className="mt-5 inline-flex items-center gap-2 text-xs text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-medium">
-                <span>View full entry</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+            <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
+                <span>Open entry</span>
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </div>
         </Link>
     );

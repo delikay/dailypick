@@ -5,47 +5,67 @@ const MovieCard = ({ movie, featured = false, entry }) => {
     if (!movie) return null;
 
     return (
-        <div className={`glass rounded-2xl p-6 hover-lift relative overflow-x-hidden ${featured ? 'col-span-1' : ''}`}>
+        <article
+            className={`card-shell hover-lift relative p-6 sm:p-7 ${featured ? 'min-h-[18rem]' : ''}`}
+        >
+            <div className="pointer-events-none absolute right-0 top-0 h-36 w-36 rounded-full bg-rose-500/10 blur-3xl" />
             {entry && <ShareButton entry={entry} iconOnly />}
-            <div className="flex items-start gap-4">
-                {movie.poster ? (
-                    <img
-                        src={movie.poster}
-                        alt={`${movie.title} poster`}
-                        className="w-14 h-20 rounded-lg object-cover flex-shrink-0"
-                        loading="lazy"
-                        decoding="async"
-                        onError={(event) => {
-                            event.target.style.display = 'none';
-                            event.target.nextSibling.style.display = 'flex';
-                        }}
-                    />
-                ) : null}
-                <div
-                    className={`w-14 h-20 rounded-lg bg-gradient-to-br from-red-500 to-rose-600 items-center justify-center flex-shrink-0 ${movie.poster ? 'hidden' : 'flex'}`}
-                >
-                    <Film className="w-7 h-7 text-white" />
+
+            <div className="relative z-[1] flex h-full flex-col">
+                <span className="editorial-kicker">Screening</span>
+
+                <div className="mt-6 flex items-start gap-4">
+                    {movie.poster ? (
+                        <img
+                            src={movie.poster}
+                            alt={`${movie.title} poster`}
+                            className="h-28 w-20 flex-shrink-0 rounded-[1.15rem] border border-border/60 object-cover shadow-[0_18px_32px_rgba(24,21,18,0.14)]"
+                            loading="lazy"
+                            decoding="async"
+                            onError={(event) => {
+                                event.target.style.display = 'none';
+                                event.target.nextSibling.style.display = 'flex';
+                            }}
+                        />
+                    ) : null}
+                    <div
+                        className={`flex h-28 w-20 flex-shrink-0 items-center justify-center rounded-[1.15rem] border border-rose-500/20 bg-gradient-to-br from-rose-500 to-red-600 text-white shadow-[0_18px_35px_rgba(244,63,94,0.22)] ${movie.poster ? 'hidden' : 'flex'}`}
+                    >
+                        <Film className="h-7 w-7" />
+                    </div>
+
+                    <div className="min-w-0">
+                        <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted">
+                            Movie of the day
+                        </p>
+                        <h3 className="section-title mt-2 text-3xl text-text sm:text-[2.1rem]">
+                            {movie.title}
+                        </h3>
+                        {movie.year && (
+                            <p className="mt-2 text-base font-medium text-muted">{movie.year}</p>
+                        )}
+                    </div>
                 </div>
 
-                <div className="flex-1 min-w-0">
-                    <p className="text-xs uppercase tracking-wider text-muted mb-1">Movie of the Day</p>
-                    <h3 className="text-lg font-semibold text-text truncate">{movie.title}</h3>
-                    {movie.year && <p className="text-muted text-sm">{movie.year}</p>}
-                </div>
+                <div className="accent-rule my-6" />
+
+                <p className="max-w-md text-sm leading-relaxed text-muted">
+                    The film pairing that completes the mood and gives the day its second texture.
+                </p>
+
+                {movie.trailer && (
+                    <a
+                        href={movie.trailer}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="button-secondary mt-auto w-full sm:w-fit"
+                    >
+                        <Play className="h-4 w-4 text-secondary" />
+                        <span>Watch trailer</span>
+                    </a>
+                )}
             </div>
-
-            {movie.trailer && (
-                <a
-                    href={movie.trailer}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-colors text-sm font-medium"
-                >
-                    <Play className="w-4 h-4" />
-                    <span>Watch Trailer</span>
-                </a>
-            )}
-        </div>
+        </article>
     );
 };
 

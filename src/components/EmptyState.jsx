@@ -1,30 +1,34 @@
 import { Link } from 'react-router-dom';
-import { Plus } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const EmptyState = ({
     icon: Icon,
     title,
     description,
     actionLabel,
-    actionTo
+    actionTo,
 }) => {
     return (
-        <div className="flex flex-col items-center justify-center py-16 text-center">
+        <div className="section-frame px-6 py-10 text-left sm:px-8 sm:py-12">
             {Icon && (
-                <div className="w-20 h-20 rounded-2xl bg-surface flex items-center justify-center mb-6">
-                    <Icon className="w-10 h-10 text-muted" />
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-[1.4rem] border border-border/70 bg-surface/90 text-secondary shadow-[0_16px_30px_rgba(24,21,18,0.08)]">
+                    <Icon className="h-7 w-7" />
                 </div>
             )}
-            <h3 className="text-xl font-semibold text-text mb-2">{title}</h3>
-            <p className="text-muted max-w-md mb-6">{description}</p>
+
+            <div className="max-w-2xl">
+                <p className="editorial-kicker mb-3">Nothing here yet</p>
+                <h3 className="section-title text-3xl text-text sm:text-4xl">{title}</h3>
+                <p className="mt-4 text-base leading-relaxed text-muted">{description}</p>
+            </div>
+
             {actionLabel && actionTo && (
-                <Link
-                    to={actionTo}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary text-white font-medium hover:bg-secondary/90 transition-opacity"
-                >
-                    <Plus className="w-5 h-5" />
-                    {actionLabel}
-                </Link>
+                <div className="mt-8">
+                    <Link to={actionTo} className="button-primary">
+                        <span>{actionLabel}</span>
+                        <ArrowRight className="h-4 w-4" />
+                    </Link>
+                </div>
             )}
         </div>
     );

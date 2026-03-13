@@ -48,8 +48,10 @@ const Archive = () => {
     if (loading) {
         return (
             <Layout>
-                <div className="flex items-center justify-center h-64">
-                    <div className="animate-pulse-soft text-muted">Loading...</div>
+                <div className="section-frame flex h-72 items-center justify-center">
+                    <div className="animate-pulse-soft text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+                        Loading archive
+                    </div>
                 </div>
             </Layout>
         );
@@ -57,35 +59,69 @@ const Archive = () => {
 
     return (
         <Layout>
-            <div className="animate-fade-in">
-                <header className="text-center mb-10">
-                    <div className="inline-flex items-center justify-center gap-3 mb-3">
-                        <ArchiveIcon className="w-9 h-9 text-primary" />
-                        <h1 className="text-3xl sm:text-4xl font-black text-text tracking-tight">
-                            Archive
+            <div className="animate-fade-in space-y-6 sm:space-y-8">
+                <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+                    <header className="section-frame px-6 py-8 sm:px-8 lg:px-10">
+                        <p className="editorial-kicker">Recent archive</p>
+                        <h1 className="display-title mt-5 text-5xl text-text sm:text-6xl">
+                            18 days of mood, music, and film.
                         </h1>
-                    </div>
-                    <p className="text-muted text-base sm:text-lg max-w-2xl mx-auto">
-                        {entries.length} {entries.length === 1 ? 'entry' : 'entries'} from the last 18 days
-                    </p>
-                </header>
+                        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+                            The archive is intentionally tight: a rolling window of recent entries so each day still feels current.
+                        </p>
+                    </header>
 
-                <section className="mb-8">
-                    <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                    <aside className="card-shell px-6 py-7 sm:px-7 sm:py-8">
+                        <div className="relative z-[1]">
+                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-[1.1rem] bg-primary text-surface">
+                                <ArchiveIcon className="h-5 w-5" />
+                            </div>
+                            <p className="editorial-kicker">At a glance</p>
+                            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                                <div>
+                                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                        Entries
+                                    </p>
+                                    <p className="section-title mt-2 text-4xl text-text">
+                                        {entries.length}
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                        Filtered
+                                    </p>
+                                    <p className="section-title mt-2 text-4xl text-text">
+                                        {filteredEntries.length}
+                                    </p>
+                                </div>
+                            </div>
+                            <p className="mt-5 text-sm leading-relaxed text-muted">
+                                Use the mood filter to isolate a feeling and see only the entries that match it.
+                            </p>
+                        </div>
+                    </aside>
+                </section>
+
+                <section className="section-frame px-6 py-5 sm:px-8">
+                    <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                         <label
                             htmlFor="archive-mood-filter"
-                            className="flex items-center gap-2 text-muted"
+                            className="flex items-center gap-3 text-sm font-semibold text-text"
                         >
-                            <Filter className="w-4 h-4" />
-                            <span className="text-sm font-medium">Filter by mood</span>
+                            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
+                                <Filter className="h-4 w-4" />
+                            </span>
+                            <span>
+                                Filter the last 18 days by mood
+                            </span>
                         </label>
 
-                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                        <div className="flex flex-col gap-3 sm:flex-row">
                             <select
                                 id="archive-mood-filter"
                                 value={selectedMood || ''}
                                 onChange={(event) => handleMoodChange(event.target.value)}
-                                className="bg-surface border border-border rounded-xl px-4 py-3 text-sm text-text focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                                className="form-field min-w-[15rem]"
                             >
                                 <option value="">All moods</option>
                                 {moods.map((mood) => (
@@ -99,7 +135,7 @@ const Archive = () => {
                                 <button
                                     onClick={handleClearFilter}
                                     type="button"
-                                    className="px-4 py-3 rounded-xl bg-surface border border-border text-sm font-medium text-text hover:bg-surface-hover transition-colors"
+                                    className="button-secondary"
                                 >
                                     Clear filter ({entries.length - filteredEntries.length} hidden)
                                 </button>
@@ -109,51 +145,52 @@ const Archive = () => {
                 </section>
 
                 {filteredEntries.length === 0 ? (
-                    <div className="max-w-3xl mx-auto">
-                        <EmptyState
-                            icon={ArchiveIcon}
-                            title={selectedMood ? 'No entries with this mood' : 'No entries yet'}
-                            description={
-                                selectedMood
-                                    ? 'Try selecting a different mood or clear the filter.'
-                                    : 'Start curating your daily songs and movies to build your archive.'
-                            }
-                        />
-                    </div>
+                    <EmptyState
+                        icon={ArchiveIcon}
+                        title={selectedMood ? 'No entries match this mood' : 'No entries yet'}
+                        description={
+                            selectedMood
+                                ? 'Try a different mood or clear the filter to return to the full 18-day view.'
+                                : 'Start curating daily songs and movies to build out the archive.'
+                        }
+                    />
                 ) : (
-                    <section className="max-w-6xl mx-auto">
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {paginatedEntries.map((entry) => (
-                                <EntryCard key={entry.id} entry={entry} />
-                            ))}
-                        </div>
+                    <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                        {paginatedEntries.map((entry) => (
+                            <EntryCard key={entry.id} entry={entry} />
+                        ))}
                     </section>
                 )}
 
                 {filteredEntries.length > PER_PAGE && (
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-                        <button
-                            onClick={() => setPage((currentPage) => Math.max(1, currentPage - 1))}
-                            type="button"
-                            disabled={activePage === 1}
-                            className={`px-5 py-2.5 rounded-full border text-sm font-medium transition-colors ${activePage === 1 ? 'opacity-50 cursor-not-allowed border-border bg-surface' : 'border-border bg-surface hover:bg-surface-hover text-text'}`}
-                        >
-                            Prev
-                        </button>
+                    <section className="section-frame px-6 py-5 sm:px-8">
+                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            <p className="text-sm text-muted">
+                                Page <span className="font-semibold text-text">{activePage}</span> of{' '}
+                                <span className="font-semibold text-text">{totalPages}</span>
+                            </p>
 
-                        <div className="text-sm text-muted">
-                            Page <span className="text-text font-semibold">{activePage}</span> of <span className="text-text font-semibold">{totalPages}</span>
+                            <div className="flex flex-col gap-3 sm:flex-row">
+                                <button
+                                    onClick={() => setPage((currentPage) => Math.max(1, currentPage - 1))}
+                                    type="button"
+                                    disabled={activePage === 1}
+                                    className="button-secondary disabled:cursor-not-allowed disabled:opacity-50"
+                                >
+                                    Previous
+                                </button>
+
+                                <button
+                                    onClick={() => setPage((currentPage) => Math.min(totalPages, currentPage + 1))}
+                                    type="button"
+                                    disabled={activePage === totalPages}
+                                    className="button-primary disabled:cursor-not-allowed disabled:opacity-50"
+                                >
+                                    Next page
+                                </button>
+                            </div>
                         </div>
-
-                        <button
-                            onClick={() => setPage((currentPage) => Math.min(totalPages, currentPage + 1))}
-                            type="button"
-                            disabled={activePage === totalPages}
-                            className={`px-5 py-2.5 rounded-full border text-sm font-medium transition-colors ${activePage === totalPages ? 'opacity-50 cursor-not-allowed border-border bg-surface' : 'border-border bg-surface hover:bg-surface-hover text-text'}`}
-                        >
-                            Next
-                        </button>
-                    </div>
+                    </section>
                 )}
             </div>
         </Layout>
