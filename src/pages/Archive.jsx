@@ -162,7 +162,7 @@ const Archive = () => {
                             </div>
                         </div>
 
-                        <div className="rounded-[1.3rem] border border-border/60 bg-surface/65 px-4 py-4 sm:px-5">
+                        <div className="surface-panel rounded-[1.3rem] border border-border/60 bg-surface/65 px-4 py-4 sm:px-5">
                             <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                                 Current view
                             </p>

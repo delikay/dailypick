@@ -116,7 +116,7 @@ const Home = () => {
                             <div className="accent-rule my-6" />
 
                             <div className="grid gap-4 sm:grid-cols-2">
-                                <div className="rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
+                                <div className="surface-panel rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
                                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                                         Track
                                     </p>
@@ -126,7 +126,7 @@ const Home = () => {
                                     <p className="text-sm text-muted">{entry.song?.artist}</p>
                                 </div>
 
-                                <div className="rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
+                                <div className="surface-panel rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
                                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                                         Movie
                                     </p>

@@ -26,7 +26,7 @@ const EntryCard = ({ entry }) => {
             <div className="accent-rule my-5" />
 
             <div className="space-y-4">
-                <div className="min-w-0 rounded-[1.15rem] border border-border/65 bg-surface/75 px-4 py-3">
+                <div className="surface-panel min-w-0 rounded-[1.15rem] border border-border/65 bg-surface/75 px-4 py-3">
                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                         Song
                     </p>
@@ -36,7 +36,7 @@ const EntryCard = ({ entry }) => {
                     <p className="truncate text-sm text-muted">{entry.song?.artist}</p>
                 </div>
 
-                <div className="min-w-0 rounded-[1.15rem] border border-border/65 bg-surface/75 px-4 py-3">
+                <div className="surface-panel min-w-0 rounded-[1.15rem] border border-border/65 bg-surface/75 px-4 py-3">
                     <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                         Movie
                     </p>

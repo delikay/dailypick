@@ -10,10 +10,10 @@ const navItems = [
 ];
 
 const getNavClasses = ({ isActive }) =>
-    `inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold ${
+    `nav-pill inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold ${
         isActive
-            ? 'bg-primary text-surface shadow-[0_16px_28px_rgba(24,21,18,0.16)]'
-            : 'text-muted hover:bg-surface/70 hover:text-text'
+            ? 'nav-pill-active bg-primary text-surface shadow-[0_16px_28px_rgba(24,21,18,0.16)]'
+            : 'text-muted hover:text-text'
     }`;
 
 const Header = () => {
@@ -200,9 +200,9 @@ const Header = () => {
                                         to={item.to}
                                         onClick={() => setMobileMenuOpen(false)}
                                         className={({ isActive }) =>
-                                            `flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold ${
+                                            `mobile-drawer-link flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold ${
                                                 isActive
-                                                    ? 'bg-secondary text-primary-dark shadow-[0_14px_26px_rgba(181,108,52,0.2)]'
+                                                    ? 'mobile-drawer-link-active bg-secondary text-primary-dark shadow-[0_14px_26px_rgba(181,108,52,0.2)]'
                                                     : 'border border-white/8 bg-white/6 text-surface/92'
                                             }`
                                         }
