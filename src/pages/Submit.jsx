@@ -30,11 +30,11 @@ const Submit = () => {
                         <h1 className="section-title mt-5 text-4xl text-text sm:text-5xl">
                             Thanks for sending a pick.
                         </h1>
-                        <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
-                            Your suggestion has been sent through FormSubmit.
-                        </p>
                         <Link to="/submit" className="button-primary mt-8 !w-auto !px-6">
                             Send another pick
+                        </Link>
+                        <Link to="/archive" className="mt-4 text-sm font-medium text-muted">
+                            Browse the archive
                         </Link>
                     </div>
                 </section>
@@ -68,15 +68,6 @@ const Submit = () => {
                             <p className="mt-2 text-sm leading-relaxed text-muted">
                                 Clear song title, artist name, and one or more movie options that
                                 genuinely fit the mood.
-                            </p>
-                        </div>
-
-                        <div className="surface-panel rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
-                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
-                                Delivery
-                            </p>
-                            <p className="mt-2 text-sm leading-relaxed text-muted">
-                                This form posts directly to FormSubmit only.
                             </p>
                         </div>
                     </div>
