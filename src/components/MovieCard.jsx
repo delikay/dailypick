@@ -1,4 +1,4 @@
-import { Film, Play } from 'lucide-react';
+﻿import { Film, Play } from 'lucide-react';
 import ShareButton from './ShareButton';
 
 const MovieCard = ({ movie, featured = false, entry }) => {
@@ -18,7 +18,7 @@ const MovieCard = ({ movie, featured = false, entry }) => {
                         <img
                             src={movie.poster}
                             alt={`${movie.title} poster`}
-                            className="h-28 w-20 flex-shrink-0 rounded-[1.15rem] border border-border/60 object-cover shadow-[0_14px_26px_rgba(24,21,18,0.1)]"
+                            className="h-28 w-20 flex-shrink-0 rounded-[1.15rem] border border-border/60 object-cover shadow-[0_14px_26px_rgba(16,46,30,0.1)]"
                             loading="lazy"
                             decoding="async"
                             onError={(event) => {
@@ -69,3 +69,4 @@ const MovieCard = ({ movie, featured = false, entry }) => {
 };
 
 export default MovieCard;
+

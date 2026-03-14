@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const EmptyState = ({
@@ -11,7 +11,7 @@ const EmptyState = ({
     return (
         <div className="section-frame px-6 py-10 text-left sm:px-8 sm:py-12">
             {Icon && (
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-[1.4rem] border border-border/70 bg-surface/90 text-secondary shadow-[0_16px_30px_rgba(24,21,18,0.08)]">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-[1.4rem] border border-border/70 bg-surface/90 text-secondary shadow-[0_16px_30px_rgba(16,46,30,0.08)]">
                     <Icon className="h-7 w-7" />
                 </div>
             )}
@@ -35,3 +35,4 @@ const EmptyState = ({
 };
 
 export default EmptyState;
+

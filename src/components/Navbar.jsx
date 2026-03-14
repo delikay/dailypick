@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu, Sparkles, X } from 'lucide-react';
 
@@ -11,7 +11,7 @@ const links = [
 const desktopLinkClasses = ({ isActive }) =>
     `inline-flex items-center rounded-full border px-4 py-2 text-sm font-semibold ${
         isActive
-            ? 'border-primary/20 bg-primary text-surface shadow-[0_14px_28px_rgba(24,21,18,0.18)]'
+            ? 'border-primary/20 bg-primary text-surface shadow-[0_14px_28px_rgba(16,46,30,0.18)]'
             : 'border-border/65 bg-surface/55 text-text hover:border-secondary/35 hover:bg-surface/90'
     }`;
 
@@ -58,7 +58,7 @@ const Navbar = () => {
                     <div className="glass rounded-[1.75rem] px-4 py-3 sm:px-5">
                         <div className="flex items-center justify-between gap-3">
                             <NavLink to="/" className="flex min-w-0 items-center gap-3">
-                                <span className="inline-flex h-11 w-11 items-center justify-center rounded-[1rem] bg-primary text-surface shadow-[0_16px_30px_rgba(24,21,18,0.2)]">
+                                <span className="inline-flex h-11 w-11 items-center justify-center rounded-[1rem] bg-primary text-surface shadow-[0_16px_30px_rgba(16,46,30,0.2)]">
                                     <Sparkles className="h-5 w-5" />
                                 </span>
                                 <span className="min-w-0">
@@ -160,3 +160,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+﻿import { Link, useSearchParams } from 'react-router-dom';
 import { Mail, Music, Film, Send, Check, User, MessageSquare } from 'lucide-react';
 import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
@@ -46,7 +46,7 @@ const Submit = () => {
         <Layout>
             <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
                 <section className="section-frame px-6 py-8 sm:px-8 lg:px-10">
-                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-surface shadow-[0_18px_34px_rgba(24,21,18,0.18)]">
+                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-surface shadow-[0_18px_34px_rgba(16,46,30,0.18)]">
                         <Mail className="h-6 w-6" />
                     </div>
                     <p className="editorial-kicker">Submit a suggestion</p>
@@ -220,3 +220,4 @@ const Submit = () => {
 };
 
 export default Submit;
+

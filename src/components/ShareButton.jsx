@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Share2, Check, Link2 } from 'lucide-react';
 import { formatDate, isToday } from '../utils/dateUtils';
 
@@ -78,7 +78,7 @@ const ShareButton = ({ entry, iconOnly = false, className = '' }) => {
                 onClick={handleShare}
                 type="button"
                 title={label}
-                className={`absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-surface/90 text-text shadow-[0_12px_24px_rgba(24,21,18,0.08)] hover:bg-white ${className}`}
+                className={`absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-surface/90 text-text shadow-[0_12px_24px_rgba(16,46,30,0.08)] hover:bg-white ${className}`}
                 aria-label={label}
             >
                 {status === 'copied' ? (
@@ -107,3 +107,4 @@ const ShareButton = ({ entry, iconOnly = false, className = '' }) => {
 };
 
 export default ShareButton;
+

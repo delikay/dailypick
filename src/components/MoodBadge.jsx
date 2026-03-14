@@ -1,4 +1,4 @@
-import { getMood } from '../utils/moodColors';
+﻿import { getMood } from '../utils/moodColors';
 
 const MoodBadge = ({ mood, size = 'md' }) => {
     const moodData = getMood(mood);
@@ -20,7 +20,7 @@ const MoodBadge = ({ mood, size = 'md' }) => {
 
     return (
         <span
-            className={`inline-flex items-center rounded-full border bg-surface/85 font-semibold tracking-[0.01em] shadow-[0_8px_20px_rgba(23,20,16,0.05)] ${sizeClasses[size].badge}`}
+            className={`inline-flex items-center rounded-full border bg-surface/85 font-semibold tracking-[0.01em] shadow-[0_8px_20px_rgba(15,44,29,0.05)] ${sizeClasses[size].badge}`}
             style={{
                 borderColor: `${moodData.color}30`,
                 color: 'var(--color-text)',
@@ -37,3 +37,4 @@ const MoodBadge = ({ mood, size = 'md' }) => {
 };
 
 export default MoodBadge;
+
