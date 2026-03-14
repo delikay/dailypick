@@ -31,8 +31,20 @@ const Header = () => {
 
         mediaQuery.addEventListener('change', handleViewportChange);
 
+        // Also handle orientation changes
+        const handleOrientationChange = () => {
+            setTimeout(() => {
+                if (window.innerWidth >= 768) {
+                    setMobileMenuOpen(false);
+                }
+            }, 100);
+        };
+
+        window.addEventListener('orientationchange', handleOrientationChange);
+
         return () => {
             mediaQuery.removeEventListener('change', handleViewportChange);
+            window.removeEventListener('orientationchange', handleOrientationChange);
         };
     }, []);
 
@@ -45,10 +57,17 @@ const Header = () => {
             }
         };
 
+        // Handle touch events to prevent scrolling behind the menu
+        const handleTouchMove = (event) => {
+            event.preventDefault();
+        };
+
         window.addEventListener('keydown', handleKeyDown);
+        document.addEventListener('touchmove', handleTouchMove, { passive: false });
 
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('touchmove', handleTouchMove);
         };
     }, [mobileMenuOpen]);
 
@@ -56,27 +75,33 @@ const Header = () => {
         if (!mobileMenuOpen) {
             const lockedScrollY = scrollLockYRef.current;
 
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            document.body.style.width = '';
-            document.documentElement.style.overflow = '';
+            // Restore scroll position with a small delay to ensure smooth transition
+            requestAnimationFrame(() => {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                document.body.style.width = '';
+                document.documentElement.style.overflow = '';
 
-            if (lockedScrollY) {
-                window.scrollTo(0, lockedScrollY);
-                scrollLockYRef.current = 0;
-            }
+                if (lockedScrollY) {
+                    window.scrollTo(0, lockedScrollY);
+                    scrollLockYRef.current = 0;
+                }
+            });
 
             return;
         }
 
-        scrollLockYRef.current = window.scrollY;
+        // Prevent scroll if already at top to avoid jump
+        const currentScrollY = window.scrollY;
+        scrollLockYRef.current = currentScrollY;
 
+        // Apply scroll lock styles
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollLockYRef.current}px`;
+        document.body.style.top = `-${currentScrollY}px`;
         document.body.style.left = '0';
         document.body.style.right = '0';
         document.body.style.width = '100%';
@@ -85,18 +110,20 @@ const Header = () => {
         return () => {
             const lockedScrollY = scrollLockYRef.current;
 
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.left = '';
-            document.body.style.right = '';
-            document.body.style.width = '';
-            document.documentElement.style.overflow = '';
+            requestAnimationFrame(() => {
+                document.body.style.overflow = '';
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                document.body.style.width = '';
+                document.documentElement.style.overflow = '';
 
-            if (lockedScrollY) {
-                window.scrollTo(0, lockedScrollY);
-                scrollLockYRef.current = 0;
-            }
+                if (lockedScrollY) {
+                    window.scrollTo(0, lockedScrollY);
+                    scrollLockYRef.current = 0;
+                }
+            });
         };
     }, [mobileMenuOpen]);
 
@@ -156,8 +183,12 @@ const Header = () => {
 
                             <button
                                 onClick={() => setMobileMenuOpen((open) => !open)}
+                                onTouchEnd={(e) => {
+                                    e.preventDefault();
+                                    setMobileMenuOpen((open) => !open);
+                                }}
                                 type="button"
-                                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-surface/70 text-text md:hidden"
+                                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border/70 bg-surface/70 text-text md:hidden active:scale-95 transition-transform"
                                 aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                                 aria-expanded={mobileMenuOpen}
                                 aria-controls="mobile-navigation"
@@ -176,6 +207,10 @@ const Header = () => {
                         className="absolute inset-0 bg-[rgba(8,10,14,0.72)] backdrop-blur-sm"
                         aria-label="Close menu"
                         onClick={() => setMobileMenuOpen(false)}
+                        onTouchEnd={(e) => {
+                            e.preventDefault();
+                            setMobileMenuOpen(false);
+                        }}
                     />
 
                     <div className="page-container relative flex min-h-screen items-start px-4 pb-6 pt-[5.75rem]">
