@@ -9,6 +9,7 @@ import { moods } from '../utils/moodColors';
 import { getPreviousDays } from '../utils/dateUtils';
 
 const PER_PAGE = 9;
+const ARCHIVE_WINDOW_DAYS = 36;
 
 const Archive = () => {
     const { loading, getEntryByDate } = useEntries();
@@ -17,11 +18,11 @@ const Archive = () => {
 
     usePageMeta({
         title: 'Archive',
-        description: 'Browse the most recent 18 days of songs, movies, and moods from My Daily Pick.',
+        description: 'Browse the most recent 36 days of songs, movies, and moods from My Daily Pick.',
         canonicalPath: '/archive',
     });
 
-    const recentDates = getPreviousDays(18);
+    const recentDates = getPreviousDays(ARCHIVE_WINDOW_DAYS);
     const entries = recentDates
         .map((date) => getEntryByDate(date))
         .filter(Boolean);
@@ -68,7 +69,7 @@ const Archive = () => {
                     <header className="section-frame px-6 py-8 sm:px-8 lg:px-10">
                         <p className="editorial-kicker">Recent archive</p>
                         <h1 className="display-title mt-5 text-5xl text-text sm:text-6xl">
-                            18 days of mood, music, and film.
+                            36 days of mood, music, and film.
                         </h1>
                         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
                             The archive is intentionally tight: a rolling window of recent entries so each day still feels current.
@@ -113,7 +114,7 @@ const Archive = () => {
                                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
                                     <Filter className="h-4 w-4" />
                                 </span>
-                                <span>Filter the last 18 days by mood</span>
+                                <span>Filter the last 36 days by mood</span>
                             </div>
                             <p className="mt-4 text-sm leading-relaxed text-muted sm:text-[0.96rem]">
                                 Select one emotional register to narrow the archive. Each option shows how many recent entries sit inside that mood.
@@ -173,7 +174,7 @@ const Archive = () => {
                             </p>
                             <p className="mt-1 text-sm leading-relaxed text-muted">
                                 {selectedMood
-                                    ? `${filteredEntries.length} entries shown from the last 18 days.`
+                                    ? `${filteredEntries.length} entries shown from the last 36 days.`
                                     : `Showing all ${entries.length} entries in the active archive window.`}
                             </p>
                         </div>
@@ -197,7 +198,7 @@ const Archive = () => {
                         title={selectedMood ? 'No entries match this mood' : 'No entries yet'}
                         description={
                             selectedMood
-                                ? 'Try a different mood or clear the filter to return to the full 18-day view.'
+                                ? 'Try a different mood or clear the filter to return to the full 36-day view.'
                                 : 'Start curating daily songs and movies to build out the archive.'
                         }
                     />
