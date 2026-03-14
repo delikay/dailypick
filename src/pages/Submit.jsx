@@ -204,8 +204,11 @@ const Submit = () => {
                                 Required fields: artist, song title, and at least one movie suggestion.
                             </p>
 
-                            <button type="submit" className="button-primary">
-                                <Send className="h-4 w-4" />
+                            <button
+                                type="submit"
+                                className="button-primary !w-auto self-start !px-3.5 !py-2 !text-xs"
+                            >
+                                <Send className="h-3.5 w-3.5" />
                                 <span>Send pick</span>
                             </button>
                         </div>
