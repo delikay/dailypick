@@ -18,7 +18,7 @@ const Home = () => {
     const entry = dateParam ? getEntryByDate(dateParam) : getTodayEntry();
     const displayDate = dateParam || getToday();
     const isTodayView = isToday(displayDate);
-    const heading = isTodayView ? "Today's pick" : 'Archive selection';
+    const sectionTitle = isTodayView ? 'Daily pick overview' : 'Archive pick overview';
     const description = entry
         ? `${formatDate(displayDate)}: ${entry.song?.title} by ${entry.song?.artist} and ${entry.movie?.title}.`
         : isTodayView
@@ -64,82 +64,29 @@ const Home = () => {
     return (
         <Layout>
             <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-                <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-                    <div className="section-frame px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
-                        <p className="editorial-kicker">
-                            {isTodayView ? 'Now playing' : 'From the archive'}
-                        </p>
-
-                        <div className="mt-5 max-w-3xl">
-                            <h1 className="display-title text-5xl text-text sm:text-[3.9rem] lg:text-[4.8rem]">
-                                {heading}
+                <section className="section-frame px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+                    <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <h1 className="section-title text-3xl text-text sm:text-4xl">
+                                {sectionTitle}
                             </h1>
-                            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-                                {isTodayView
-                                    ? 'A daily pairing of music, film, and feeling. Personal enough to stay human, structured enough to revisit later.'
-                                    : 'A saved snapshot from the archive, brought back with its original mood, track, and film pairing intact.'}
+                            <p className="mt-2 text-sm leading-relaxed text-muted">
+                                One day, one movie, Everyday.
+                            </p>
+                            <p className="mt-1 text-sm font-medium text-muted">
+                                {formatDate(displayDate)}
                             </p>
                         </div>
 
-                        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                            <Link to="/archive" className="button-primary">
-                                View archive
-                            </Link>
-                            <Link to="/submit" className="button-secondary">
-                                Suggest a pick
-                            </Link>
-                            {!isTodayView && (
-                                <Link to="/" className="button-ghost">
-                                    <ArrowLeft className="h-4 w-4" />
-                                    <span>Back to today</span>
-                                </Link>
-                            )}
+                        <div className="surface-panel w-full max-w-xs rounded-[1.2rem] border border-border/65 bg-surface/80 px-4 py-3 sm:w-auto">
+                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                Mood
+                            </p>
+                            <div className="mt-2">
+                                <MoodBadge mood={entry.mood} size="sm" />
+                            </div>
                         </div>
                     </div>
-
-                    <aside className="card-shell px-6 py-7 sm:px-7 sm:py-8">
-                        <div className="relative z-[1]">
-                            <p className="editorial-kicker">
-                                {isTodayView ? 'Daily snapshot' : 'Selected entry'}
-                            </p>
-                            <h2 className="section-title mt-4 text-3xl text-text sm:text-4xl">
-                                {formatDate(displayDate)}
-                            </h2>
-                            <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted">
-                                One mood marker, one track, and one film shaping the tone of this day.
-                            </p>
-
-                            <div className="mt-6">
-                                <MoodBadge mood={entry.mood} size="lg" />
-                            </div>
-
-                            <div className="accent-rule my-6" />
-
-                            <div className="grid gap-4 sm:grid-cols-2">
-                                <div className="surface-panel rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
-                                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
-                                        Track
-                                    </p>
-                                    <p className="mt-2 text-base font-semibold text-text">
-                                        {entry.song?.title}
-                                    </p>
-                                    <p className="text-sm text-muted">{entry.song?.artist}</p>
-                                </div>
-
-                                <div className="surface-panel rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
-                                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
-                                        Movie
-                                    </p>
-                                    <p className="mt-2 text-base font-semibold text-text">
-                                        {entry.movie?.title}
-                                    </p>
-                                    {entry.movie?.year && (
-                                        <p className="text-sm text-muted">{entry.movie.year}</p>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </aside>
                 </section>
 
                 {entry.caption && (
@@ -177,6 +124,23 @@ const Home = () => {
                                 </Link>
                             )}
                         </div>
+                    </div>
+                </section>
+
+                <section className="px-6 py-5 sm:px-8">
+                    <div className="mx-auto flex w-full max-w-3xl flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+                        <Link to="/archive" className="button-primary !w-auto">
+                            View archive
+                        </Link>
+                        <Link to="/submit" className="button-secondary !w-auto">
+                            Suggest a pick
+                        </Link>
+                        {!isTodayView && (
+                            <Link to="/" className="button-ghost !w-auto">
+                                <ArrowLeft className="h-4 w-4" />
+                                <span>Back to today</span>
+                            </Link>
+                        )}
                     </div>
                 </section>
             </div>
