@@ -34,7 +34,7 @@ const About = () => {
 
     return (
         <Layout>
-            <div className="animate-fade-in space-y-6 sm:space-y-8">
+            <div className="space-y-6 sm:space-y-8">
                 <section className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
                     <header className="section-frame px-6 py-8 sm:px-8 lg:px-10">
                         <p className="editorial-kicker">About the project</p>

@@ -44,7 +44,7 @@ const Submit = () => {
 
     return (
         <Layout>
-            <div className="animate-fade-in grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+            <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
                 <section className="section-frame px-6 py-8 sm:px-8 lg:px-10">
                     <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-surface shadow-[0_18px_34px_rgba(24,21,18,0.18)]">
                         <Mail className="h-6 w-6" />

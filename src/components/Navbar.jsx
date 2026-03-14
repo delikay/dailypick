@@ -9,14 +9,14 @@ const links = [
 ];
 
 const desktopLinkClasses = ({ isActive }) =>
-    `inline-flex items-center rounded-full border px-4 py-2 text-sm font-semibold transition ${
+    `inline-flex items-center rounded-full border px-4 py-2 text-sm font-semibold ${
         isActive
             ? 'border-primary/20 bg-primary text-surface shadow-[0_14px_28px_rgba(24,21,18,0.18)]'
             : 'border-border/65 bg-surface/55 text-text hover:border-secondary/35 hover:bg-surface/90'
     }`;
 
 const mobileLinkClasses = ({ isActive }) =>
-    `flex items-center justify-between rounded-2xl border px-4 py-3 text-sm font-semibold transition ${
+    `flex items-center justify-between rounded-2xl border px-4 py-3 text-sm font-semibold ${
         isActive
             ? 'border-primary/20 bg-primary text-surface'
             : 'border-border/70 bg-surface/70 text-text hover:border-secondary/35 hover:bg-surface'

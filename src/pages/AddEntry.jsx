@@ -65,7 +65,7 @@ const AddEntry = () => {
     if (success) {
         return (
             <Layout>
-                <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
+                <div className="flex flex-col items-center justify-center py-20">
                     <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
                         <Check className="w-10 h-10 text-green-400" />
                     </div>
@@ -78,7 +78,7 @@ const AddEntry = () => {
 
     return (
         <Layout>
-            <div className="max-w-2xl mx-auto animate-fade-in">
+            <div className="max-w-2xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-8">
                     <h1 className="text-2xl sm:text-3xl font-bold text-text flex items-center justify-center gap-3">
@@ -122,7 +122,7 @@ const AddEntry = () => {
                                     key={mood.id}
                                     type="button"
                                     onClick={() => updateField('mood', mood.id)}
-                                    className={`flex flex-col items-center gap-1 p-3 rounded-xl border-2 transition-all ${formData.mood === mood.id
+                                    className={`flex flex-col items-center gap-1 p-3 rounded-xl border-2 ${formData.mood === mood.id
                                             ? 'border-current scale-105'
                                             : 'border-transparent bg-surface hover:bg-surface-light'
                                         }`}
@@ -225,7 +225,7 @@ const AddEntry = () => {
                     <button
                         type="submit"
                         disabled={!isValid || submitting}
-                        className={`w-full py-4 rounded-xl font-semibold text-white transition-all ${isValid && !submitting
+                        className={`w-full py-4 rounded-xl font-semibold text-white ${isValid && !submitting
                                 ? 'bg-gradient-to-r from-primary to-secondary hover:opacity-90'
                                 : 'bg-surface-light text-muted cursor-not-allowed'
                             }`}

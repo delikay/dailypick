@@ -53,7 +53,7 @@ const Archive = () => {
         return (
             <Layout>
                 <div className="section-frame flex h-72 items-center justify-center">
-                    <div className="animate-pulse-soft text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+                    <div className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
                         Loading archive
                     </div>
                 </div>
@@ -63,7 +63,7 @@ const Archive = () => {
 
     return (
         <Layout>
-            <div className="animate-fade-in space-y-6 sm:space-y-8">
+            <div className="space-y-6 sm:space-y-8">
                 <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
                     <header className="section-frame px-6 py-8 sm:px-8 lg:px-10">
                         <p className="editorial-kicker">Recent archive</p>

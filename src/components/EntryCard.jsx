@@ -9,7 +9,7 @@ const EntryCard = ({ entry }) => {
     return (
         <Link
             to={`/?date=${entry.date}`}
-            className="card-shell hover-lift group block p-5 sm:p-6"
+            className="card-shell hover-lift block p-5 sm:p-6"
         >
             <div className="flex items-start justify-between gap-4">
                 <div>
@@ -55,7 +55,7 @@ const EntryCard = ({ entry }) => {
 
             <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-secondary">
                 <span>Open entry</span>
-                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                <ArrowRight className="h-4 w-4" />
             </div>
         </Link>
     );
