@@ -1,4 +1,5 @@
-﻿import { Link, useSearchParams } from 'react-router-dom';
+﻿import { useEffect, useRef } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { useEntries } from '../hooks/useEntries';
 import { formatDate, getToday, isToday } from '../utils/dateUtils';
@@ -12,6 +13,7 @@ import ShareButton from '../components/ShareButton';
 
 const Home = () => {
     const [searchParams] = useSearchParams();
+    const contentRef = useRef(null);
     const dateParam = searchParams.get('date');
     const { getTodayEntry, getEntryByDate, loading } = useEntries();
 
@@ -30,6 +32,55 @@ const Home = () => {
         description,
         canonicalPath: dateParam ? `/?date=${displayDate}` : '/',
     });
+
+    useEffect(() => {
+        const container = contentRef.current;
+        if (!container || !entry || typeof window === 'undefined') {
+            return undefined;
+        }
+
+        const sections = Array.from(container.querySelectorAll('[data-home-reveal]'));
+        if (sections.length === 0) {
+            return undefined;
+        }
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        container.classList.add('home-reveal-ready');
+
+        if (prefersReducedMotion) {
+            sections.forEach((section) => section.classList.add('is-visible'));
+            return () => {
+                container.classList.remove('home-reveal-ready');
+            };
+        }
+
+        sections.forEach((section, index) => {
+            section.classList.remove('is-visible');
+            section.style.setProperty('--reveal-delay', `${index * 70}ms`);
+        });
+
+        const observer = new IntersectionObserver(
+            (entries, currentObserver) => {
+                entries.forEach((entryItem) => {
+                    if (!entryItem.isIntersecting) return;
+                    entryItem.target.classList.add('is-visible');
+                    currentObserver.unobserve(entryItem.target);
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px',
+            }
+        );
+
+        sections.forEach((section) => observer.observe(section));
+
+        return () => {
+            observer.disconnect();
+            sections.forEach((section) => section.style.removeProperty('--reveal-delay'));
+            container.classList.remove('home-reveal-ready');
+        };
+    }, [displayDate, entry, entry?.id, entry?.caption]);
 
     if (loading) {
         return (
@@ -63,8 +114,11 @@ const Home = () => {
 
     return (
         <Layout>
-            <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-                <section className="section-frame px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+            <div ref={contentRef} className="space-y-6 sm:space-y-8 lg:space-y-10">
+                <section
+                    data-home-reveal
+                    className="home-reveal section-frame px-6 py-8 sm:px-8 lg:px-10 lg:py-10"
+                >
                     <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
                         <div>
                             <h1 className="section-title text-3xl text-text sm:text-4xl">
@@ -90,7 +144,10 @@ const Home = () => {
                 </section>
 
                 {entry.caption && (
-                    <section className="section-frame px-6 py-7 sm:px-8 lg:px-10">
+                    <section
+                        data-home-reveal
+                        className="home-reveal section-frame px-6 py-7 sm:px-8 lg:px-10"
+                    >
                         <div className="grid gap-5 lg:grid-cols-[13rem_1fr]">
                             <div>
                                 <p className="editorial-kicker">Journal note</p>
@@ -102,12 +159,15 @@ const Home = () => {
                     </section>
                 )}
 
-                <section className="grid gap-6 lg:grid-cols-2">
+                <section data-home-reveal className="home-reveal grid gap-6 lg:grid-cols-2">
                     <SongCard song={entry.song} featured entry={entry} />
                     <MovieCard movie={entry.movie} featured entry={entry} />
                 </section>
 
-                <section className="section-frame px-6 py-5 sm:px-8">
+                <section
+                    data-home-reveal
+                    className="home-reveal section-frame px-6 py-5 sm:px-8"
+                >
                     <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                         <div>
                             <p className="editorial-kicker mb-2">Share this entry</p>
@@ -127,7 +187,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section className="px-6 py-5 sm:px-8">
+                <section data-home-reveal className="home-reveal px-6 py-5 sm:px-8">
                     <div className="mx-auto flex w-full max-w-3xl flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
                         <Link to="/archive" className="button-primary !w-auto">
                             View archive

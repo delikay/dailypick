@@ -435,6 +435,26 @@ img {
   box-shadow: 0 16px 40px rgba(47, 154, 96, 0.18);
 }
 
+.home-reveal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.home-reveal-ready .home-reveal {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 460ms ease-out,
+    transform 460ms var(--ease-fluid) !important;
+  transition-delay: var(--reveal-delay, 0ms) !important;
+  will-change: opacity, transform;
+}
+
+.home-reveal-ready .home-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
 @media (max-width: 640px) {
   .site-shell {
     padding: 0.75rem;
@@ -474,4 +494,11 @@ img {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal-ready .home-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none !important;
+  }
+}
 
