@@ -191,10 +191,7 @@ const Submit = () => {
                         </div>
 
                         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                            <p className="text-sm leading-relaxed text-muted">
-                                Required fields: artist, song title, and at least one movie suggestion.
-                            </p>
-
+                          
                             <button
                                 type="submit"
                                 className="button-primary !w-auto self-start !px-3.5 !py-2 !text-xs"
