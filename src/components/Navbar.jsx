@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Menu, Sparkles, X } from 'lucide-react';
 
 const links = [
@@ -24,11 +24,6 @@ const mobileLinkClasses = ({ isActive }) =>
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const location = useLocation();
-
-    useEffect(() => {
-        setMenuOpen(false);
-    }, [location.pathname, location.search]);
 
     useEffect(() => {
         if (!menuOpen) {
@@ -160,4 +155,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
