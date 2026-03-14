@@ -435,39 +435,6 @@ img {
   box-shadow: 0 16px 40px rgba(47, 154, 96, 0.18);
 }
 
-.mobile-nav-overlay {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 260ms ease-out !important;
-}
-
-.mobile-nav-overlay.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.mobile-nav-backdrop {
-  opacity: 0;
-  transition: opacity 260ms ease-out !important;
-}
-
-.mobile-nav-overlay.is-open .mobile-nav-backdrop {
-  opacity: 1;
-}
-
-.mobile-nav-panel {
-  opacity: 0;
-  transform: translate3d(0, -14px, 0) scale(0.985);
-  transition:
-    opacity 260ms ease-out !important,
-    transform 340ms var(--ease-fluid) !important;
-}
-
-.mobile-nav-overlay.is-open .mobile-nav-panel {
-  opacity: 1;
-  transform: translate3d(0, 0, 0) scale(1);
-}
-
 .home-reveal {
   opacity: 1;
   transform: translate3d(0, 0, 0);
@@ -528,15 +495,10 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mobile-nav-overlay,
-  .mobile-nav-backdrop,
-  .mobile-nav-panel {
-    transition: none !important;
-  }
-
   .home-reveal-ready .home-reveal {
     opacity: 1;
     transform: none;
     transition: none !important;
   }
 }
+
