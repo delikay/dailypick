@@ -106,54 +106,56 @@ const Navbar = () => {
 
             <div className="h-[5.4rem] md:hidden" aria-hidden="true" />
 
-            {menuOpen && (
-                <div className="fixed inset-0 z-40 md:hidden" aria-hidden={!menuOpen}>
-                    <button
-                        type="button"
-                        aria-label="Close menu"
-                        onClick={() => setMenuOpen(false)}
-                        className="absolute inset-0 bg-[#0e1218]/48 backdrop-blur-sm"
-                    />
+            <div
+                className={`mobile-nav-overlay fixed inset-0 z-40 md:hidden ${
+                    menuOpen ? 'is-open' : ''
+                }`}
+                aria-hidden={!menuOpen}
+            >
+                <button
+                    type="button"
+                    aria-label="Close menu"
+                    onClick={() => setMenuOpen(false)}
+                    tabIndex={menuOpen ? 0 : -1}
+                    className="mobile-nav-backdrop absolute inset-0 bg-[#0e1218]/48 backdrop-blur-sm"
+                />
 
-                    <div className="page-container relative px-2 pt-[5.4rem]">
-                        <nav
-                            id="mobile-menu"
-                            className="glass rounded-[1.6rem] border border-border/60 p-3"
-                            role="dialog"
-                            aria-modal="true"
-                            aria-label="Mobile navigation"
-                        >
-                            <div className="space-y-2">
-                                {links.map((link) => (
-                                    <NavLink
-                                        key={link.to}
-                                        to={link.to}
-                                        className={mobileLinkClasses}
-                                        onClick={() => setMenuOpen(false)}
-                                    >
-                                        <span>{link.label}</span>
-                                        <span className="text-xs uppercase tracking-[0.14em] text-secondary/85">
-                                            View
-                                        </span>
-                                    </NavLink>
-                                ))}
-
+                <div className="page-container relative px-2 pt-[5.4rem]">
+                    <nav
+                        id="mobile-menu"
+                        className="mobile-nav-panel glass rounded-[1.6rem] border border-border/60 p-3"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-label="Mobile navigation"
+                    >
+                        <div className="space-y-2">
+                            {links.map((link) => (
                                 <NavLink
-                                    to="/submit"
+                                    key={link.to}
+                                    to={link.to}
+                                    className={mobileLinkClasses}
                                     onClick={() => setMenuOpen(false)}
-                                    className="button-primary !mt-2 !flex !w-full !justify-center !text-sm"
+                                    tabIndex={menuOpen ? 0 : -1}
                                 >
-                                    Suggest a Pick
+                                    <span>{link.label}</span>
                                 </NavLink>
-                            </div>
-                        </nav>
-                    </div>
+                            ))}
+
+                            <NavLink
+                                to="/submit"
+                                onClick={() => setMenuOpen(false)}
+                                tabIndex={menuOpen ? 0 : -1}
+                                className="button-primary !mt-2 !flex !w-full !justify-center !text-sm"
+                            >
+                                Suggest a Pick
+                            </NavLink>
+                        </div>
+                    </nav>
                 </div>
-            )}
+            </div>
         </>
     );
 };
 
 export default Navbar;
-
 
