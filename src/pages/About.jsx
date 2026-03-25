@@ -5,18 +5,18 @@ import Layout from '../components/Layout';
 const highlights = [
     {
         icon: Calendar,
-        title: 'Daily mood tracking',
-        description: 'A lightweight ritual that captures how a day felt, not just what happened in it.',
+        title: 'Daily logging',
+        description: 'A lightweight ritual that captures one clear pairing from each day.',
     },
     {
         icon: Music,
         title: 'Song-led memory',
-        description: 'Tracks become anchors for specific moments, seasons, and states of mind.',
+        description: 'Tracks become anchors for specific moments, seasons, and routines.',
     },
     {
         icon: Film,
         title: 'Film pairings',
-        description: 'Each entry gets a second texture through a movie choice that deepens the mood.',
+        description: 'Each entry gets a second texture through a movie choice that expands the pairing.',
     },
     {
         icon: Share2,
@@ -28,7 +28,7 @@ const highlights = [
 const About = () => {
     usePageMeta({
         title: 'About',
-        description: 'Learn the story behind My Daily Pick and how daily moods shape the music and movie selections.',
+        description: 'Learn the story behind My Daily Pick and how daily song and movie pairings shape the archive.',
         canonicalPath: '/about',
     });
 
@@ -42,7 +42,7 @@ const About = () => {
                             A personal archive told through songs and movies.
                         </h1>
                         <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
-                            My Daily Pick started as a way to record emotional weather without over-explaining it. One song and one film were enough to define the tone.
+                            My Daily Pick started as a way to mark each day without over-explaining it. One song and one film were enough to define the entry.
                         </p>
                     </header>
 
@@ -53,7 +53,7 @@ const About = () => {
                             </div>
                             <p className="editorial-kicker">Why it works</p>
                             <p className="mt-4 text-sm leading-relaxed text-muted">
-                                The format stays small enough to remain honest. Instead of trying to summarize a whole day, it preserves a mood through two carefully chosen references.
+                                The format stays small enough to remain honest. Instead of trying to summarize a whole day, it preserves a clear pairing through two carefully chosen references.
                             </p>
                             <div className="accent-rule my-5" />
                             <p className="text-[0.8125rem] leading-relaxed text-muted">
@@ -74,10 +74,10 @@ const About = () => {
 
                         <div className="space-y-3.5 text-sm leading-relaxed text-muted sm:text-base">
                             <p>
-                                Each day, I record how I&apos;m feeling, save a song that matches that mood, and pair it with a movie that belongs in the same emotional world.
+                                Each day, I save a song, pair it with a movie, and leave a note when the day needs one.
                             </p>
                             <p>
-                                Some days call for something bright and direct. Others feel cinematic, restless, nostalgic, or reflective. The archive gives those moods a shape without flattening them.
+                                Some days call for something bright and direct. Others lean quieter, stranger, or more cinematic. The archive gives those shifts a shape without turning them into a heavy diary.
                             </p>
                             <p>
                                 That structure is what makes the project useful: it is simple enough to keep going, and rich enough to reveal patterns over time.
@@ -116,7 +116,7 @@ const About = () => {
                                         The archive becomes more interesting the longer it stays alive.
                                     </h3>
                                     <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
-                                        Repeated moods, surprise pairings, seasonal shifts, and recurring artists start to tell their own story. The design should feel like it respects that history, not like it came from a one-click template.
+                                        Repeated pairings, seasonal shifts, and recurring artists start to tell their own story. The design should feel like it respects that history, not like it came from a one-click template.
                                     </p>
                                 </div>
                             </div>

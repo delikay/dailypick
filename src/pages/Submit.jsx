@@ -67,7 +67,7 @@ const Submit = () => {
                             </p>
                             <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted">
                                 Clear song title, artist name, and one or more movie options that
-                                genuinely fit the mood.
+                                clearly belong together.
                             </p>
                         </div>
                     </div>

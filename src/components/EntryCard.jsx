@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Calendar, Clapperboard, Music2, Quote } from 'lucide-react';
-import MoodBadge from './MoodBadge';
 import { formatShortDate, getDaysAgo } from '../utils/dateUtils';
 
 const EntryCard = ({ entry }) => {
@@ -22,8 +21,6 @@ const EntryCard = ({ entry }) => {
                             {getDaysAgo(entry.date)}
                         </p>
                     </div>
-
-                    <MoodBadge mood={entry.mood} size="sm" />
                 </div>
 
                 <div className="flex-1 space-y-2.5 px-4 py-4 sm:px-5">

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const DEFAULT_TITLE = 'My Daily Pick';
-const DEFAULT_DESCRIPTION = 'A daily journal of songs, movies, and moods.';
+const DEFAULT_DESCRIPTION = 'A daily journal of songs, movies, and notes.';
 
 const ensureMetaTag = (selector, attributes) => {
     let tag = document.head.querySelector(selector);

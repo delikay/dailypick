@@ -12,7 +12,6 @@ import { useEntries } from '../hooks/useEntries';
 import { formatDate, getToday, isToday } from '../utils/dateUtils';
 import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
-import MoodBadge from '../components/MoodBadge';
 import SongCard from '../components/SongCard';
 import MovieCard from '../components/MovieCard';
 import EmptyState from '../components/EmptyState';
@@ -59,7 +58,7 @@ const Home = () => {
                     title={isTodayView ? 'No entry for today yet' : 'No entry for this date'}
                     description={
                         isTodayView
-                            ? 'Start your day by sharing the song and movie that match your mood right now.'
+                            ? 'Start your day by sharing a song and movie pairing.'
                             : "There's no entry recorded for this date. Try another day in the archive."
                     }
                     actionLabel="Browse archive"
@@ -84,7 +83,7 @@ const Home = () => {
                             <p className="editorial-kicker">Daily pick</p>
 
                             <h1 className="display-title mt-4 text-4xl text-text sm:text-5xl lg:text-[4rem]">
-                                {isTodayView ? 'Today\'s Moodboard' : 'Archive Moodboard'}
+                                {isTodayView ? 'Today\'s Pairing' : 'Archive Pairing'}
                             </h1>
 
                             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:text-[0.95rem]">
@@ -110,7 +109,7 @@ const Home = () => {
                         </div>
 
                         <aside className="border-t border-border/60 bg-surface/65 px-5 py-7 sm:px-6 sm:py-8 lg:border-l lg:border-t-0 lg:px-7">
-                            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+                            <div className="grid gap-3 sm:grid-cols-2">
                                 <div className="surface-panel rounded-xl border border-border/60 bg-surface/90 px-3.5 py-3">
                                     <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
                                         Date
@@ -119,15 +118,6 @@ const Home = () => {
                                 </div>
 
                                 <div className="surface-panel rounded-xl border border-border/60 bg-surface/90 px-3.5 py-3">
-                                    <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
-                                        Mood
-                                    </p>
-                                    <div className="mt-1.5">
-                                        <MoodBadge mood={entry.mood} size="sm" />
-                                    </div>
-                                </div>
-
-                                <div className="surface-panel rounded-xl border border-border/60 bg-surface/90 px-3.5 py-3 sm:col-span-2 lg:col-span-1">
                                     <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
                                         Entries logged
                                     </p>

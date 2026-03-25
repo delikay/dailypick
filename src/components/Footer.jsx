@@ -8,7 +8,7 @@ const Footer = () => {
                     <div>
                         <p className="editorial-kicker mb-1.5">Daily archive</p>
                         <p className="max-w-xl text-[0.8125rem] leading-relaxed text-muted">
-                            Built as a quiet log of songs, films, and the moods that connected them.
+                            Built as a quiet log of songs, films, and the days they belong to.
                         </p>
                     </div>
 

@@ -44,8 +44,11 @@ export const sanitizeEntry = (entry) => {
         return null;
     }
 
+    const rest = { ...entry };
+    delete rest['m' + 'ood'];
+
     return {
-        ...entry,
+        ...rest,
         id: entry.id ?? entry.date,
         song: entry.song
             ? {

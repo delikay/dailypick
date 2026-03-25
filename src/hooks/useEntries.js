@@ -23,17 +23,11 @@ export const useEntries = () => {
         return [...entries].sort((a, b) => b.date.localeCompare(a.date));
     };
 
-    // Filter entries by mood
-    const getEntriesByMood = (moodId) => {
-        return entries.filter(entry => entry.mood === moodId);
-    };
-
     return {
         entries,
         loading,
         getTodayEntry,
         getEntryByDate,
         getAllEntries,
-        getEntriesByMood,
     };
 };
