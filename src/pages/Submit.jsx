@@ -1,4 +1,4 @@
-﻿import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { Mail, Music, Film, Send, Check, User, MessageSquare } from 'lucide-react';
 import { usePageMeta } from '../hooks/usePageMeta';
 import Layout from '../components/Layout';
@@ -21,19 +21,19 @@ const Submit = () => {
     if (isSubmitted) {
         return (
             <Layout>
-                <section className="section-frame px-6 py-14 text-center sm:px-8 sm:py-16">
+                <section className="section-frame px-5 py-10 text-center sm:px-6 sm:py-12">
                     <div className="mx-auto flex max-w-2xl flex-col items-center" aria-live="polite">
-                        <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-emerald-500/12 text-emerald-600 shadow-[0_18px_40px_rgba(16,185,129,0.18)]">
-                            <Check className="h-10 w-10" />
+                        <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-secondary/10 text-secondary shadow-sm">
+                            <Check className="h-8 w-8" />
                         </div>
                         <p className="editorial-kicker">Submission received</p>
-                        <h1 className="section-title mt-5 text-4xl text-text sm:text-5xl">
+                        <h1 className="section-title mt-4 text-3xl text-text sm:text-4xl">
                             Thanks for sending a pick.
                         </h1>
-                        <Link to="/submit" className="button-primary mt-8 !w-auto !px-6">
+                        <Link to="/submit" className="button-primary mt-6 !w-auto !px-5">
                             Send another pick
                         </Link>
-                        <Link to="/archive" className="mt-4 text-sm font-medium text-muted">
+                        <Link to="/archive" className="mt-3 text-[0.8125rem] font-medium text-muted">
                             Browse the archive
                         </Link>
                     </div>
@@ -44,28 +44,28 @@ const Submit = () => {
 
     return (
         <Layout>
-            <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
-                <section className="section-frame px-6 py-8 sm:px-8 lg:px-10">
-                    <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-[1.2rem] bg-primary text-surface shadow-[0_18px_34px_rgba(16,46,30,0.18)]">
-                        <Mail className="h-6 w-6" />
+            <div className="grid gap-5 lg:grid-cols-[0.88fr_1.12fr]">
+                <section className="section-frame px-5 py-6 sm:px-6 lg:px-8">
+                    <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-surface shadow-sm">
+                        <Mail className="h-5 w-5" />
                     </div>
                     <p className="editorial-kicker">Submit a suggestion</p>
-                    <h1 className="display-title mt-5 text-5xl text-text sm:text-6xl">
+                    <h1 className="display-title mt-4 text-4xl text-text sm:text-5xl">
                         Send the next song and film pair.
                     </h1>
-                    <p className="mt-6 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+                    <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
                         If a track or movie feels right for the archive, drop it here. Keep it simple,
                         and add context only if it helps explain the choice.
                     </p>
 
-                    <div className="accent-rule my-6" />
+                    <div className="accent-rule my-5" />
 
-                    <div className="grid gap-4">
-                        <div className="surface-panel rounded-[1.4rem] border border-border/70 bg-surface/80 p-4">
-                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                    <div className="grid gap-3">
+                        <div className="surface-panel rounded-xl border border-border/60 bg-surface/80 p-3.5">
+                            <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
                                 Best submissions
                             </p>
-                            <p className="mt-2 text-sm leading-relaxed text-muted">
+                            <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted">
                                 Clear song title, artist name, and one or more movie options that
                                 genuinely fit the mood.
                             </p>
@@ -73,11 +73,11 @@ const Submit = () => {
                     </div>
                 </section>
 
-                <section className="card-shell px-6 py-7 sm:px-8">
+                <section className="card-shell px-5 py-6 sm:px-6">
                     <form
                         action={FORM_SUBMIT_ACTION}
                         method="POST"
-                        className="relative z-[1] space-y-5"
+                        className="relative z-[1] space-y-4"
                     >
                         <input type="hidden" name="_subject" value="New My Daily Pick suggestion" />
                         <input type="hidden" name="_captcha" value="false" />
@@ -97,13 +97,13 @@ const Submit = () => {
                             />
                         </div>
 
-                        <div className="grid gap-5 sm:grid-cols-2">
+                        <div className="grid gap-4 sm:grid-cols-2">
                             <div className="sm:col-span-2">
                                 <label
                                     htmlFor="submit-name"
-                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                    className="mb-1.5 flex items-center gap-1.5 text-[0.8125rem] font-semibold text-text"
                                 >
-                                    <User className="h-4 w-4 text-secondary" />
+                                    <User className="h-3.5 w-3.5 text-secondary" />
                                     Name (optional)
                                 </label>
                                 <input
@@ -119,15 +119,15 @@ const Submit = () => {
                             <div className="sm:col-span-2">
                                 <label
                                     htmlFor="submit-suggestion"
-                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                    className="mb-1.5 flex items-center gap-1.5 text-[0.8125rem] font-semibold text-text"
                                 >
-                                    <MessageSquare className="h-4 w-4 text-secondary" />
+                                    <MessageSquare className="h-3.5 w-3.5 text-secondary" />
                                     Suggestion or context
                                 </label>
                                 <textarea
                                     id="submit-suggestion"
                                     name="suggestion"
-                                    rows={4}
+                                    rows={3}
                                     placeholder="Why does this pairing fit?"
                                     className="form-field resize-none"
                                 />
@@ -136,9 +136,9 @@ const Submit = () => {
                             <div>
                                 <label
                                     htmlFor="submit-artist-name"
-                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                    className="mb-1.5 flex items-center gap-1.5 text-[0.8125rem] font-semibold text-text"
                                 >
-                                    <Music className="h-4 w-4 text-secondary" />
+                                    <Music className="h-3.5 w-3.5 text-secondary" />
                                     Artist name
                                 </label>
                                 <input
@@ -155,9 +155,9 @@ const Submit = () => {
                             <div>
                                 <label
                                     htmlFor="submit-song-title"
-                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                    className="mb-1.5 flex items-center gap-1.5 text-[0.8125rem] font-semibold text-text"
                                 >
-                                    <Music className="h-4 w-4 text-secondary" />
+                                    <Music className="h-3.5 w-3.5 text-secondary" />
                                     Song title
                                 </label>
                                 <input
@@ -174,29 +174,29 @@ const Submit = () => {
                             <div className="sm:col-span-2">
                                 <label
                                     htmlFor="submit-movies"
-                                    className="mb-2 flex items-center gap-2 text-sm font-semibold text-text"
+                                    className="mb-1.5 flex items-center gap-1.5 text-[0.8125rem] font-semibold text-text"
                                 >
-                                    <Film className="h-4 w-4 text-secondary" />
+                                    <Film className="h-3.5 w-3.5 text-secondary" />
                                     Movie picks
                                 </label>
                                 <textarea
                                     id="submit-movies"
                                     name="movies"
                                     required
-                                    rows={5}
+                                    rows={4}
                                     placeholder="One per line or comma separated"
                                     className="form-field resize-none"
                                 />
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                           
                             <button
                                 type="submit"
-                                className="button-primary !w-auto self-start !px-3.5 !py-2 !text-xs"
+                                className="button-primary !w-auto self-start !px-3.5 !py-2 !text-[0.8125rem]"
                             >
-                                <Send className="h-3.5 w-3.5" />
+                                <Send className="h-3 w-3" />
                                 <span>Send pick</span>
                             </button>
                         </div>
@@ -208,4 +208,3 @@ const Submit = () => {
 };
 
 export default Submit;
-

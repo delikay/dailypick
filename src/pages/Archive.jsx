@@ -53,8 +53,8 @@ const Archive = () => {
     if (loading) {
         return (
             <Layout>
-                <div className="section-frame flex h-72 items-center justify-center">
-                    <div className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+                <div className="section-frame flex h-56 items-center justify-center">
+                    <div className="text-[0.8125rem] font-semibold uppercase tracking-[0.18em] text-muted">
                         Loading archive
                     </div>
                 </div>
@@ -64,59 +64,59 @@ const Archive = () => {
 
     return (
         <Layout>
-            <div className="space-y-6 sm:space-y-8">
-                <section className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-                    <header className="section-frame px-6 py-8 sm:px-8 lg:px-10">
+            <div className="space-y-5 sm:space-y-6">
+                <section className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
+                    <header className="section-frame px-5 py-6 sm:px-6 lg:px-8">
                         <p className="editorial-kicker">Recent archive</p>
-                        <h1 className="display-title mt-5 text-5xl text-text sm:text-6xl">
+                        <h1 className="display-title mt-4 text-4xl text-text sm:text-5xl">
                             36 days of mood, music, and film.
                         </h1>
-                        <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+                        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
                             The archive is intentionally tight: a rolling window of recent entries so each day still feels current.
                         </p>
                     </header>
 
-                    <aside className="card-shell px-6 py-7 sm:px-7 sm:py-8">
+                    <aside className="card-shell px-5 py-6 sm:px-6 sm:py-7">
                         <div className="relative z-[1]">
-                            <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-[1.1rem] bg-primary text-surface">
-                                <ArchiveIcon className="h-5 w-5" />
+                            <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-surface">
+                                <ArchiveIcon className="h-4 w-4" />
                             </div>
                             <p className="editorial-kicker">At a glance</p>
-                            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                            <div className="mt-4 grid gap-3 sm:grid-cols-2">
                                 <div>
-                                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                    <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
                                         Entries
                                     </p>
-                                    <p className="section-title mt-2 text-4xl text-text">
+                                    <p className="section-title mt-1.5 text-3xl text-text">
                                         {entries.length}
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                                    <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
                                         Filtered
                                     </p>
-                                    <p className="section-title mt-2 text-4xl text-text">
+                                    <p className="section-title mt-1.5 text-3xl text-text">
                                         {filteredEntries.length}
                                     </p>
                                 </div>
                             </div>
-                            <p className="mt-5 text-sm leading-relaxed text-muted">
+                            <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted">
                                 Use the mood filter to isolate a feeling and see only the entries that match it.
                             </p>
                         </div>
                     </aside>
                 </section>
 
-                <section className="section-frame px-6 py-6 sm:px-8 sm:py-7">
-                    <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                <section className="section-frame px-5 py-5 sm:px-6 sm:py-6">
+                    <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                         <div className="max-w-2xl">
-                            <div className="flex items-center gap-3 text-sm font-semibold text-text">
-                                <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10 text-secondary">
-                                    <Filter className="h-4 w-4" />
+                            <div className="flex items-center gap-2.5 text-[0.8125rem] font-semibold text-text">
+                                <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-secondary/10 text-secondary">
+                                    <Filter className="h-3.5 w-3.5" />
                                 </span>
                                 <span>Filter the last 36 days by mood</span>
                             </div>
-                            <p className="mt-4 text-sm leading-relaxed text-muted sm:text-[0.96rem]">
+                            <p className="mt-3 text-[0.8125rem] leading-relaxed text-muted">
                                 Select one emotional register to narrow the archive. Each option shows how many recent entries sit inside that mood.
                             </p>
                         </div>
@@ -128,20 +128,20 @@ const Archive = () => {
                                 className="button-ghost w-full sm:w-auto"
                             >
                                 Clear filter
-                                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-secondary/80">
+                                <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-secondary/80">
                                     {entries.length - filteredEntries.length} hidden
                                 </span>
                             </button>
                         )}
                     </div>
 
-                    <div className="accent-rule my-6" />
+                    <div className="accent-rule my-5" />
 
-                    <div className="grid gap-4 lg:grid-cols-[minmax(0,26rem)_1fr] lg:items-end">
+                    <div className="grid gap-3.5 lg:grid-cols-[minmax(0,24rem)_1fr] lg:items-end">
                         <div>
                             <label
                                 htmlFor="archive-mood-filter"
-                                className="mb-3 block text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted"
+                                className="mb-2 block text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted"
                             >
                                 Mood selection
                             </label>
@@ -159,20 +159,20 @@ const Archive = () => {
                                         </option>
                                     ))}
                                 </select>
-                                <ChevronDown className="premium-select__icon h-4 w-4" />
+                                <ChevronDown className="premium-select__icon h-3.5 w-3.5" />
                             </div>
                         </div>
 
-                        <div className="surface-panel rounded-[1.3rem] border border-border/60 bg-surface/65 px-4 py-4 sm:px-5">
-                            <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
+                        <div className="surface-panel rounded-xl border border-border/50 bg-surface/65 px-3.5 py-3 sm:px-4">
+                            <p className="text-[0.625rem] font-bold uppercase tracking-[0.14em] text-muted">
                                 Current view
                             </p>
-                            <p className="mt-2 text-base font-semibold text-text">
+                            <p className="mt-1.5 text-sm font-semibold text-text">
                                 {selectedMood
                                     ? `${moods.find((mood) => mood.id === selectedMood)?.label} mood`
                                     : 'All moods'}
                             </p>
-                            <p className="mt-1 text-sm leading-relaxed text-muted">
+                            <p className="mt-0.5 text-[0.8125rem] leading-relaxed text-muted">
                                 {selectedMood
                                     ? `${filteredEntries.length} entries shown from the last 36 days.`
                                     : `Showing all ${entries.length} entries in the active archive window.`}
@@ -181,7 +181,7 @@ const Archive = () => {
                     </div>
 
                     {selectedMood && (
-                        <p className="mt-5 text-sm leading-relaxed text-muted">
+                        <p className="mt-4 text-[0.8125rem] leading-relaxed text-muted">
                             Showing <span className="font-semibold text-text">{filteredEntries.length}</span>{' '}
                             entries tagged{' '}
                             <span className="font-semibold text-text">
@@ -203,7 +203,7 @@ const Archive = () => {
                         }
                     />
                 ) : (
-                    <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+                    <section className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                         {paginatedEntries.map((entry) => (
                             <EntryCard key={entry.id} entry={entry} />
                         ))}
@@ -211,14 +211,14 @@ const Archive = () => {
                 )}
 
                 {filteredEntries.length > PER_PAGE && (
-                    <section className="section-frame px-6 py-5 sm:px-8">
-                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                            <p className="text-sm text-muted">
+                    <section className="section-frame px-5 py-4 sm:px-6">
+                        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <p className="text-[0.8125rem] text-muted">
                                 Page <span className="font-semibold text-text">{activePage}</span> of{' '}
                                 <span className="font-semibold text-text">{totalPages}</span>
                             </p>
 
-                            <div className="flex flex-col gap-3 sm:flex-row">
+                            <div className="flex flex-col gap-2 sm:flex-row">
                                 <button
                                     onClick={() => setPage((currentPage) => Math.max(1, currentPage - 1))}
                                     type="button"

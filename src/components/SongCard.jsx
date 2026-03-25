@@ -6,32 +6,32 @@ const SongCard = ({ song, featured = false, entry }) => {
 
     return (
         <article
-            className={`card-shell hover-lift relative p-6 sm:p-7 ${featured ? 'min-h-[18rem]' : ''}`}
+            className={`card-shell hover-lift relative p-5 sm:p-6 ${featured ? 'min-h-[15rem]' : ''}`}
         >
             {entry && <ShareButton entry={entry} iconOnly />}
 
             <div className="relative z-[1] flex h-full flex-col">
                 <span className="editorial-kicker">Soundtrack</span>
 
-                <div className="mt-6 flex items-start gap-4">
-                    <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-[1.1rem] border border-border/70 bg-surface/80 text-secondary">
-                        <Music className="h-5 w-5" />
+                <div className="mt-5 flex items-start gap-3">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-border/60 bg-surface/80 text-secondary">
+                        <Music className="h-4 w-4" />
                     </div>
 
                     <div className="min-w-0">
-                        <p className="text-[0.72rem] font-bold uppercase tracking-[0.18em] text-muted">
+                        <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-muted">
                             Featured track
                         </p>
-                        <h3 className="section-title mt-2 text-3xl text-text sm:text-[2.1rem]">
+                        <h3 className="section-title mt-1.5 text-2xl text-text sm:text-[1.75rem]">
                             {song.title}
                         </h3>
-                        <p className="mt-2 text-base font-medium text-muted">{song.artist}</p>
+                        <p className="mt-1.5 text-sm font-medium text-muted">{song.artist}</p>
                     </div>
                 </div>
 
-                <div className="accent-rule my-6" />
+                <div className="accent-rule my-5" />
 
-                <p className="max-w-md text-sm leading-relaxed text-muted">
+                <p className="max-w-md text-[0.8125rem] leading-relaxed text-muted">
                     A single song anchoring the tone of this entry.
                 </p>
 
@@ -43,7 +43,7 @@ const SongCard = ({ song, featured = false, entry }) => {
                         className="button-secondary mt-auto w-full sm:w-fit"
                     >
                         <span>Play on Spotify</span>
-                        <ExternalLink className="h-4 w-4 text-secondary" />
+                        <ExternalLink className="h-3.5 w-3.5 text-secondary" />
                     </a>
                 )}
             </div>
