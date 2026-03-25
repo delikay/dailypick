@@ -70,10 +70,6 @@
     @apply rounded-full bg-[rgb(94_128_108_/_0.3)];
   }
 
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-[rgb(94_128_108_/_0.5)];
-  }
-
   @media (max-width: 640px) {
     header {
       -webkit-backface-visibility: hidden;
@@ -156,23 +152,23 @@
   }
 
   .button-primary {
-    @apply border border-[rgb(16_52_35_/_0.5)] bg-[#174a30] text-[#f2faf4] shadow-[0_4px_12px_rgb(18_50_34_/_0.14)] hover:bg-[#1a5637] hover:shadow-[0_6px_18px_rgb(18_50_34_/_0.2)];
+    @apply border border-[rgb(16_52_35_/_0.5)] bg-[#174a30] text-[#f2faf4] shadow-[0_4px_12px_rgb(18_50_34_/_0.14)];
   }
 
   .button-secondary {
-    @apply border border-[rgb(74_104_86_/_0.14)] bg-[rgb(248_252_248_/_0.8)] text-text shadow-[0_2px_8px_rgb(18_50_34_/_0.05)] hover:bg-[rgb(255_255_255_/_0.95)] hover:shadow-[0_4px_14px_rgb(18_50_34_/_0.1)];
+    @apply border border-[rgb(74_104_86_/_0.14)] bg-[rgb(248_252_248_/_0.8)] text-text shadow-[0_2px_8px_rgb(18_50_34_/_0.05)];
   }
 
   .button-ghost {
-    @apply border border-[rgb(47_154_96_/_0.14)] bg-[rgb(47_154_96_/_0.06)] text-secondary hover:border-[rgb(47_154_96_/_0.24)] hover:bg-[rgb(47_154_96_/_0.1)];
+    @apply border border-[rgb(47_154_96_/_0.14)] bg-[rgb(47_154_96_/_0.06)] text-secondary;
   }
 
   .form-field {
-    @apply w-full rounded-[0.85rem] border border-[rgb(74_104_86_/_0.16)] bg-[rgb(245_252_247_/_0.9)] px-[0.85rem] py-[0.7rem] text-[0.9375rem] text-text placeholder:text-[rgb(94_128_108_/_0.7)] hover:border-[rgb(47_154_96_/_0.26)] focus:border-[rgb(47_154_96_/_0.44)] focus:outline-none focus:shadow-[0_0_0_3px_rgb(47_154_96_/_0.1)];
+    @apply w-full rounded-[0.85rem] border border-[rgb(74_104_86_/_0.16)] bg-[rgb(245_252_247_/_0.9)] px-[0.85rem] py-[0.7rem] text-[0.9375rem] text-text placeholder:text-[rgb(94_128_108_/_0.7)] focus:border-[rgb(47_154_96_/_0.44)] focus:outline-none focus:shadow-[0_0_0_3px_rgb(47_154_96_/_0.1)];
   }
 
   .premium-select-shell {
-    @apply relative rounded-[0.85rem] border border-[rgb(74_104_86_/_0.14)] bg-[rgb(248_252_248_/_0.85)] shadow-[0_2px_8px_rgb(18_50_34_/_0.04)] hover:border-[rgb(47_154_96_/_0.22)] hover:shadow-[0_4px_14px_rgb(18_50_34_/_0.08)] focus-within:border-[rgb(47_154_96_/_0.34)] focus-within:shadow-[0_0_0_3px_rgb(47_154_96_/_0.1)];
+    @apply relative rounded-[0.85rem] border border-[rgb(74_104_86_/_0.14)] bg-[rgb(248_252_248_/_0.85)] shadow-[0_2px_8px_rgb(18_50_34_/_0.04)] focus-within:border-[rgb(47_154_96_/_0.34)] focus-within:shadow-[0_0_0_3px_rgb(47_154_96_/_0.1)];
   }
 
   .premium-select {
@@ -184,44 +180,6 @@
   }
 
   .surface-panel {
-    @apply relative overflow-hidden hover:border-[rgb(47_154_96_/_0.2)] hover:bg-[rgb(245_252_247_/_0.95)];
-  }
-
-  .hover-lift:hover {
-    @apply border-[rgb(47_154_96_/_0.2)] shadow-[0_8px_24px_rgb(18_50_34_/_0.1)];
-  }
-
-  .glass:hover,
-  .section-frame:hover,
-  .card-shell:hover {
-    @apply border-[rgb(47_154_96_/_0.18)] shadow-[0_8px_28px_rgb(18_50_34_/_0.1)];
-  }
-
-  .home-reveal {
-    @apply translate-y-0 opacity-100;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .home-reveal-ready .home-reveal {
-    opacity: 0;
-    transform: translate3d(0, 12px, 0);
-    transition:
-      opacity 400ms ease-out,
-      transform 400ms cubic-bezier(0.22, 1, 0.36, 1) !important;
-    transition-delay: var(--reveal-delay, 0ms) !important;
-    will-change: opacity, transform;
-  }
-
-  .home-reveal-ready .home-reveal.is-visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-reveal-ready .home-reveal {
-    opacity: 1;
-    transform: none;
-    transition: none !important;
+    @apply relative overflow-hidden;
   }
 }

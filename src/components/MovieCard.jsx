@@ -6,7 +6,7 @@ const MovieCard = ({ movie, featured = false, entry }) => {
 
     return (
         <article
-            className={`card-shell hover-lift relative p-5 sm:p-6 ${featured ? 'min-h-[15rem]' : ''}`}
+            className={`card-shell relative p-5 sm:p-6 ${featured ? 'min-h-[15rem]' : ''}`}
         >
             {entry && <ShareButton entry={entry} iconOnly />}
 

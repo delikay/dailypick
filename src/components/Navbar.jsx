@@ -12,14 +12,14 @@ const desktopLinkClasses = ({ isActive }) =>
     `inline-flex items-center rounded-full border px-3.5 py-1.5 text-[0.8125rem] font-semibold ${
         isActive
             ? 'border-primary/18 bg-primary text-surface shadow-sm'
-            : 'border-border/60 bg-surface/60 text-text hover:border-secondary/30 hover:bg-surface/90'
+            : 'border-border/60 bg-surface/60 text-text'
     }`;
 
 const mobileLinkClasses = ({ isActive }) =>
     `flex items-center justify-between rounded-xl border px-3.5 py-2.5 text-[0.8125rem] font-semibold ${
         isActive
             ? 'border-primary/18 bg-primary text-surface'
-            : 'border-border/60 bg-surface/70 text-text hover:border-secondary/30 hover:bg-surface'
+            : 'border-border/60 bg-surface/70 text-text'
     }`;
 
 const Navbar = () => {

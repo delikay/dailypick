@@ -9,7 +9,7 @@ const EntryCard = ({ entry }) => {
     return (
         <Link
             to={`/?date=${entry.date}`}
-            className="card-shell hover-lift block overflow-hidden p-0"
+            className="card-shell block overflow-hidden p-0"
         >
             <div className="relative z-[1] flex h-full flex-col">
                 <div className="flex items-start justify-between gap-2.5 border-b border-border/50 bg-surface/60 px-4 py-3 sm:px-5">

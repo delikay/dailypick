@@ -1,4 +1,3 @@
-﻿import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
     ArrowLeft,
@@ -21,7 +20,6 @@ import ShareButton from '../components/ShareButton';
 
 const Home = () => {
     const [searchParams] = useSearchParams();
-    const contentRef = useRef(null);
     const dateParam = searchParams.get('date');
     const { getTodayEntry, getEntryByDate, getAllEntries, loading } = useEntries();
 
@@ -40,55 +38,6 @@ const Home = () => {
         description,
         canonicalPath: dateParam ? `/?date=${displayDate}` : '/',
     });
-
-    useEffect(() => {
-        const container = contentRef.current;
-        if (!container || !entry || typeof window === 'undefined') {
-            return undefined;
-        }
-
-        const sections = Array.from(container.querySelectorAll('[data-home-reveal]'));
-        if (sections.length === 0) {
-            return undefined;
-        }
-
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        container.classList.add('home-reveal-ready');
-
-        if (prefersReducedMotion) {
-            sections.forEach((section) => section.classList.add('is-visible'));
-            return () => {
-                container.classList.remove('home-reveal-ready');
-            };
-        }
-
-        sections.forEach((section, index) => {
-            section.classList.remove('is-visible');
-            section.style.setProperty('--reveal-delay', `${index * 70}ms`);
-        });
-
-        const observer = new IntersectionObserver(
-            (entries, currentObserver) => {
-                entries.forEach((entryItem) => {
-                    if (!entryItem.isIntersecting) return;
-                    entryItem.target.classList.add('is-visible');
-                    currentObserver.unobserve(entryItem.target);
-                });
-            },
-            {
-                threshold: 0.12,
-                rootMargin: '0px 0px -8% 0px',
-            }
-        );
-
-        sections.forEach((section) => observer.observe(section));
-
-        return () => {
-            observer.disconnect();
-            sections.forEach((section) => section.style.removeProperty('--reveal-delay'));
-            container.classList.remove('home-reveal-ready');
-        };
-    }, [displayDate, entry, entry?.id, entry?.caption]);
 
     if (loading) {
         return (
@@ -128,8 +77,8 @@ const Home = () => {
 
     return (
         <Layout>
-            <div ref={contentRef} className="space-y-5 sm:space-y-6 lg:space-y-8">
-                <section data-home-reveal className="home-reveal section-frame overflow-hidden p-0">
+            <div className="space-y-5 sm:space-y-6 lg:space-y-8">
+                <section className="section-frame overflow-hidden p-0">
                     <div className="grid lg:grid-cols-[1.3fr_0.9fr]">
                         <div className="px-5 py-7 sm:px-6 sm:py-8 lg:px-8">
                             <p className="editorial-kicker">Daily pick</p>
@@ -193,7 +142,7 @@ const Home = () => {
                     </div>
                 </section>
 
-                <section data-home-reveal className="home-reveal grid gap-5 lg:grid-cols-6">
+                <section className="grid gap-5 lg:grid-cols-6">
                     <article className="section-frame px-5 py-6 sm:px-6 lg:col-span-4 lg:px-7">
                         <p className="editorial-kicker mb-2">Journal note</p>
                         <blockquote className="font-display text-[1.55rem] leading-[1.16] tracking-[-0.03em] text-text sm:text-[1.9rem] lg:text-[2.25rem]">

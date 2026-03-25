@@ -78,7 +78,7 @@ const ShareButton = ({ entry, iconOnly = false, className = '' }) => {
                 onClick={handleShare}
                 type="button"
                 title={label}
-                className={`absolute right-3.5 top-3.5 z-10 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border/60 bg-surface/90 text-text shadow-sm hover:bg-white ${className}`}
+                className={`absolute right-3.5 top-3.5 z-10 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-border/60 bg-surface/90 text-text shadow-sm ${className}`}
                 aria-label={label}
             >
                 {status === 'copied' ? (
